@@ -43,6 +43,27 @@
       word-break: break-all; 
     }
 
+/* ✅ 指定各欄位寬度比例 */
+th:nth-child(1),
+td:nth-child(1) {
+  width: 15%;  /* 角色 */
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  width: 20%;  /* 技能名稱 */
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+  width: 30%;  /* 改版前 */
+}
+
+th:nth-child(4),
+td:nth-child(4) {
+  width: 35%;  /* 改版後 */
+}
+    
     th {
       background-color: #e8eaf6;
       font-weight: bold;
