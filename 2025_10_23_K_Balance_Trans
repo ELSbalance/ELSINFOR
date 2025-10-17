@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2025 年 10 月 23 日 韓版平衡翻譯</title>
+  <style>
+    body {
+      font-family: "Microsoft JhengHei", sans-serif;
+      margin: 40px auto;
+      max-width: 1000px;
+      line-height: 1.6;
+      background-color: #f7f9fc;
+      color: #222;
+    }
+
+    h1, h2 {
+      color: #1a237e;
+    }
+
+    h1 {
+      border-bottom: 3px solid #1a237e;
+      padding-bottom: 6px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background-color: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: left;
+      vertical-align: top;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+
+    th {
+      background-color: #e8eaf6;
+      font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f4f6fb;
+    }
+
+    .character-block {
+      margin-top: 40px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: #3949ab;
+      font-weight: bold;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>2025 年 10 月 23 日 韓版平衡翻譯</h1>
+  <p>以下為 2025 年 10 月 23 日《艾爾之光》韓版平衡中文翻譯。</p>
+
+  <!-- ✅ 角色區塊：艾索德 -->
+  <div class="character-block">
+    <h2>艾索德</h2>
+
+    <table>
+      <tr>
+        <th>角色</th>
+        <th>技能名稱</th>
+        <th>改版前</th>
+        <th>改版後</th>
+      </tr>
+      <tr>
+        <td>魔法騎士</td>
+        <td>裂刃風暴</td>
+        <td> </td>
+        <td>技能施展速度增加約30%、變更技能打擊範圍、變更為可在空中使用</td>
+      </tr>
+      <tr>
+        <td>符文殺手</td>
+        <td>火柱莿擊</td>
+        <td> </td>
+        <td> 技能翻新 </td>
+      </tr>
+       <tr>
+        <td>劍鞘騎士</td>
+        <td>猛然一擊</td>
+        <td> </td>
+        <td> 增加致命一擊；覺醒狀態下，特殊主動技能使用時一定時間內增加致命一擊傷害
+            [副本]致命一擊增加：20%   致命一擊傷害增加：5%(最大4重疊)
+            致命一擊傷害增加持續時間：10秒(持續時間結束時移除1層)</td>
+      </tr>
+       <tr>
+        <td>劍鞘騎士</td>
+        <td>最後一擊</td>
+        <td> </td>
+        <td> 技能翻新 </td>
+      </tr>
+      <tr>
+        <td>聖殿騎士</td>
+        <td>神之裂</td>
+        <td> </td>
+        <td> 技能翻新 </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ✅ 角色區塊：愛莎 -->
+  <div class="character-block">
+    <h2>愛莎</h2>
+
+    <table>
+      <tr>
+        <th>角色</th>
+        <th>技能名稱</th>
+        <th>改版前</th>
+        <th>改版後</th>
+      </tr>
+      <tr>
+        <td>虛無公主</td>
+        <td>破滅</td>
+        <td> </td>
+        <td> 技能翻新 </td>
+      </tr>
+      <tr>
+        <td>虛無公主</td>
+        <td>[真]破滅</td>
+        <td> 以力量激流最終強化的技能
+             -每打擊將敵人的MP減少2</td>
+        <td>以力量激流最終強化的技能
+            -增加1.2倍傷害 </td>
+      </tr>
+      <tr>
+        <td>次元魔女</td>
+        <td>天懲</td>
+        <td></td>
+        <td> 技能翻新 </td>
+      </tr>
+    </table>
+  </div>
+
+  <a class="back-link" href="2025.html">← 返回 2025 年改版列表</a>
+
+</body>
+</html>
