@@ -1,17 +1,125 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>艾爾之光改版資料站</title>
-</head>
-<body>
-  <h1>艾爾之光改版資料整理</h1>
-  <p>歡迎！這裡是平衡改編翻譯與更新記錄整理站。</p>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>艾爾之光 改版資料整理</title>
+  <style>
+    /* ===== 全站基本樣式 ===== */
+    body {
+      font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      background-color: #f5f6fa;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
 
-  <h2>年度資料</h2>
-  <ul>
-    <li><a href="2025.html">2025 年改版紀錄</a></li>
-    <li><a href="2024.html">2024 年改版紀錄</a></li>
-  </ul>
+    header {
+      background: linear-gradient(135deg, #3949ab, #5c6bc0);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      margin-top: 8px;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      border-left: 5px solid #3949ab;
+      padding-left: 10px;
+      font-size: 1.4rem;
+      color: #3949ab;
+    }
+
+    .section {
+      background-color: white;
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 25px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 10px;
+    }
+
+    li {
+      margin: 10px 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: #3949ab;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: #1a237e;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding: 20px 0;
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.6rem;
+      }
+      main {
+        margin: 30px auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>艾爾之光 改版資料整理</h1>
+    <p>歡迎！這裡是平衡翻譯與更新紀錄的集中站。</p>
+  </header>
+
+  <main>
+    <section class="section">
+      <h2>📘 平衡翻譯</h2>
+      <ul>
+        <li><a href="2025.html">2025 年平衡紀錄</a></li>
+        <li><a href="balance/2024.html">2024 年平衡紀錄</a></li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>📰 更新紀錄</h2>
+      <ul>
+        <li><a href="#">2025 年更新總覽（即將推出）</a></li>
+        <li><a href="#">2024 年更新總覽（即將推出）</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 艾爾之光改版資料整理站｜非官方，粉絲整理
+  </footer>
 </body>
 </html>
