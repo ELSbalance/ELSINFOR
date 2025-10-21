@@ -67,17 +67,17 @@
       margin-top: 0;
     }
 
-    /* 折疊列表 */
+    /* 折疊列表 - 方法1: 背景透明 */
     details {
       margin-bottom: 15px;
       padding: 10px 15px;
       border: 1px solid #bbdefb;
       border-radius: 10px;
-      background: #f0f7ff;
+      background: transparent; /* 透明背景跟隨 body */
     }
 
     details[open] {
-      background: #e3f2fd;
+      background: transparent;
     }
 
     summary {
@@ -90,14 +90,6 @@
       margin: 10px 0 0 20px;
     }
 
-    /* footer */
-    footer {
-      text-align: center;
-      color: #777;
-      padding: 30px 10px 50px;
-      font-size: 0.95rem;
-    }
-
     a {
       color: #1565c0;
       text-decoration: none;
@@ -105,6 +97,14 @@
 
     a:hover {
       text-decoration: underline;
+    }
+
+    /* footer */
+    footer {
+      text-align: center;
+      color: #777;
+      padding: 30px 10px 50px;
+      font-size: 0.95rem;
     }
   </style>
 </head>
@@ -153,7 +153,7 @@
       </ul>
     </details>
 
-    <!-- 你可以在這裡繼續加 2 月、3 月…每週折疊 -->
+    <!-- 可以在這裡繼續新增 2 月、3 月…的折疊區塊 -->
   </main>
 
   <footer>
