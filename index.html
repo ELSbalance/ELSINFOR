@@ -5,151 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>艾爾之光 改版資料整理</title>
 
-  <style>
-    /* ===== 全站基本樣式 ===== */
-    body {
-      font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
-      background-color: #f5f6fa;
-      margin: 0;
-      padding: 0;
-      color: #333;
-    }
-
-    header {
-      background: linear-gradient(135deg, #3949ab, #5c6bc0);
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-      letter-spacing: 1px;
-    }
-
-    header p {
-      margin-top: 8px;
-      font-size: 1.1rem;
-      opacity: 0.9;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 50px auto;
-      padding: 0 20px;
-    }
-
-    h2 {
-      border-left: 5px solid #3949ab;
-      padding-left: 10px;
-      font-size: 1.4rem;
-      color: #3949ab;
-    }
-
-    .section {
-      background-color: white;
-      border-radius: 12px;
-      padding: 20px;
-      margin-top: 25px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-    }
-
-    ul {
-      list-style-type: none;
-      padding-left: 10px;
-    }
-
-    li {
-      margin: 10px 0;
-    }
-
-    a {
-      text-decoration: none;
-      color: #3949ab;
-      font-weight: 600;
-      transition: color 0.2s;
-    }
-
-    a:hover {
-      color: #1a237e;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 60px;
-      padding: 20px 0;
-      color: #777;
-      font-size: 0.9rem;
-    }
-
-
-    
-
-    /* ===== 冬季改版特別區塊 ===== */
-    .highlight-section {
-      background-color:#ffffff;
-      border: 1px solid #c5e1ff;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 25px;
-      text-align: center;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
-    }
-
-    .highlight-section h2 {
-      font-size: 1.3rem;
-      color: #1e88e5;
-      margin-bottom: 10px;
-    }
-
-    .highlight-section a {
-      color: #1565c0;
-      font-weight: 600;
-    }
-
-    .highlight-section a:hover {
-      color: #0d47a1;
-      text-decoration: underline;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.6rem;
-      }
-      main {
-        margin: 30px auto;
-      }
-    }
-  </style>
-    <!-- 新增：引用共用 CSS 與共用 JS -->
+  <!-- ✅ 移除內嵌 <style> 區塊，統一使用外部 CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
   <script defer src="assets/js/main.js"></script>
 </head>
 
 <body>
-  <header>
+  <header class="site-header">
     <h1>艾爾之光 改版資料整理</h1>
     <p>歡迎！這裡是平衡翻譯與更新紀錄的集中站。</p>
   </header>
 
-  <main>
+  <main class="container">
     <!-- ❄️ 冬季改版專區 -->
-    <div class="highlight-section">
+    <div class="card">
       <h2>🆕 ❄️ 2025 冬季改版</h2>
-      <p><a href="2025_Winter_Update_Info.html">2025 冬季改版資訊翻譯</a></p>
+      <p><a href="update/2025_Winter_Update_Info.html">2025 冬季改版資訊翻譯</a></p>
     </div>
 
-    <section class="section">
+    <section class="card">
       <h2>📘 平衡翻譯</h2>
       <ul>
-        <li><a href="2025_Balance_list.html">2025 年平衡紀錄</a></li>
+        <li><a href="balance/2025_Balance_list.html">2025 年平衡紀錄</a></li>
         <li><a href="balance/2024.html">2024 年平衡紀錄</a></li>
       </ul>
     </section>
 
-    <section class="section">
+    <section class="card">
       <h2>📰 更新紀錄</h2>
       <ul>
         <li><a href="#">2025 年更新總覽（即將推出）</a></li>
@@ -159,7 +41,7 @@
   </main>
 
   <footer>
-    © 2025 艾爾之光改版資料整理站｜
+    © 2025 艾爾之光改版資料整理站
   </footer>
 </body>
 </html>
