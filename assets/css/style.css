@@ -1,0 +1,80 @@
+/* assets/css/style.css — 全站共用樣式（基礎） */
+:root{
+  --primary: #3949ab;
+  --accent: #64b5f6;
+  --muted: #777;
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --max-width: 1000px;
+  --radius: 12px;
+  --gap: 20px;
+  font-size: 16px;
+}
+
+*{box-sizing:border-box}
+body{
+  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg);
+  color:#222;
+  margin:0;
+  line-height:1.6;
+}
+
+.container{
+  max-width:var(--max-width);
+  margin:40px auto;
+  padding:0 20px;
+}
+
+/* header */
+.site-header{
+  background: linear-gradient(135deg,var(--primary),#5c6bc0);
+  color:#fff;
+  padding:36px 20px;
+  text-align:center;
+  border-radius:0 0 10px 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+/* sections */
+.card{
+  background:var(--card);
+  border: 1px solid #e3f2fd;
+  border-radius:var(--radius);
+  padding:20px;
+  margin-bottom:var(--gap);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+}
+
+/* headings */
+h1{font-size:1.8rem;margin:0}
+h2{color:var(--primary);border-left:6px solid var(--accent);padding-left:10px}
+h3{color:#1565c0}
+
+/* links */
+a{color:var(--primary);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* table */
+table{width:100%;border-collapse:collapse;margin-top:10px}
+th,td{padding:10px;border:1px solid #e0f0ff}
+th{background:linear-gradient(to right,#90caf9,#e3f2fd);color:#08306b}
+
+/* back-to-top button (placeholder class) */
+#backToTop{
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  background:var(--accent);
+  color:white;
+  padding:10px 12px;
+  border-radius:24px;
+  text-decoration:none;
+  display:none; /* js 控制顯示 */
+  box-shadow: 0 6px 14px rgba(100,149,237,0.15);
+}
+
+/* small screens */
+@media (max-width:600px){
+  h1{font-size:1.4rem}
+}
