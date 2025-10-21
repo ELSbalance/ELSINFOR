@@ -5,14 +5,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>2025 更新總覽</title>
 
-  <!-- 使用藍色主題作為示範 -->
+  <!-- 藍色主題預設 -->
   <link id="theme-link" rel="stylesheet" href="../assets/css/blue_style.css">
 
   <!-- 主題切換功能 -->
   <script defer src="../assets/js/color_switch.js"></script>
 
   <style>
-    /* 折疊列表樣式微調，保持整齊 */
+    /* header */
+    header {
+      position: relative;
+      text-align: center;
+      background: linear-gradient(135deg, #5c6bc0, #7986cb);
+      color: white;
+      padding: 50px 20px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      margin-top: 10px;
+    }
+
+    /* 主題切換按鈕 */
+    .theme-toggle-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.6);
+      color: #333;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 25px;
+      padding: 8px 16px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: background 0.3s, transform 0.2s;
+      z-index: 1000;
+    }
+
+    .theme-toggle-btn:hover {
+      background: rgba(255, 255, 255, 0.85);
+      transform: scale(1.05);
+    }
+
+    /* main */
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      color: #1a237e;
+      border-left: 6px solid #64b5f6;
+      padding-left: 10px;
+      margin-top: 0;
+    }
+
+    /* 折疊列表 */
     details {
       margin-bottom: 15px;
       padding: 10px 15px;
@@ -21,18 +76,35 @@
       background: #f0f7ff;
     }
 
+    details[open] {
+      background: #e3f2fd;
+    }
+
     summary {
       cursor: pointer;
       font-weight: bold;
       font-size: 1rem;
     }
 
-    details[open] {
-      background: #e3f2fd;
-    }
-
     ul {
       margin: 10px 0 0 20px;
+    }
+
+    /* footer */
+    footer {
+      text-align: center;
+      color: #777;
+      padding: 30px 10px 50px;
+      font-size: 0.95rem;
+    }
+
+    a {
+      color: #1565c0;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -80,37 +152,12 @@
         <li>商城小修正</li>
       </ul>
     </details>
+
+    <!-- 你可以在這裡繼續加 2 月、3 月…每週折疊 -->
   </main>
 
   <footer>
     © 2025 艾爾之光改版資料整理站
   </footer>
-
-  <style>
-    /* 主題切換按鈕 */
-    .theme-toggle-btn {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: rgba(255, 255, 255, 0.6);
-      color: #333;
-      border: 1px solid rgba(255,255,255,0.3);
-      border-radius: 25px;
-      padding: 8px 16px;
-      cursor: pointer;
-      font-size: 0.95rem;
-      transition: background 0.3s, transform 0.2s;
-      z-index: 1000;
-    }
-
-    .theme-toggle-btn:hover {
-      background: rgba(255, 255, 255, 0.85);
-      transform: scale(1.05);
-    }
-
-    header {
-      position: relative;
-    }
-  </style>
 </body>
 </html>
