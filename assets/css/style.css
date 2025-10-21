@@ -1,3 +1,14 @@
+body {
+  background-color: #ffe6f0; /* 淡粉色背景 */
+  color: #333;
+  font-family: "Microsoft JhengHei", sans-serif;
+}
+
+h1 {
+  color: #a020f0; /* 紫色標題 */
+}
+
+
 /* assets/css/style.css — 全站共用樣式（基礎） */
 :root{
   --primary: #3949ab;
