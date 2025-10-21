@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2025 更新總覽</title>
+
+  <!-- 使用藍色主題作為示範 -->
+  <link id="theme-link" rel="stylesheet" href="assets/css/blue_style.css">
+
+  <!-- 主題切換功能 -->
+  <script defer src="assets/js/color_switch.js"></script>
+
+  <style>
+    /* 折疊列表樣式微調，保持整齊 */
+    details {
+      margin-bottom: 15px;
+      padding: 10px 15px;
+      border: 1px solid #bbdefb;
+      border-radius: 10px;
+      background: #f0f7ff;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    details[open] {
+      background: #e3f2fd;
+    }
+
+    ul {
+      margin: 10px 0 0 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>2025 更新總覽</h1>
+    <p>以下按週列出 2025 年的所有更新，點擊可展開詳細內容</p>
+
+    <!-- 主題切換按鈕 -->
+    <button id="theme-toggle" class="theme-toggle-btn">切換主題</button>
+  </header>
+
+  <main>
+    <!-- 一月更新 -->
+    <h2>2025/01 月</h2>
+
+    <details>
+      <summary>第 1 週 - 01/07</summary>
+      <ul>
+        <li>UI 改善：新增快捷欄</li>
+        <li>商城更新：販售新服裝</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>第 2 週 - 01/14</summary>
+      <ul>
+        <li>商城上新：節日道具</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>第 3 週 - 01/21</summary>
+      <ul>
+        <li>新副本開放：冰雪秘境</li>
+        <li>副本獎勵調整</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>第 4 週 - 01/28</summary>
+      <ul>
+        <li>活動更新：新年活動上線</li>
+        <li>商城小修正</li>
+      </ul>
+    </details>
+  </main>
+
+  <footer>
+    © 2025 艾爾之光改版資料整理站
+  </footer>
+
+  <style>
+    /* 主題切換按鈕 */
+    .theme-toggle-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.6);
+      color: #333;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 25px;
+      padding: 8px 16px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: background 0.3s, transform 0.2s;
+      z-index: 1000;
+    }
+
+    .theme-toggle-btn:hover {
+      background: rgba(255, 255, 255, 0.85);
+      transform: scale(1.05);
+    }
+
+    header {
+      position: relative;
+    }
+  </style>
+</body>
+</html>
