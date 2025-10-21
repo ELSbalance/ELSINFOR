@@ -54,7 +54,7 @@ body{
 /* sections */
 .card{
   background:var(--card);
-  border: 1px solid #e3f2fd;
+  border: 1px solid #ffffff;
   border-radius:var(--radius);
   padding:20px;
   margin-bottom:var(--gap);
