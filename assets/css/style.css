@@ -88,3 +88,12 @@ th{background:linear-gradient(to right,#90caf9,#e3f2fd);color:#08306b}
 @media (max-width:600px){
   h1{font-size:1.4rem}
 }
+
+/* --- 測試用樣式（淡粉色背景 + 紫色標題） --- */
+body {
+  background-color: #ffe6f0 !important; /* 加 !important 保證覆蓋 */
+}
+
+h1, h2, h3 {
+  color: #a020f0 !important;
+}
