@@ -6,13 +6,17 @@
 const themeLink = document.getElementById("theme-link");
 const themeToggleBtn = document.getElementById("theme-toggle");
 
+// 判斷是否在 /updates/ 資料夾內
+const isInsideUpdates = window.location.pathname.includes("/updates/");
+const cssPrefix = isInsideUpdates ? "../assets/css/" : "assets/css/";
+
 // 讀取 localStorage
 const savedTheme = localStorage.getItem("theme");
 if (savedTheme === "pink") {
-  themeLink.href = "assets/css/pink_style.css";
+  themeLink.href = cssPrefix + "pink_style.css";
   themeToggleBtn.textContent = "❄ 切換藍調";
 } else {
-  themeLink.href = "assets/css/blue_style.css";
+  themeLink.href = cssPrefix + "blue_style.css";
   themeToggleBtn.textContent = "🌸 切換粉色";
 }
 
@@ -22,12 +26,12 @@ themeToggleBtn.addEventListener("click", () => {
 
   if (current.includes("blue_style.css")) {
     // 切換成粉色
-    themeLink.href = "assets/css/pink_style.css";
+    themeLink.href = cssPrefix + "pink_style.css";
     themeToggleBtn.textContent = "❄ 切換藍調";
     localStorage.setItem("theme", "pink");
   } else {
     // 切換成藍色
-    themeLink.href = "assets/css/blue_style.css";
+    themeLink.href = cssPrefix + "blue_style.css";
     themeToggleBtn.textContent = "🌸 切換粉色";
     localStorage.setItem("theme", "blue");
   }
