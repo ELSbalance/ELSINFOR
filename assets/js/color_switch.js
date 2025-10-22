@@ -6,9 +6,8 @@
 const themeLink = document.getElementById("theme-link");
 const themeToggleBtn = document.getElementById("theme-toggle");
 
-// 判斷是否在 /updates/ 資料夾內
-const isInsideUpdates = window.location.pathname.includes("/updates/");
-const cssPrefix = isInsideUpdates ? "../assets/css/" : "assets/css/";
+// 使用絕對路徑，保證所有頁面都能正確讀到 CSS
+const cssPrefix = "/assets/css/";
 
 // 讀取 localStorage
 const savedTheme = localStorage.getItem("theme");
