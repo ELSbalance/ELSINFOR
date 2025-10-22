@@ -23,6 +23,7 @@ header {
 /* 首頁 header 漸層 */
 header.homepage {
   background: linear-gradient(135deg, #ff99c8, #ffb3d9);
+  color: #111;
 }
 
 header h1 {
