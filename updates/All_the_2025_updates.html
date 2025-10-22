@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>2025 年更新總覽｜艾爾之光改版資料整理</title>
 
-  <!-- 套用主題 CSS -->
+  <!-- 套用主題 CSS（藍/粉可切換） -->
   <link id="theme-link" rel="stylesheet" href="../assets/css/blue_style.css">
 
   <!-- 主題切換 JS -->
   <script defer src="../assets/js/color_switch.js"></script>
 
-  <!-- 摺疊功能 JS -->
+  <!-- 摺疊區塊功能 JS -->
   <script defer>
     document.addEventListener("DOMContentLoaded", () => {
       const toggles = document.querySelectorAll(".update-week summary");
@@ -22,10 +22,73 @@
       });
     });
   </script>
+
+  <style>
+    /* 返回首頁按鈕 */
+    .return-btn {
+      display: inline-block;
+      background-color: #64b5f6;
+      color: white;
+      padding: 10px 22px;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.2s;
+      margin-bottom: 25px;
+      font-weight: 500;
+    }
+    .return-btn:hover {
+      background-color: #42a5f5;
+      transform: scale(1.05);
+    }
+
+    /* 內頁 header/footer */
+    header.inner-page {
+      background: transparent;
+      color: #111; /* 可依主題調整深色文字 */
+      text-align: center;
+      padding: 30px 20px;
+      position: relative;
+    }
+    footer.inner-page {
+      text-align: center;
+      color: #777;
+      padding: 30px 10px 50px;
+      font-size: 0.95rem;
+    }
+
+    /* 摺疊區塊 */
+    details.update-week {
+      margin-bottom: 15px;
+      border: 1px solid #b3e5fc;
+      border-radius: 10px;
+      padding: 10px 15px;
+      background: #ffffffcc;
+      backdrop-filter: blur(4px);
+    }
+    details.update-week[open] {
+      background: #ffffffee;
+    }
+    details.update-week summary {
+      cursor: pointer;
+      font-weight: 600;
+      list-style: none;
+    }
+    details.update-week ul {
+      margin-top: 8px;
+      padding-left: 20px;
+    }
+
+    /* main 區塊透明背景 */
+    main.content {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+  </style>
 </head>
 
 <body>
-  <header>
+  <header class="inner-page">
     <h1>2025 年艾爾之光更新總覽</h1>
     <button id="theme-toggle" class="theme-toggle-btn">🌸 切換粉色</button>
   </header>
@@ -60,7 +123,7 @@
         </ul>
       </details>
 
-      <!-- 可以繼續依週新增更多 details 區塊 -->
+      <!-- 可以依週數繼續新增 details 區塊 -->
     </section>
   </main>
 
