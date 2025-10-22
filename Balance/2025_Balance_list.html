@@ -4,131 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>2025 年度韓版平衡翻譯紀錄｜艾爾之光改版資料整理</title>
-  <style>
-    body {
-      font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
-      background-color: #f5f6fa;
-      margin: 0;
-      padding: 0;
-      color: #333;
-    }
 
-    header {
-      background: linear-gradient(135deg, #3949ab, #5c6bc0);
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    }
+  <!-- 主題樣式 -->
+  <link id="theme-link" rel="stylesheet" href="../assets/css/blue_style.css">
 
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-      letter-spacing: 1px;
-    }
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
 
-    main {
-      max-width: 900px;
-      margin: 50px auto;
-      padding: 0 20px;
-    }
-
-    .back-link {
-      display: inline-block;
-      margin-bottom: 25px;
-      text-decoration: none;
-      color: #3949ab;
-      font-weight: bold;
-      transition: color 0.2s;
-    }
-
-    .back-link:hover {
-      color: #1a237e;
-      text-decoration: underline;
-    }
-
-    h2 {
-      border-left: 5px solid #3949ab;
-      padding-left: 10px;
-      font-size: 1.4rem;
-      color: #3949ab;
-      margin-bottom: 20px;
-    }
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    li {
-      background-color: white;
-      margin: 12px 0;
-      padding: 15px 18px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    li:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    }
-
-    a {
-      color: #3949ab;
-      font-weight: 600;
-      text-decoration: none;
-      display: block;
-    }
-
-    a:hover {
-      color: #1a237e;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 60px;
-      padding: 20px 0;
-      color: #777;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.6rem;
-      }
-      main {
-        margin: 30px auto;
-      }
-      li {
-        font-size: 0.95rem;
-      }
-    }
-  </style>
+  <!-- JS -->
+  <script defer src="../assets/js/color_switch.js"></script>
 </head>
 
 <body>
-  <header>
-    <h1>2025 年艾爾之光韓版平衡翻譯紀錄</h1>
+  <header class="site-header">
+    <h1 class="title">2025 年艾爾之光韓版平衡翻譯紀錄</h1>
+    <button id="theme-toggle" class="theme-btn">🌸 切換粉色</button>
   </header>
 
-  <main>
-    <a href="index.html" class="back-link">← 返回首頁</a>
+  <main class="content">
+    <a href="../index.html" class="back-link">← 返回首頁</a>
 
-    <h2>📅 2025 年韓版平衡時間</h2>
-    <ul>
-      <li><a href="2025_10_23_K_Balance_Trans.html">2025.10.23 平衡改版事前公告 [台服：預計25/11/20]</a></li>
-      <li><a href="#">(修正)7/17(四) 角色平衡改編事先公告</a></li>
-      <li><a href="#">(修正)5/22(四) 角色平衡改編事先公告　[台服25/06/19]</a></li>
-      <li><a href="#">(修正)3/27(四) 角色平衡改編事先公告　[台服25/04/24]</a></li>
-      <li><a href="#">(修正)2/27(四) 角色平衡改編事先公告　[台服25/03/27]</a></li>
-      <li><a href="#">1/31(四) 定期維護 - 轉換巔峰技能 AS　[台服25/02/06]</a></li>
-      <li><a href="#">1/16(四) 定期維護 - 轉換巔峰技能 AS　[台服25/02/06]</a></li>
-      <li><a href="#">1/2(四) 定期維護 - 轉換巔峰技能 AS（艾索德／蕾娜／伊芙／蘿潔／菈比）</a></li>
-    </ul>
+    <section class="balance-section">
+      <h2>📅 2025 年韓版平衡時間</h2>
+      <ul class="balance-list">
+        <li><a href="2025_10_23_K_Balance_Trans.html">2025.10.23 平衡改版事前公告 [台服：預計25/11/20]</a></li>
+        <li><a href="#">(修正)7/17(四) 角色平衡改編事先公告</a></li>
+        <li><a href="#">(修正)5/22(四) 角色平衡改編事先公告　[台服25/06/19]</a></li>
+        <li><a href="#">(修正)3/27(四) 角色平衡改編事先公告　[台服25/04/24]</a></li>
+        <li><a href="#">(修正)2/27(四) 角色平衡改編事先公告　[台服25/03/27]</a></li>
+        <li><a href="#">1/31(四) 定期維護 - 轉換巔峰技能 AS　[台服25/02/06]</a></li>
+        <li><a href="#">1/16(四) 定期維護 - 轉換巔峰技能 AS　[台服25/02/06]</a></li>
+        <li><a href="#">1/2(四) 定期維護 - 轉換巔峰技能 AS（艾索德／蕾娜／伊芙／蘿潔／菈比）</a></li>
+      </ul>
+    </section>
   </main>
 
-  <footer>
+  <footer class="site-footer">
     © 2025 艾爾之光改版資料整理站｜
   </footer>
 </body>
