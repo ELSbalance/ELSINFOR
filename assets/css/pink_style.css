@@ -1,33 +1,38 @@
 /* ==============================
-   艾爾之光 改版資料站 - B版：柔粉主題
+   艾爾之光 改版資料站 - B版：柔粉櫻光主題
    ============================== */
 
 body {
   font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
-  background: linear-gradient(to bottom, #fdeef4, #ffffff);
+  background: linear-gradient(to bottom, #fff0f6, #ffffff);
   margin: 0;
   padding: 0;
   color: #333;
 }
 
+/* ======= 頁首 ======= */
 header {
   text-align: center;
   background: linear-gradient(135deg, #f48fb1, #f8bbd0);
   color: white;
   padding: 50px 20px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  position: relative;
 }
 
 header h1 {
   margin: 0;
   font-size: 2.2rem;
+  letter-spacing: 1px;
 }
 
 header p {
   font-size: 1.1rem;
   margin-top: 10px;
+  opacity: 0.95;
 }
 
+/* ======= 主體內容 ======= */
 main {
   max-width: 900px;
   margin: 40px auto;
@@ -35,13 +40,14 @@ main {
 }
 
 section {
-  background: white;
+  background: #ffffffcc;
   border: 2px solid #f8bbd0;
   border-radius: 14px;
   padding: 25px 30px;
   margin-bottom: 30px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
   position: relative;
+  backdrop-filter: blur(4px);
 }
 
 section::before {
@@ -77,12 +83,13 @@ ul {
   padding-left: 10px;
 }
 
+/* ======= 影片/表格區 ======= */
 iframe {
   width: 100%;
   height: 450px;
   border-radius: 12px;
   border: none;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
   margin-bottom: 25px;
 }
 
@@ -92,6 +99,7 @@ table {
   margin-top: 10px;
   border-radius: 10px;
   overflow: hidden;
+  font-size: 0.95rem;
 }
 
 th, td {
@@ -102,12 +110,14 @@ th, td {
 
 th {
   background: linear-gradient(to right, #f8bbd0, #fdeef4);
+  color: #880e4f;
 }
 
 tr:hover {
-  background-color: #fce4ec;
+  background-color: #fde4ef;
 }
 
+/* ======= 底部 ======= */
 footer {
   text-align: center;
   color: #777;
@@ -115,23 +125,60 @@ footer {
   font-size: 0.95rem;
 }
 
+/* ======= 返回按鈕 ======= */
 .return-btn {
   display: inline-block;
   background-color: #f48fb1;
   color: white;
-  padding: 10px 20px;
+  padding: 10px 22px;
   border-radius: 25px;
   text-decoration: none;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.2s;
   margin-top: 15px;
+  font-weight: 500;
 }
 
 .return-btn:hover {
   background-color: #f06292;
+  transform: scale(1.05);
 }
 
+/* ======= 主題切換按鈕 ======= */
+.theme-toggle-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 25px;
+  padding: 8px 18px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  backdrop-filter: blur(6px);
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.08);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+/* ======= RWD ======= */
 @media (max-width: 600px) {
   iframe {
     height: 250px;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .theme-toggle-btn {
+    top: 15px;
+    right: 15px;
+    padding: 6px 14px;
+    font-size: 0.9rem;
   }
 }
