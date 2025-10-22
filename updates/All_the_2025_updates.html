@@ -1,163 +1,71 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2025 更新總覽</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2025 年更新總覽｜艾爾之光改版資料整理</title>
 
-  <!-- 藍色主題預設 -->
+  <!-- 套用主題 CSS -->
   <link id="theme-link" rel="stylesheet" href="../assets/css/blue_style.css">
 
-  <!-- 主題切換功能 -->
+  <!-- 主題切換 JS -->
   <script defer src="../assets/js/color_switch.js"></script>
 
-  <style>
-    /* header - 不要硬編碼背景，跟主題 CSS 一起控制 */
-    header {
-      position: relative;
-      text-align: center;
-      padding: 50px 20px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-      color: inherit; /* 跟主題 CSS 走 */
-      background: transparent; /* 透明，主題 CSS 會覆蓋 */
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.2rem;
-    }
-
-    header p {
-      font-size: 1.1rem;
-      margin-top: 10px;
-    }
-
-    /* 主題切換按鈕 */
-    .theme-toggle-btn {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: rgba(255, 255, 255, 0.6);
-      color: #333;
-      border: 1px solid rgba(255,255,255,0.3);
-      border-radius: 25px;
-      padding: 8px 16px;
-      cursor: pointer;
-      font-size: 0.95rem;
-      transition: background 0.3s, transform 0.2s;
-      z-index: 1000;
-    }
-
-    .theme-toggle-btn:hover {
-      background: rgba(255, 255, 255, 0.85);
-      transform: scale(1.05);
-    }
-
-    /* main */
-    main {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    h2 {
-      color: #1a237e;
-      border-left: 6px solid #64b5f6;
-      padding-left: 10px;
-      margin-top: 0;
-    }
-
-    /* 折疊列表 - 方法1: 背景透明 */
-    details {
-      margin-bottom: 15px;
-      padding: 10px 15px;
-      border: 1px solid #bbdefb;
-      border-radius: 10px;
-      background: transparent; /* 透明背景跟隨 body */
-    }
-
-    details[open] {
-      background: transparent;
-    }
-
-    summary {
-      cursor: pointer;
-      font-weight: bold;
-      font-size: 1rem;
-    }
-
-    ul {
-      margin: 10px 0 0 20px;
-    }
-
-    a {
-      color: #1565c0;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* footer */
-    footer {
-      text-align: center;
-      color: #777;
-      padding: 30px 10px 50px;
-      font-size: 0.95rem;
-    }
-  </style>
+  <!-- 摺疊功能 JS -->
+  <script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggles = document.querySelectorAll(".update-week summary");
+      toggles.forEach(summary => {
+        summary.addEventListener("click", () => {
+          summary.parentElement.classList.toggle("open");
+        });
+      });
+    });
+  </script>
 </head>
 
 <body>
   <header>
-    <h1>2025 更新總覽</h1>
-    <p>以下按週列出 2025 年的所有更新，點擊可展開詳細內容</p>
-
-    <!-- 主題切換按鈕 -->
-    <button id="theme-toggle" class="theme-toggle-btn">切換主題</button>
+    <h1>2025 年艾爾之光更新總覽</h1>
+    <button id="theme-toggle" class="theme-toggle-btn">🌸 切換粉色</button>
   </header>
 
-  <main>
-    <!-- 一月更新 -->
-    <h2>2025/01 月</h2>
+  <main class="content">
+    <a href="../index.html" class="return-btn">← 返回首頁</a>
 
-    <details>
-      <summary>第 1 週 - 01/07</summary>
-      <ul>
-        <li>UI 改善：新增快捷欄</li>
-        <li>商城更新：販售新服裝</li>
-      </ul>
-    </details>
+    <section class="inner-page">
+      <h2>📅 2025 年度更新</h2>
 
-    <details>
-      <summary>第 2 週 - 01/14</summary>
-      <ul>
-        <li>商城上新：節日道具</li>
-      </ul>
-    </details>
+      <details class="update-week">
+        <summary>第 10 週（10/23） - 小型更新</summary>
+        <ul>
+          <li>UI 優化與錯誤修正</li>
+          <li>商城更新部分物品</li>
+        </ul>
+      </details>
 
-    <details>
-      <summary>第 3 週 - 01/21</summary>
-      <ul>
-        <li>新副本開放：冰雪秘境</li>
-        <li>副本獎勵調整</li>
-      </ul>
-    </details>
+      <details class="update-week">
+        <summary>第 11 週（11/6） - 商城更新</summary>
+        <ul>
+          <li>新增限時服裝販售</li>
+          <li>調整部分商城價格</li>
+        </ul>
+      </details>
 
-    <details>
-      <summary>第 4 週 - 01/28</summary>
-      <ul>
-        <li>活動更新：新年活動上線</li>
-        <li>商城小修正</li>
-      </ul>
-    </details>
+      <details class="update-week">
+        <summary>第 12 週（11/20） - 副本與角色更新</summary>
+        <ul>
+          <li>新增新副本「冰封迷宮」</li>
+          <li>角色技能微調與平衡修改</li>
+        </ul>
+      </details>
 
-    <!-- 可以在這裡繼續新增 2 月、3 月…的折疊區塊 -->
+      <!-- 可以繼續依週新增更多 details 區塊 -->
+    </section>
   </main>
 
-  <footer>
-    © 2025 艾爾之光改版資料整理站
+  <footer class="inner-page">
+    © 2025 艾爾之光改版資料整理站｜
   </footer>
 </body>
 </html>
