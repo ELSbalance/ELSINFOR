@@ -154,7 +154,8 @@ footer {
   border-radius: 25px;
   text-decoration: none;
   transition: background-color 0.3s, transform 0.2s;
-  margin-top: 15px;
+  margin-top: 30px;   /* 增加上方距離 */
+  margin-bottom: 40px; /* 與底部區隔 */
   font-weight: 500;
 }
 
