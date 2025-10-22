@@ -1,5 +1,6 @@
 /* ==============================
    艾爾之光 改版資料站 - A版：冰藍冬季主題
+   適用首頁與內頁
    ============================== */
 
 body {
@@ -13,11 +14,15 @@ body {
 /* ======= 頁首 ======= */
 header {
   text-align: center;
-  background: linear-gradient(135deg, #6fa8dc, #9cc8f5);
   color: white;
   padding: 50px 20px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
   position: relative;
+}
+
+/* 首頁 header 漸層 */
+header.homepage {
+  background: linear-gradient(135deg, #6fa8dc, #9cc8f5);
 }
 
 header h1 {
@@ -39,8 +44,9 @@ main {
   padding: 0 20px;
 }
 
+/* section 區塊 */
 section {
-  background: #ffffffcc;
+  background: #ffffffcc; /* 預設首頁半透明白 */
   border: 2px solid #b3e5fc;
   border-radius: 14px;
   padding: 25px 30px;
@@ -50,6 +56,14 @@ section {
   backdrop-filter: blur(4px);
 }
 
+/* 內頁 section 背景透明 */
+section.inner-page {
+  background: transparent;
+  border: 2px solid #b3e5fc;
+  box-shadow: none;
+}
+
+/* section 裝飾 */
 section::before {
   content: "❄️";
   position: absolute;
@@ -123,6 +137,7 @@ footer {
   color: #777;
   padding: 30px 10px 50px;
   font-size: 0.95rem;
+  background: transparent; /* 內頁透明 */
 }
 
 /* ======= 返回按鈕 ======= */
