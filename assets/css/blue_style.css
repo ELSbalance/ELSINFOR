@@ -26,6 +26,10 @@ header.homepage {
   color: #111;
 }
 
+body:not(.homepage) header {
+  color: #333;
+}
+
 header h1 {
   margin: 0;
   font-size: 2.2rem;
