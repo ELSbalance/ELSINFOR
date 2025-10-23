@@ -3,6 +3,14 @@
    適用首頁與內頁
    ============================== */
 
+:root {
+  --bg-gradient: linear-gradient(to bottom, #e8f5ff, #ffffff);
+  --header-gradient: linear-gradient(135deg, #6fa8dc, #9cc8f5);
+  --accent-color: #64b5f6;
+  --accent-hover: #42a5f5;
+}
+
+
 body {
   font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
   background: linear-gradient(to bottom, #e8f5ff, #ffffff);
