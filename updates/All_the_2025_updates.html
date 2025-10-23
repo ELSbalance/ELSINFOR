@@ -24,10 +24,11 @@
   </script>
 
   <style>
-    /* 返回首頁按鈕 */
+    /* ==============================
+       🔘 返回首頁按鈕：依主題變色
+       ============================== */
     .return-btn {
       display: inline-block;
-      background-color: #64b5f6;
       color: white;
       padding: 10px 22px;
       border-radius: 25px;
@@ -37,9 +38,25 @@
       font-weight: 500;
     }
     .return-btn:hover {
-      background-color: #42a5f5;
       transform: scale(1.05);
     }
+
+    /* 🌊 藍色主題 */
+    body.blue-theme .return-btn {
+      background-color: #64b5f6;
+    }
+    body.blue-theme .return-btn:hover {
+      background-color: #42a5f5;
+    }
+
+    /* 🌸 粉色主題 */
+    body.pink-theme .return-btn {
+      background-color: #f48fb1;
+    }
+    body.pink-theme .return-btn:hover {
+      background-color: #f06292;
+    }
+
 
     /* 內頁 header/footer */
     header.inner-page {
