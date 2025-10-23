@@ -4,21 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>艾爾之光 2025 冬季改版資訊</title>
+
+  <!-- 套用主題 CSS（可切換藍/粉） -->
+  <link id="theme-link" rel="stylesheet" href="../assets/css/blue_style.css">
+
+  <!-- 主題切換 JS -->
+  <script defer src="../assets/js/color_switch.js"></script>
+
   <style>
     body {
       font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
-      background: linear-gradient(to bottom, #e3f2fd, #ffffff);
       margin: 0;
       padding: 0;
       color: #333;
     }
 
+    /* === Header === */
     header {
       text-align: center;
-      background: linear-gradient(135deg, #5c6bc0, #7986cb);
+      background: var(--header-gradient, linear-gradient(135deg, #5c6bc0, #7986cb));
       color: white;
       padding: 50px 20px;
       box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+      position: relative;
     }
 
     header h1 {
@@ -31,6 +39,26 @@
       margin-top: 10px;
     }
 
+    #theme-toggle {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      background: white;
+      color: #444;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    #theme-toggle:hover {
+      transform: scale(1.05);
+      background: #f0f0f0;
+    }
+
+    /* === Main === */
     main {
       max-width: 900px;
       margin: 40px auto;
@@ -39,7 +67,7 @@
 
     section {
       background: white;
-      border: 2px solid #bbdefb;
+      border: 2px solid var(--section-border, #bbdefb);
       border-radius: 14px;
       padding: 25px 30px;
       margin-bottom: 30px;
@@ -52,22 +80,17 @@
       position: absolute;
       top: -12px;
       left: -12px;
-      background: #e3f2fd;
+      background: var(--section-icon-bg, #e3f2fd);
       border-radius: 50%;
       padding: 5px;
       font-size: 1.2rem;
     }
 
     h2 {
-      color: #1a237e;
-      border-left: 6px solid #64b5f6;
+      color: var(--title-color, #1a237e);
+      border-left: 6px solid var(--title-border, #64b5f6);
       padding-left: 10px;
       margin-top: 0;
-    }
-
-    h3 {
-      color: #1565c0;
-      margin-top: 10px;
     }
 
     p, li {
@@ -98,19 +121,38 @@
     }
 
     th, td {
-      border: 1px solid #bbdefb;
+      border: 1px solid var(--table-border, #bbdefb);
       padding: 10px 15px;
       text-align: left;
     }
 
     th {
-      background: linear-gradient(to right, #90caf9, #e3f2fd);
+      background: var(--table-header-bg, linear-gradient(to right, #90caf9, #e3f2fd));
     }
 
     tr:hover {
       background-color: #f5f5f5;
     }
 
+    /* === 返回首頁按鈕 === */
+    .return-btn {
+      display: inline-block;
+      background-color: var(--button-bg, #64b5f6);
+      color: white;
+      padding: 10px 22px;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.2s;
+      margin-top: 20px;
+      font-weight: 500;
+    }
+
+    .return-btn:hover {
+      background-color: var(--button-hover, #42a5f5);
+      transform: scale(1.05);
+    }
+
+    /* === Footer === */
     footer {
       text-align: center;
       color: #777;
@@ -118,32 +160,47 @@
       font-size: 0.95rem;
     }
 
-    .return-btn {
-      display: inline-block;
-      background-color: #64b5f6;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 25px;
-      text-decoration: none;
-      transition: background-color 0.3s;
-      margin-top: 15px;
-    }
-
-    .return-btn:hover {
-      background-color: #42a5f5;
-    }
-
     @media (max-width: 600px) {
       iframe {
         height: 250px;
       }
     }
+
+    /* === 粉色主題樣式 === */
+    .pink-theme {
+      --header-gradient: linear-gradient(135deg, #f48fb1, #f8bbd0);
+      --section-border: #f8bbd0;
+      --section-icon-bg: #fde4ef;
+      --title-color: #ad1457;
+      --title-border: #f06292;
+      --table-border: #f8bbd0;
+      --table-header-bg: linear-gradient(to right, #f8bbd0, #fde4ef);
+      --button-bg: #f48fb1;
+      --button-hover: #ec407a;
+      background: linear-gradient(to bottom, #fff0f7, #ffffff);
+    }
+
+    /* === 藍色主題樣式 === */
+    .blue-theme {
+      --header-gradient: linear-gradient(135deg, #5c6bc0, #7986cb);
+      --section-border: #bbdefb;
+      --section-icon-bg: #e3f2fd;
+      --title-color: #1a237e;
+      --title-border: #64b5f6;
+      --table-border: #bbdefb;
+      --table-header-bg: linear-gradient(to right, #90caf9, #e3f2fd);
+      --button-bg: #64b5f6;
+      --button-hover: #42a5f5;
+      background: linear-gradient(to bottom, #e3f2fd, #ffffff);
+    }
   </style>
 </head>
-<body>
+
+<body class="blue-theme">
   <header>
     <h1>❄ 艾爾之光 2025 冬季改版資訊 ❄</h1>
     <p>本頁暫展示 2024 冬季改版翻譯內容，供設計預覽。</p>
+    <button id="theme-toggle">🌸 切換粉色</button>
   </header>
 
   <main>
@@ -169,8 +226,8 @@
       <h2>❄ Part 1. 2024 年更新回顧 [0:01:18]</h2>
       <ul>
         <li>1️⃣ 新角色：莉緹亞</li>
-        <li>2️⃣ 新區域：瑟芬提姆 </li>
-        <li>3️⃣ EL★STAR 2 </li>
+        <li>2️⃣ 新區域：瑟芬提姆</li>
+        <li>3️⃣ EL★STAR 2</li>
       </ul>
     </section>
 
@@ -187,7 +244,7 @@
     <section>
       <h2>❄ Part 3. 冬季改版主要內容 [0:06:17]</h2>
       <ul>
-        <li>1️⃣ 新 轉換巔峰技能。 </li>
+        <li>1️⃣ 新 轉換巔峰技能。</li>
         <li>2️⃣ 新襲擊開放，4 個副本，最多 6 人組隊。</li>
         <li>3️⃣ 新武器將可透過新襲擊獲得，採量條設計。</li>
         <li>4️⃣ 預計於 2025 年 2 月擴充飾品欄位，並追加販售對應飾品。</li>
@@ -198,7 +255,7 @@
     <section>
       <h2>❄ Part 4. 冬季活動介紹 [0:14:54]</h2>
       <ul>
-        <li>1️⃣ 超級拳擊大師 </li>
+        <li>1️⃣ 超級拳擊大師</li>
         <li>2️⃣ 提供 11 魂靈武器</li>
         <li>3️⃣ 共鳴度燃燒活動</li>
         <li>4️⃣ 強化之路</li>
@@ -213,9 +270,9 @@
       <table>
         <tr><th>日期</th><th>更新內容</th></tr>
         <tr><td>12月5日（四）</td><td>超級拳擊大師、強化11魂靈武器、共鳴度燃燒、前輩，帶我打襲擊活動、賦靈錄無憂慮收藏活動、防具改善</td></tr>
-        <tr><td>12月19日（四）</td><td> 新 轉換巔峰技能（艾索德 / 蕾娜 / 伊芙 / 蘿潔 / 菈比）<br>強化活動、17週年活動</td></tr>
-        <tr><td>1月2日（四）</td><td> 新 轉換巔峰技能（雷文 / 艾拉 / 愛利西斯 / 露希爾 / 莉緹亞）<br>Reorder Shop 冰機復刻商店開啟</td></tr>
-        <tr><td>1月16日（四）</td><td> 新 轉換巔峰技能（愛莎 / 澄 / ADD / 亞殷 / 諾亞）</td></tr>
+        <tr><td>12月19日（四）</td><td>新 轉換巔峰技能（艾索德 / 蕾娜 / 伊芙 / 蘿潔 / 菈比）<br>強化活動、17週年活動</td></tr>
+        <tr><td>1月2日（四）</td><td>新 轉換巔峰技能（雷文 / 艾拉 / 愛利西斯 / 露希爾 / 莉緹亞）<br>Reorder Shop 冰機復刻商店開啟</td></tr>
+        <tr><td>1月16日（四）</td><td>新 轉換巔峰技能（愛莎 / 澄 / ADD / 亞殷 / 諾亞）</td></tr>
         <tr><td>2月6日（四）</td><td>新襲擊開放3關卡、飾品欄位分離、新飾品EP商店開啟</td></tr>
         <tr><td>2月27日（四）</td><td>新襲擊第4關卡開放、新武器登場</td></tr>
         <tr><td>3月27日（四）</td><td>角色平衡性調整</td></tr>
