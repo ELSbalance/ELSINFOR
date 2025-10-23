@@ -5,11 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>艾爾之光 2025 冬季改版資訊</title>
 
-  <!-- 套用主題 CSS（藍/粉可切換） -->
+  <!-- 主題樣式（會被 color_switch.js 切換） -->
   <link id="theme-link" rel="stylesheet" href="../assets/css/blue_style.css">
 
-  <!-- 主題切換 JS -->
+  <!-- 主題切換程式 -->
   <script defer src="../assets/js/color_switch.js"></script>
+
+  <!-- 安全載入保護：確保在 updates/ 目錄下也能執行 -->
+  <script>
+    window.addEventListener("load", () => {
+      const btn = document.getElementById("theme-toggle");
+      if (!btn) {
+        console.warn("⚠ 找不到 #theme-toggle 按鈕，將嘗試延後載入 color_switch.js");
+        const script = document.createElement("script");
+        script.src = "../assets/js/color_switch.js";
+        document.body.appendChild(script);
+      } else {
+        console.log("✅ 主題切換按鈕載入成功");
+      }
+    });
+  </script>
 
   <style>
     body {
@@ -144,7 +159,7 @@
       font-size: 0.95rem;
     }
 
-    /* 返回首頁按鈕 */
+    /* 返回首頁按鈕（跟隨主題顏色） */
     .return-btn {
       display: inline-block;
       background-color: var(--accent-color, #64b5f6);
@@ -168,11 +183,12 @@
     }
   </style>
 </head>
+
 <body>
   <header class="inner-page">
     <h1>❄ 艾爾之光 2025 冬季改版資訊 ❄</h1>
     <p>本頁暫展示 2024 冬季改版翻譯內容，供設計預覽。</p>
-    <button id="theme-toggle" class="theme-toggle-btn">🌸 切換粉色</button>
+    <button id="theme-toggle">🌸 切換粉色</button>
   </header>
 
   <main>
@@ -216,7 +232,7 @@
     <section>
       <h2>❄ Part 3. 冬季改版主要內容 [0:06:17]</h2>
       <ul>
-        <li>1️⃣ 新 轉換巔峰技能。</li>
+        <li>1️⃣ 新 轉換巔峰技能。 </li>
         <li>2️⃣ 新襲擊開放，4 個副本，最多 6 人組隊。</li>
         <li>3️⃣ 新武器將可透過新襲擊獲得，採量條設計。</li>
         <li>4️⃣ 預計於 2025 年 2 月擴充飾品欄位，並追加販售對應飾品。</li>
