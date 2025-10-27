@@ -1,19 +1,30 @@
 /* ==============================
    艾爾之光 改版資料站 - A版：冰藍冬季主題
-   適用首頁與內頁
+   適用首頁與內頁 + 可變主題元素
    ============================== */
 
 :root {
+  /* 主背景與強調色 */
   --bg-gradient: linear-gradient(to bottom, #e8f5ff, #ffffff);
   --header-gradient: linear-gradient(135deg, #6fa8dc, #9cc8f5);
   --accent-color: #64b5f6;
   --accent-hover: #42a5f5;
+
+  /* 改版頁用：邊框與表格顏色 */
+  --section-border: #7ab8f0;
+  --section-shadow: rgba(122, 184, 240, 0.4);
+  --table-border: #7ab8f0;
+  --table-head-bg: #e8f3ff;
+  --table-cell-bg: #f6fbff;
 }
 
+/* ==============================
+   一般結構
+   ============================== */
 
 body {
   font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
-  background: linear-gradient(to bottom, #e8f5ff, #ffffff);
+  background: var(--bg-gradient);
   margin: 0;
   padding: 0;
   color: #333;
@@ -28,9 +39,8 @@ header {
   position: relative;
 }
 
-/* 首頁 header 漸層 */
 header.homepage {
-  background: linear-gradient(135deg, #6fa8dc, #9cc8f5);
+  background: var(--header-gradient);
   color: #111;
 }
 
@@ -57,9 +67,9 @@ main {
   padding: 0 20px;
 }
 
-/* section 區塊 */
+/* ======= section 區塊 ======= */
 section {
-  background: #ffffffcc; /* 預設首頁半透明白 */
+  background: #ffffffcc;
   border: 2px solid #b3e5fc;
   border-radius: 14px;
   padding: 25px 30px;
@@ -69,11 +79,36 @@ section {
   backdrop-filter: blur(4px);
 }
 
-/* 內頁 section 背景透明 */
 section.inner-page {
   background: transparent;
   border: 2px solid #b3e5fc;
   box-shadow: none;
+}
+
+/* ======= 改版專用可變色區塊 ======= */
+.update-section {
+  border: 2px solid var(--section-border);
+  box-shadow: 0 0 10px var(--section-shadow);
+  transition: all 0.3s ease;
+}
+
+.update-section:hover {
+  box-shadow: 0 0 14px var(--section-shadow);
+}
+
+/* ======= Part5 表格樣式 ======= */
+#part5 table,
+#part5 th,
+#part5 td {
+  border: 1.5px solid var(--table-border);
+}
+
+#part5 th {
+  background-color: var(--table-head-bg);
+}
+
+#part5 td {
+  background-color: var(--table-cell-bg);
 }
 
 /* section 裝飾 */
@@ -88,9 +123,10 @@ section::before {
   font-size: 1.2rem;
 }
 
+/* ======= 標題與文字 ======= */
 h2 {
   color: #0d47a1;
-  border-left: 6px solid #64b5f6;
+  border-left: 6px solid var(--accent-color);
   padding-left: 10px;
   margin-top: 0;
 }
@@ -110,7 +146,7 @@ ul {
   padding-left: 10px;
 }
 
-/* ======= 影片/表格區 ======= */
+/* ======= 影片/表格 ======= */
 iframe {
   width: 100%;
   height: 450px;
@@ -150,25 +186,25 @@ footer {
   color: #777;
   padding: 30px 10px 50px;
   font-size: 0.95rem;
-  background: transparent; /* 內頁透明 */
+  background: transparent;
 }
 
 /* ======= 返回按鈕 ======= */
 .return-btn {
   display: inline-block;
-  background-color: #64b5f6;
+  background-color: var(--accent-color);
   color: white;
   padding: 10px 22px;
   border-radius: 25px;
   text-decoration: none;
   transition: background-color 0.3s, transform 0.2s;
-  margin-top: 30px;   /* 增加上方距離 */
-  margin-bottom: 40px; /* 與底部區隔 */
+  margin-top: 30px;
+  margin-bottom: 40px;
   font-weight: 500;
 }
 
 .return-btn:hover {
-  background-color: #42a5f5;
+  background-color: var(--accent-hover);
   transform: scale(1.05);
 }
 
