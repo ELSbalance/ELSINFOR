@@ -1,20 +1,18 @@
 /* ==============================
-   艾爾之光 改版資料站 - A版：粉色櫻花主題
+   艾爾之光 改版資料站 - B版：冰晶藍主題
    適用首頁與內頁
    ============================== */
 
 :root {
-  --bg-gradient: linear-gradient(to bottom, #ffeef5, #fff);
-  --header-gradient: linear-gradient(135deg, #f48fb1, #f8bbd0);
-  --accent-color: #f48fb1;
-  --accent-hover: #f06292;
+  --bg-gradient: linear-gradient(to bottom, #e6f3ff, #ffffff);
+  --header-gradient: linear-gradient(135deg, #5daeff, #a5d8ff);
+  --accent-color: #5daeff;
+  --accent-hover: #4a97e0;
 }
-
-
 
 body {
   font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
-  background: linear-gradient(to bottom, #ffe6f0, #ffffff);
+  background: linear-gradient(to bottom, #e6f3ff, #ffffff);
   margin: 0;
   padding: 0;
   color: #333;
@@ -29,9 +27,8 @@ header {
   position: relative;
 }
 
-/* 首頁 header 漸層 */
 header.homepage {
-  background: linear-gradient(135deg, #ff99c8, #ffb3d9);
+  background: linear-gradient(135deg, #79bfff, #a5d8ff);
   color: #111;
 }
 
@@ -60,8 +57,8 @@ main {
 
 /* section 區塊 */
 section {
-  background: #ffffffcc; /* 預設首頁半透明白 */
-  border: 2px solid #ffb3d9;
+  background: #ffffffcc;
+  border: 2px solid #a5d8ff;
   border-radius: 14px;
   padding: 25px 30px;
   margin-bottom: 30px;
@@ -73,31 +70,31 @@ section {
 /* 內頁 section 背景透明 */
 section.inner-page {
   background: transparent;
-  border: 2px solid #ffb3d9;
+  border: 2px solid #a5d8ff;
   box-shadow: none;
 }
 
 /* section 裝飾 */
 section::before {
-  content: "🌸";
+  content: "❄️";
   position: absolute;
   top: -12px;
   left: -12px;
-  background: #ffe6f0;
+  background: #e6f3ff;
   border-radius: 50%;
   padding: 5px;
   font-size: 1.2rem;
 }
 
 h2 {
-  color: #c2185b;
-  border-left: 6px solid #ff80ab;
+  color: #1565c0;
+  border-left: 6px solid #64b5f6;
   padding-left: 10px;
   margin-top: 0;
 }
 
 h3 {
-  color: #e91e63;
+  color: #1e88e5;
   margin-top: 10px;
 }
 
@@ -131,18 +128,18 @@ table {
 }
 
 th, td {
-  border: 1px solid #ffcce1;
+  border: 1px solid #b3daff;
   padding: 10px 15px;
   text-align: left;
 }
 
 th {
-  background: linear-gradient(to right, #ffb3d9, #ffe6f0);
-  color: #c2185b;
+  background: linear-gradient(to right, #a5d8ff, #e6f3ff);
+  color: #1565c0;
 }
 
 tr:hover {
-  background-color: #fff0f6;
+  background-color: #f0f8ff;
 }
 
 /* ======= 底部 ======= */
@@ -151,25 +148,25 @@ footer {
   color: #777;
   padding: 30px 10px 50px;
   font-size: 0.95rem;
-  background: transparent; /* 內頁透明 */
+  background: transparent;
 }
 
 /* ======= 返回按鈕 ======= */
 .return-btn {
   display: inline-block;
-  background-color: #ff80ab;
+  background-color: #64b5f6;
   color: white;
   padding: 10px 22px;
   border-radius: 25px;
   text-decoration: none;
   transition: background-color 0.3s, transform 0.2s;
-  margin-top: 30px;   /* 增加上方距離 */
-  margin-bottom: 40px; /* 與底部區隔 */
+  margin-top: 30px;
+  margin-bottom: 40px;
   font-weight: 500;
 }
 
 .return-btn:hover {
-  background-color: #ff4d94;
+  background-color: #42a5f5;
   transform: scale(1.05);
 }
 
