@@ -1,18 +1,21 @@
-/* ==============================
-   艾爾之光 改版資料站 - B版：冰晶藍主題
-   適用首頁與內頁
-   ============================== */
+/* pink_style.css
+   艾爾之光 改版資料站 - 粉色櫻花主題（完整、可切換用）
+*/
 
 :root {
-  --bg-gradient: linear-gradient(to bottom, #e6f3ff, #ffffff);
-  --header-gradient: linear-gradient(135deg, #5daeff, #a5d8ff);
-  --accent-color: #5daeff;
-  --accent-hover: #4a97e0;
+  --bg-gradient: linear-gradient(to bottom, #ffeef5, #ffffff);
+  --header-gradient: linear-gradient(135deg, #f48fb1, #f8bbd0);
+  --accent-color: #ff80ab;    /* 主要強調色（框線、按鈕、標題邊） */
+  --accent-hover: #ff4d94;    /* 按鈕 hover */
+  --section-border: #ffb3d9;  /* 區塊框線 / 表格邊色 */
+  --th-gradient-start: #ffb3d9;
+  --th-gradient-end: #fdeef4;
 }
 
+/* 基本 */
 body {
   font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
-  background: linear-gradient(to bottom, #e6f3ff, #ffffff);
+  background: var(--bg-gradient);
   margin: 0;
   padding: 0;
   color: #333;
@@ -23,13 +26,13 @@ header {
   text-align: center;
   color: white;
   padding: 50px 20px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
   position: relative;
 }
 
+/* 首頁 header 漸層（可用 .homepage 判斷不同背景） */
 header.homepage {
-  background: linear-gradient(135deg, #79bfff, #a5d8ff);
-  color: #111;
+  background: var(--header-gradient);
 }
 
 body:not(.homepage) header {
@@ -57,44 +60,46 @@ main {
 
 /* section 區塊 */
 section {
-  background: #ffffffcc;
-  border: 2px solid #a5d8ff;
+  background: #ffffffcc; /* 半透明白 */
+  border: 2px solid var(--section-border);
   border-radius: 14px;
   padding: 25px 30px;
   margin-bottom: 30px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
   position: relative;
   backdrop-filter: blur(4px);
+  transition: border-color .35s ease, background .35s ease;
 }
 
-/* 內頁 section 背景透明 */
+/* 內頁使用透明樣式（如果你在內頁加上 class="inner-page"） */
 section.inner-page {
   background: transparent;
-  border: 2px solid #a5d8ff;
+  border: 2px solid var(--section-border);
   box-shadow: none;
 }
 
-/* section 裝飾 */
+/* section 裝飾小圖示（左上角） */
 section::before {
-  content: "❄️";
+  content: "🌸";
   position: absolute;
   top: -12px;
   left: -12px;
-  background: #e6f3ff;
+  background: var(--bg-gradient);
   border-radius: 50%;
   padding: 5px;
   font-size: 1.2rem;
 }
 
+/* 標題 */
 h2 {
-  color: #1565c0;
-  border-left: 6px solid #64b5f6;
+  color: #c2185b; /* 深粉標題色 */
+  border-left: 6px solid var(--accent-color);
   padding-left: 10px;
   margin-top: 0;
 }
 
 h3 {
-  color: #1e88e5;
+  color: #e91e63;
   margin-top: 10px;
 }
 
@@ -108,16 +113,17 @@ ul {
   padding-left: 10px;
 }
 
-/* ======= 影片/表格區 ======= */
+/* 影片 / iframe */
 iframe {
   width: 100%;
   height: 450px;
   border-radius: 12px;
   border: none;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.12);
   margin-bottom: 25px;
 }
 
+/* 表格 */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -125,24 +131,67 @@ table {
   border-radius: 10px;
   overflow: hidden;
   font-size: 0.95rem;
+  transition: border-color .35s ease, background .35s ease;
 }
 
 th, td {
-  border: 1px solid #b3daff;
+  border: 1px solid var(--section-border);
   padding: 10px 15px;
   text-align: left;
 }
 
 th {
-  background: linear-gradient(to right, #a5d8ff, #e6f3ff);
-  color: #1565c0;
+  background: linear-gradient(to right, var(--th-gradient-start), var(--th-gradient-end));
+  color: var(--accent-color);
+  font-weight: 600;
 }
 
 tr:hover {
-  background-color: #f0f8ff;
+  background-color: #fff0f6;
 }
 
-/* ======= 底部 ======= */
+/* 返回按鈕 */
+.return-btn {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: white;
+  padding: 10px 22px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background-color .25s, transform .12s;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  font-weight: 500;
+}
+
+.return-btn:hover {
+  background-color: var(--accent-hover);
+  transform: scale(1.03);
+}
+
+/* 主題切換按鈕（若把按鈕樣式寫到主題檔，可共用） */
+.theme-toggle-btn,
+#theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255,255,255,0.25);
+  color: #111;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 25px;
+  padding: 8px 18px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  backdrop-filter: blur(6px);
+  transition: background .2s, transform .12s;
+}
+.theme-toggle-btn:hover,
+#theme-toggle:hover {
+  background: rgba(255,255,255,0.4);
+  transform: scale(1.05);
+}
+
+/* footer */
 footer {
   text-align: center;
   color: #777;
@@ -151,61 +200,9 @@ footer {
   background: transparent;
 }
 
-/* ======= 返回按鈕 ======= */
-.return-btn {
-  display: inline-block;
-  background-color: #64b5f6;
-  color: white;
-  padding: 10px 22px;
-  border-radius: 25px;
-  text-decoration: none;
-  transition: background-color 0.3s, transform 0.2s;
-  margin-top: 30px;
-  margin-bottom: 40px;
-  font-weight: 500;
-}
-
-.return-btn:hover {
-  background-color: #42a5f5;
-  transform: scale(1.05);
-}
-
-/* ======= 主題切換按鈕 ======= */
-.theme-toggle-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: rgba(255, 255, 255, 0.25);
-  color: #111;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 25px;
-  padding: 8px 18px;
-  cursor: pointer;
-  font-size: 0.95rem;
-  backdrop-filter: blur(6px);
-  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
-}
-
-.theme-toggle-btn:hover {
-  background: rgba(255, 255, 255, 0.4);
-  transform: scale(1.08);
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
-}
-
-/* ======= RWD ======= */
+/* RWD */
 @media (max-width: 600px) {
-  iframe {
-    height: 250px;
-  }
-
-  header h1 {
-    font-size: 1.8rem;
-  }
-
-  .theme-toggle-btn {
-    top: 15px;
-    right: 15px;
-    padding: 6px 14px;
-    font-size: 0.9rem;
-  }
+  iframe { height: 250px; }
+  header h1 { font-size: 1.8rem; }
+  .theme-toggle-btn, #theme-toggle { top: 15px; right: 15px; padding: 6px 14px; font-size: 0.9rem; }
 }
