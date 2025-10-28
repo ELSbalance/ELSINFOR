@@ -14,8 +14,15 @@
   <!-- 摺疊區塊功能 JS -->
   <script defer>
     document.addEventListener("DOMContentLoaded", () => {
-      const toggles = document.querySelectorAll(".update-week summary");
-      toggles.forEach(summary => {
+      // 控制月份摺疊
+      document.querySelectorAll(".month-block summary").forEach(summary => {
+        summary.addEventListener("click", () => {
+          summary.parentElement.classList.toggle("open");
+        });
+      });
+
+      // 控制週摺疊
+      document.querySelectorAll(".update-week summary").forEach(summary => {
         summary.addEventListener("click", () => {
           summary.parentElement.classList.toggle("open");
         });
@@ -25,7 +32,7 @@
 
   <style>
     /* ==============================
-       🔘 返回首頁按鈕
+       🔘 返回首頁按鈕：依主題變色
        ============================== */
     .return-btn {
       display: inline-block;
@@ -37,29 +44,23 @@
       margin-bottom: 25px;
       font-weight: 500;
     }
-    .return-btn:hover {
-      transform: scale(1.05);
-    }
+    .return-btn:hover { transform: scale(1.05); }
 
     /* 🌊 藍色主題 */
-    body.blue-theme .return-btn {
-      background-color: #64b5f6;
-    }
-    body.blue-theme .return-btn:hover {
-      background-color: #42a5f5;
-    }
+    body.blue-theme .return-btn { background-color: #64b5f6; }
+    body.blue-theme .return-btn:hover { background-color: #42a5f5; }
 
     /* 🌸 粉色主題 */
-    body.pink-theme .return-btn {
-      background-color: #f48fb1;
-    }
-    body.pink-theme .return-btn:hover {
-      background-color: #f06292;
-    }
+    body.pink-theme .return-btn { background-color: #f48fb1; }
+    body.pink-theme .return-btn:hover { background-color: #f06292; }
 
+    /* header / footer */
     header.inner-page {
+      background: transparent;
+      color: #111;
       text-align: center;
       padding: 30px 20px;
+      position: relative;
     }
     footer.inner-page {
       text-align: center;
@@ -68,8 +69,24 @@
       font-size: 0.95rem;
     }
 
+    /* 月份摺疊 */
+    details.month-block {
+      margin-bottom: 25px;
+      border: 2px solid #bbdefb;
+      border-radius: 12px;
+      padding: 10px 15px;
+      background: #f9f9ffcc;
+      backdrop-filter: blur(4px);
+    }
+    details.month-block summary {
+      cursor: pointer;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    /* 週摺疊 */
     details.update-week {
-      margin-bottom: 15px;
+      margin: 10px 0 10px 15px;
       border: 1px solid #b3e5fc;
       border-radius: 10px;
       padding: 10px 15px;
@@ -102,92 +119,122 @@
 
   <main class="content">
     <a href="../index.html" class="return-btn">← 返回首頁</a>
-
     <section class="inner-page">
       <h2>📅 2024 年度更新（韓國版時程）</h2>
 
-      <details class="update-week">
-        <summary>第 1 週（1/4） - 新年活動開跑</summary>
-        <ul>
-          <li>開啟「新年祝福！2024」活動任務</li>
-          <li>商城上架「虎年賀歲套裝（復刻）」</li>
-          <li>部分副本掉落道具機率調整</li>
-        </ul>
+      <!-- 一月 -->
+      <details class="month-block">
+        <summary>1 月</summary>
+        <details class="update-week"><summary>1/4 - 小型修正</summary><ul><li>修復部分任務無法完成問題</li><li>商城新增新年主題外觀</li></ul></details>
+        <details class="update-week"><summary>1/11 - 平衡改動</summary><ul><li>部分角色技能調整</li><li>副本經驗值小幅提升</li></ul></details>
+        <details class="update-week"><summary>1/18 - 活動更新</summary><ul><li>開啟冬季強化支援活動</li><li>修復地圖掉落異常</li></ul></details>
+        <details class="update-week"><summary>1/25 - 小型更新</summary><ul><li>商城新增時裝套組「雪夜幻想」</li><li>UI 微調與效能優化</li></ul></details>
       </details>
 
-      <details class="update-week">
-        <summary>第 2 週（1/11） - 平衡修正 & BUG 修復</summary>
-        <ul>
-          <li>調整「露西艾爾」與「亞因」部分技能冷卻</li>
-          <li>修復某些副本中角色模型顯示異常的問題</li>
-        </ul>
+      <!-- 二月 -->
+      <details class="month-block">
+        <summary>2 月</summary>
+        <details class="update-week"><summary>2/1 - 新副本追加</summary><ul><li>開放副本「時之裂縫・深層」</li><li>新增素材掉落</li></ul></details>
+        <details class="update-week"><summary>2/8 - 小型更新</summary><ul><li>活動 UI 改良</li><li>修復技能說明錯誤</li></ul></details>
+        <details class="update-week"><summary>2/15 - 平衡調整</summary><ul><li>艾索德、亞殷技能係數變更</li><li>PVP 模式優化</li></ul></details>
+        <details class="update-week"><summary>2/22 - 商城更新</summary><ul><li>新增情人節限定時裝</li><li>販售持續至 3/7 維護前</li></ul></details>
+        <details class="update-week"><summary>2/29 - 小型修正</summary><ul><li>修正稱號效果未生效問題</li></ul></details>
       </details>
 
-      <details class="update-week">
-        <summary>第 3 週（1/18） - 限時活動副本開放</summary>
-        <ul>
-          <li>新增活動副本「雪原挑戰賽」</li>
-          <li>通關可獲得期間限定飾品「雪晶耳環」</li>
-        </ul>
+      <!-- 三月 -->
+      <details class="month-block">
+        <summary>3 月</summary>
+        <details class="update-week"><summary>3/7 - 活動更新</summary><ul><li>春季登入活動開跑</li></ul></details>
+        <details class="update-week"><summary>3/14 - 系統改善</summary><ul><li>強化介面優化</li><li>修正部分語音錯誤</li></ul></details>
+        <details class="update-week"><summary>3/21 - 角色平衡</summary><ul><li>雷文、艾拉技能性能調整</li></ul></details>
+        <details class="update-week"><summary>3/28 - 商城更新</summary><ul><li>新增春季時裝系列</li></ul></details>
       </details>
 
-      <details class="update-week">
-        <summary>第 4 週（1/25） - 商城更新</summary>
-        <ul>
-          <li>新增「甜蜜冬戀」時裝販售（2 週）</li>
-          <li>商城介面優化，支援快速搜尋分類</li>
-        </ul>
+      <!-- 四月 -->
+      <details class="month-block">
+        <summary>4 月</summary>
+        <details class="update-week"><summary>4/4 - 小型更新</summary><ul><li>新增公會任務挑戰功能</li></ul></details>
+        <details class="update-week"><summary>4/11 - 活動更新</summary><ul><li>春季經驗加倍活動</li></ul></details>
+        <details class="update-week"><summary>4/18 - 平衡調整</summary><ul><li>修正技能冷卻時間錯誤</li></ul></details>
+        <details class="update-week"><summary>4/25 - 商城更新</summary><ul><li>新增「櫻色幻想」時裝</li></ul></details>
       </details>
 
-      <details class="update-week">
-        <summary>第 5 週（2/1） - 春節前夕活動</summary>
-        <ul>
-          <li>開啟「金龍迎春」簽到活動</li>
-          <li>新增「紅包收集任務」可獲得稱號</li>
-        </ul>
+      <!-- 五月 -->
+      <details class="month-block">
+        <summary>5 月</summary>
+        <details class="update-week"><summary>5/2 - 小型更新</summary><ul><li>新增公會討伐功能</li></ul></details>
+        <details class="update-week"><summary>5/9 - 活動更新</summary><ul><li>端午活動</li></ul></details>
+        <details class="update-week"><summary>5/16 - 平衡調整</summary><ul><li>修正文本錯誤</li></ul></details>
+        <details class="update-week"><summary>5/23 - 商城更新</summary><ul><li>賦靈錄實裝</li></ul></details>
+        <details class="update-week"><summary>5/30 - 商城更新</summary><ul><li>新增「藍海」時裝</li></ul></details>
       </details>
 
-      <details class="update-week">
-        <summary>第 6 週（2/8） - 假期小型維護</summary>
-        <ul>
-          <li>伺服器穩定性提升</li>
-          <li>修正部分稱號屬性未正確套用的問題</li>
-        </ul>
+    <!-- 六月 -->
+      <details class="month-block">
+        <summary>6 月</summary>
+        <details class="update-week"><summary>6/6 - 小型更新</summary><ul><li>平衡更新</li></ul></details>
+        <details class="update-week"><summary>6/13 - 活動更新</summary><ul><li>夏季改版預熱</li></ul></details>
+        <details class="update-week"><summary>6/20 - 平衡調整</summary><ul><li>新副本</li></ul></details>
+        <details class="update-week"><summary>6/27 - 商城更新</summary><ul><li>新增「ABBAAB右右左」時裝</li></ul></details>
       </details>
 
-      <details class="update-week">
-        <summary>第 7 週（2/15） - 情人節更新</summary>
-        <ul>
-          <li>推出「巧克力工坊」活動副本</li>
-          <li>商城新增情人節專屬時裝與家具</li>
-        </ul>
+    <!-- 七月 -->
+      <details class="month-block">
+        <summary>7 月</summary>
+        <details class="update-week"><summary>7/4 - 小型更新</summary><ul><li>平衡更新</li></ul></details>
+        <details class="update-week"><summary>7/11 - 活動更新</summary><ul><li>夏季改版預熱</li></ul></details>
+        <details class="update-week"><summary>7/18 - 平衡調整</summary><ul><li>新副本</li></ul></details>
+        <details class="update-week"><summary>7/25 - 商城更新</summary><ul><li>新增「ABBAAB右右左」時裝</li></ul></details>
       </details>
 
-      <details class="update-week">
-        <summary>第 8 週（2/22） - 平衡改版第一波</summary>
-        <ul>
-          <li>重製「露」與「艾索德」部分技能特效</li>
-          <li>優化戰鬥 UI 顯示與冷卻提示</li>
-        </ul>
+  <!-- 八月 -->
+      <details class="month-block">
+        <summary>8 月</summary>
+        <details class="update-week"><summary>8/1 - 小型更新</summary><ul><li>平衡更新</li></ul></details>
+        <details class="update-week"><summary>8/8 - 活動更新</summary><ul><li>夏季改版預熱</li></ul></details>
+        <details class="update-week"><summary>8/15 - 平衡調整</summary><ul><li>新副本</li></ul></details>
+        <details class="update-week"><summary>8/22 - 商城更新</summary><ul><li>新增「ABBAAB右右左」時裝</li></ul></details>
+       <details class="update-week"><summary>8/29 - 商城更新</summary><ul><li>新增「ABBAAB右右左」時裝</li></ul></details>
       </details>
 
-      <details class="update-week">
-        <summary>第 9 週（2/29） - 伺服器調整與介面更新</summary>
-        <ul>
-          <li>調整伺服器區分與頻道負載機制</li>
-          <li>改善好友清單搜尋性能</li>
-        </ul>
+      <!-- 九月 -->
+      <details class="month-block">
+        <summary>9 月</summary>
+        <details class="update-week"><summary>9/5 - 小型更新</summary><ul><li>平衡更新</li></ul></details>
+        <details class="update-week"><summary>9/12- 活動更新</summary><ul><li>夏季改版預熱</li></ul></details>
+        <details class="update-week"><summary>9/19 - 平衡調整</summary><ul><li>新副本</li></ul></details>
+        <details class="update-week"><summary>9/26 - 商城更新</summary><ul><li>新增「ABBAAB右右左」時裝</li></ul></details>
+      </details>
+     
+      <!-- 十月 -->
+      <details class="month-block">
+        <summary>10 月</summary>
+        <details class="update-week"><summary>10/3 - 小型更新</summary><ul><li>平衡更新</li></ul></details>
+        <details class="update-week"><summary>10/10 - 活動更新</summary><ul><li>夏季改版預熱</li></ul></details>
+        <details class="update-week"><summary>10/17 - 平衡調整</summary><ul><li>新副本</li></ul></details>
+        <details class="update-week"><summary>10/24 - 商城更新</summary><ul><li>新增「ABBAAB右右左」時裝</li></ul></details>
+        <details class="update-week"><summary>10/31 - 商城更新</summary><ul><li>新增「ABBAAB右右左」時裝</li></ul></details>
       </details>
 
-      <details class="update-week">
-        <summary>第 10 週（3/7） - 春季大型改版預告</summary>
-        <ul>
-          <li>釋出春季大型改版預告影片</li>
-          <li>新增「神秘角色剪影」活動網頁連動</li>
-        </ul>
+            <!-- 十一月 -->
+      <details class="month-block">
+        <summary>11 月</summary>
+        <details class="update-week"><summary>11/7 - 小型更新</summary><ul><li>平衡更新</li></ul></details>
+        <details class="update-week"><summary>11/14- 活動更新</summary><ul><li>夏季改版預熱</li></ul></details>
+        <details class="update-week"><summary>11/21 - 平衡調整</summary><ul><li>新副本</li></ul></details>
+        <details class="update-week"><summary>11/28 - 商城更新</summary><ul><li>新增「ABBAAB右右左」時裝</li></ul></details>
       </details>
 
-      <!-- 後續週數可依樣擴增 -->
+            <!-- 十二月 -->
+      <details class="month-block">
+        <summary>12 月</summary>
+        <details class="update-week"><summary>12/5 - 小型更新</summary><ul><li>平衡更新</li></ul></details>
+        <details class="update-week"><summary>12/12- 活動更新</summary><ul><li>夏季改版預熱</li></ul></details>
+        <details class="update-week"><summary>12/19 - 平衡調整</summary><ul><li>新副本</li></ul></details>
+        <details class="update-week"><summary>12/26 - 商城更新</summary><ul><li>新增「ABBAAB右右左」時裝</li></ul></details>
+      </details>
+
+      
     </section>
   </main>
 
