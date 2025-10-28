@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2024 年更新總覽｜艾爾之光改版資料整理</title>
+
+  <!-- 套用主題 CSS（藍/粉可切換） -->
+  <link id="theme-link" rel="stylesheet" href="../assets/css/blue_style.css">
+
+  <!-- 主題切換 JS -->
+  <script defer src="../assets/js/color_switch.js"></script>
+
+  <!-- 摺疊區塊功能 JS -->
+  <script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggles = document.querySelectorAll(".update-week summary");
+      toggles.forEach(summary => {
+        summary.addEventListener("click", () => {
+          summary.parentElement.classList.toggle("open");
+        });
+      });
+    });
+  </script>
+
+  <style>
+    /* ==============================
+       🔘 返回首頁按鈕
+       ============================== */
+    .return-btn {
+      display: inline-block;
+      color: white;
+      padding: 10px 22px;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.2s;
+      margin-bottom: 25px;
+      font-weight: 500;
+    }
+    .return-btn:hover {
+      transform: scale(1.05);
+    }
+
+    /* 🌊 藍色主題 */
+    body.blue-theme .return-btn {
+      background-color: #64b5f6;
+    }
+    body.blue-theme .return-btn:hover {
+      background-color: #42a5f5;
+    }
+
+    /* 🌸 粉色主題 */
+    body.pink-theme .return-btn {
+      background-color: #f48fb1;
+    }
+    body.pink-theme .return-btn:hover {
+      background-color: #f06292;
+    }
+
+    header.inner-page {
+      text-align: center;
+      padding: 30px 20px;
+    }
+    footer.inner-page {
+      text-align: center;
+      color: #777;
+      padding: 30px 10px 50px;
+      font-size: 0.95rem;
+    }
+
+    details.update-week {
+      margin-bottom: 15px;
+      border: 1px solid #b3e5fc;
+      border-radius: 10px;
+      padding: 10px 15px;
+      background: #ffffffcc;
+      backdrop-filter: blur(4px);
+    }
+    details.update-week summary {
+      cursor: pointer;
+      font-weight: 600;
+      list-style: none;
+    }
+    details.update-week ul {
+      margin-top: 8px;
+      padding-left: 20px;
+    }
+
+    main.content {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="inner-page">
+    <h1>2024 年艾爾之光更新總覽</h1>
+    <button id="theme-toggle" class="theme-toggle-btn">🌸 切換粉色</button>
+  </header>
+
+  <main class="content">
+    <a href="../index.html" class="return-btn">← 返回首頁</a>
+
+    <section class="inner-page">
+      <h2>📅 2024 年度更新（韓國版時程）</h2>
+
+      <details class="update-week">
+        <summary>第 1 週（1/4） - 新年活動開跑</summary>
+        <ul>
+          <li>開啟「新年祝福！2024」活動任務</li>
+          <li>商城上架「虎年賀歲套裝（復刻）」</li>
+          <li>部分副本掉落道具機率調整</li>
+        </ul>
+      </details>
+
+      <details class="update-week">
+        <summary>第 2 週（1/11） - 平衡修正 & BUG 修復</summary>
+        <ul>
+          <li>調整「露西艾爾」與「亞因」部分技能冷卻</li>
+          <li>修復某些副本中角色模型顯示異常的問題</li>
+        </ul>
+      </details>
+
+      <details class="update-week">
+        <summary>第 3 週（1/18） - 限時活動副本開放</summary>
+        <ul>
+          <li>新增活動副本「雪原挑戰賽」</li>
+          <li>通關可獲得期間限定飾品「雪晶耳環」</li>
+        </ul>
+      </details>
+
+      <details class="update-week">
+        <summary>第 4 週（1/25） - 商城更新</summary>
+        <ul>
+          <li>新增「甜蜜冬戀」時裝販售（2 週）</li>
+          <li>商城介面優化，支援快速搜尋分類</li>
+        </ul>
+      </details>
+
+      <details class="update-week">
+        <summary>第 5 週（2/1） - 春節前夕活動</summary>
+        <ul>
+          <li>開啟「金龍迎春」簽到活動</li>
+          <li>新增「紅包收集任務」可獲得稱號</li>
+        </ul>
+      </details>
+
+      <details class="update-week">
+        <summary>第 6 週（2/8） - 假期小型維護</summary>
+        <ul>
+          <li>伺服器穩定性提升</li>
+          <li>修正部分稱號屬性未正確套用的問題</li>
+        </ul>
+      </details>
+
+      <details class="update-week">
+        <summary>第 7 週（2/15） - 情人節更新</summary>
+        <ul>
+          <li>推出「巧克力工坊」活動副本</li>
+          <li>商城新增情人節專屬時裝與家具</li>
+        </ul>
+      </details>
+
+      <details class="update-week">
+        <summary>第 8 週（2/22） - 平衡改版第一波</summary>
+        <ul>
+          <li>重製「露」與「艾索德」部分技能特效</li>
+          <li>優化戰鬥 UI 顯示與冷卻提示</li>
+        </ul>
+      </details>
+
+      <details class="update-week">
+        <summary>第 9 週（2/29） - 伺服器調整與介面更新</summary>
+        <ul>
+          <li>調整伺服器區分與頻道負載機制</li>
+          <li>改善好友清單搜尋性能</li>
+        </ul>
+      </details>
+
+      <details class="update-week">
+        <summary>第 10 週（3/7） - 春季大型改版預告</summary>
+        <ul>
+          <li>釋出春季大型改版預告影片</li>
+          <li>新增「神秘角色剪影」活動網頁連動</li>
+        </ul>
+      </details>
+
+      <!-- 後續週數可依樣擴增 -->
+    </section>
+  </main>
+
+  <footer class="inner-page">
+    © 2024 艾爾之光改版資料整理站｜
+  </footer>
+</body>
+</html>
