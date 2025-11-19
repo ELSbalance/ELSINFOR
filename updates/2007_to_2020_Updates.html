@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>艾爾之光｜2007～2020 改版大事記</title>
+
+<style>
+/* ==============================
+   藍色主題（你提供的版本，完全保留）
+   ============================== */
+
+:root {
+  /* 主背景與強調色 */
+  --bg-gradient: linear-gradient(to bottom, #e8f5ff, #ffffff);
+  --header-gradient: linear-gradient(135deg, #6fa8dc, #9cc8f5);
+  --accent-color: #64b5f6;
+  --accent-hover: #42a5f5;
+
+  /* 改版頁用：邊框與表格顏色 */
+  --section-border: #7ab8f0;
+  --section-shadow: rgba(122, 184, 240, 0.4);
+  --table-border: #7ab8f0;
+  --table-head-bg: #e8f3ff;
+  --table-cell-bg: #f6fbff;
+
+  /* 時間軸顏色 */
+  --timeline-line: #64b5f6;
+  --timeline-dot: #42a5f5;
+
+  /* 浮動按鈕 */
+  --float-btn-bg: #64b5f6;
+  --float-btn-hover: #42a5f5;
+}
+
+/* ===== 粉色主題（供切換） ===== */
+body.pink {
+  --bg-gradient: linear-gradient(to bottom, #ffe6f2, #ffffff);
+  --header-gradient: linear-gradient(135deg, #f48fb1, #f8bbd0);
+  --accent-color: #f48fb1;
+  --accent-hover: #f06292;
+
+  --section-border: #f48fb1;
+  --section-shadow: rgba(244, 143, 177, 0.45);
+  --table-border: #f48fb1;
+  --table-head-bg: #ffe6ef;
+  --table-cell-bg: #fff5f9;
+
+  --timeline-line: #f48fb1;
+  --timeline-dot: #f06292;
+
+  --float-btn-bg: #f48fb1;
+  --float-btn-hover: #f06292;
+}
+
+/* ==============================
+   一般結構
+   ============================== */
+
+body {
+  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-gradient);
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  color: #111;
+  padding: 50px 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  background: var(--header-gradient);
+  position: relative;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+}
+
+header p {
+  font-size: 1.1rem;
+  margin-top: 10px;
+  opacity: 0.95;
+}
+
+main {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+section {
+  background: #ffffffcc;
+  border: 2px solid var(--section-border);
+  border-radius: 14px;
+  padding: 25px 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 3px 8px var(--section-shadow);
+  backdrop-filter: blur(4px);
+  position: relative;
+}
+
+section::before {
+  content: "❄️";
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  background: #e3f2fd;
+  border-radius: 50%;
+  padding: 5px;
+  font-size: 1.2rem;
+}
+
+/* 標題 */
+h2 {
+  color: #0d47a1;
+  border-left: 6px solid var(--accent-color);
+  padding-left: 10px;
+  margin-top: 0;
+}
+
+h3 {
+  color: #1565c0;
+  margin-top: 10px;
+}
+
+p, li {
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 10px;
+}
+
+/* Grid 卡片（2007 每月改版） */
+.update-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.update-card {
+  background: var(--table-cell-bg);
+  border: 1.5px solid var(--table-border);
+  border-radius: 12px;
+  padding: 15px 18px;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.08);
+  transition: 0.25s;
+}
+
+.update-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* 時間軸（A：水平） */
+.timeline-container {
+  margin: 40px 0;
+  overflow-x: auto;
+  padding-bottom: 20px;
+}
+
+.timeline-line {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding: 10px 0;
+  position: relative;
+}
+
+.timeline-line::before {
+  content: "";
+  position: absolute;
+  height: 4px;
+  background: var(--timeline-line);
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  opacity: 0.5;
+}
+
+.timeline-item {
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+
+.timeline-dot {
+  width: 16px;
+  height: 16px;
+  background: var(--timeline-dot);
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  box-shadow: 0 0 6px var(--timeline-dot);
+}
+
+.timeline-label {
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+/* 左側懸浮按鈕 */
+.side-buttons {
+  position: fixed;
+  left: 20px;
+  top: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 999;
+}
+
+.side-btn {
+  background: var(--float-btn-bg);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.2s;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+.side-btn:hover {
+  background: var(--float-btn-hover);
+  transform: scale(1.05);
+}
+
+/* 主題切換按鈕 */
+.theme-toggle-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.25);
+  color: #111;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 25px;
+  padding: 8px 18px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  backdrop-filter: blur(6px);
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.08);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+</style>
+
+<script>
+/* 主題切換：藍 ↔ 粉 */
+function toggleTheme() {
+  document.body.classList.toggle('pink');
+}
+</script>
+
+</head>
+
+<body>
+
+
+  
