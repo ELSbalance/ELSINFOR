@@ -269,5 +269,173 @@ function toggleTheme() {
 
 <body>
 
+<header>
+  <h1>艾爾之光｜2007～2020 改版大事記</h1>
+  <p>以韓國伺服器時程為主的歷史版本整理</p>
+
+  <button class="theme-toggle-btn" onclick="toggleTheme()">
+    切換主題（藍 / 粉）
+  </button>
+</header>
+
+<!-- 左側懸浮按鈕 -->
+<div class="side-buttons">
+  <a href="#rev-2007" class="side-btn">2007～2020 改版大事記</a>
+  <a href="#job-timeline" class="side-btn">轉職推出時間線</a>
+</div>
+
+<main>
+
+<!-- ===============================
+     2007 改版區塊
+     =============================== -->
+<section id="rev-2007" class="update-section">
+  <h2>📘 2007 年改版大事記（示範資料）</h2>
+  <p>以下為示意資料，你可隨時替換為真正的官方改版內容。</p>
+
+  <div class="update-grid">
+    <div class="update-card">
+      <h3>1 月</h3>
+      <ul>
+        <li>・新增登入獎勵系統</li>
+        <li>・新增新手村怪物 AI（示意）</li>
+      </ul>
+    </div>
+
+    <div class="update-card">
+      <h3>2 月</h3>
+      <ul>
+        <li>・新增「艾爾樹根地帶」副本</li>
+        <li>・改善物品掉落列表</li>
+      </ul>
+    </div>
+
+    <div class="update-card">
+      <h3>3 月</h3>
+      <ul>
+        <li>・追加早期 PVP 排名制</li>
+        <li>・新增角色配音（示意）</li>
+      </ul>
+    </div>
+
+    <div class="update-card">
+      <h3>4 月</h3>
+      <ul>
+        <li>・新增春季活動副本</li>
+        <li>・新增 +5 武器強化成功率提升</li>
+      </ul>
+    </div>
+
+    <div class="update-card">
+      <h3>5 月</h3>
+      <ul>
+        <li>・艾爾之光首次商城上架時裝</li>
+        <li>・改善好友清單介面</li>
+      </ul>
+    </div>
+
+    <div class="update-card">
+      <h3>6 月</h3>
+      <ul>
+        <li>・新增夏日泳裝（示意）</li>
+        <li>・寵物介面新版 UI 上線</li>
+      </ul>
+    </div>
+
+    <div class="update-card">
+      <h3>7 月</h3>
+      <ul>
+        <li>・新增「貝斯馬」地圖</li>
+        <li>・新增道具市場雛形（示意）</li>
+      </ul>
+    </div>
+
+    <div class="update-card">
+      <h3>8 月</h3>
+      <ul>
+        <li>・怪物 AI 調整與攻擊速度提升</li>
+        <li>・新增每日任務系統</li>
+      </ul>
+    </div>
+
+    <div class="update-card">
+      <h3>9 月</h3>
+      <ul>
+        <li>・新增中秋節活動副本</li>
+        <li>・技能冷卻機制調整（示意）</li>
+      </ul>
+    </div>
+
+    <div class="update-card">
+      <h3>10 月</h3>
+      <ul>
+        <li>・新增萬聖節限定副本</li>
+        <li>・新增南門村 NPC</li>
+      </ul>
+    </div>
+
+    <div class="update-card">
+      <h3>11 月</h3>
+      <ul>
+        <li>・改善性能與效能優化</li>
+        <li>・新增公會公告欄</li>
+      </ul>
+    </div>
+
+    <div class="update-card">
+      <h3>12 月</h3>
+      <ul>
+        <li>・新增聖誕節活動</li>
+        <li>・首次推出冬季限定時裝</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+       <!-- 主題切換按鈕 -->
+    <button id="themeToggle" class="theme-toggle">切換主題</button>
+
+    <!-- 時間軸浮動按鈕 -->
+    <a href="#top" class="scroll-top">⬆</a>
+
+    <script>
+        // =========================
+        //  主題切換（藍色 ↔ 粉色）
+        // =========================
+        const themeToggle = document.getElementById("themeToggle");
+        const body = document.body;
+
+        // 檢查本地儲存的主題設定
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+            body.className = savedTheme;
+        }
+
+        themeToggle.addEventListener("click", () => {
+            // 切換 class (blue-theme <-> pink-theme)
+            if (body.classList.contains("blue-theme")) {
+                body.classList.remove("blue-theme");
+                body.classList.add("pink-theme");
+                localStorage.setItem("theme", "pink-theme");
+            } else {
+                body.classList.remove("pink-theme");
+                body.classList.add("blue-theme");
+                localStorage.setItem("theme", "blue-theme");
+            }
+        });
+
+        // =========================
+        //  返回頂部按鈕顯示/隱藏
+        // =========================
+        const scrollBtn = document.querySelector(".scroll-top");
+
+        window.addEventListener("scroll", () => {
+            scrollBtn.style.opacity = window.scrollY > 300 ? "1" : "0";
+        });
+    </script>
+
+</body>
+</html>
+
 
   
