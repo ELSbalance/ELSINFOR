@@ -228,7 +228,8 @@ h3 {
 <script>
 /* 主題切換 */
 function toggleTheme() {
-  document.body.classList.toggle("pink");
+  const isPink = document.body.classList.toggle('pink');
+  localStorage.setItem('theme', isPink ? 'pink' : 'blue');
 }
 </script>
 
