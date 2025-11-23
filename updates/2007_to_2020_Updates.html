@@ -321,6 +321,19 @@ function toggleTheme() {
 <!-- 返回頂部按鈕 -->
 <a href="#top" class="scroll-top">⬆</a>
 
+<!-- ==============================
+     ⭐ 新增主題初始化腳本（關鍵）
+============================== -->
+<script>
+/* 進入頁面後，自動套用 localStorage 已儲存的主題 */
+document.addEventListener("DOMContentLoaded", () => {
+  const savedTheme = localStorage.getItem("theme") || "blue";
+  if (savedTheme === "pink") {
+    document.body.classList.add("pink");
+  }
+});
+</script>
+
 <script>
 /* 返回頂部按鈕顯示/隱藏 */
 const scrollBtn = document.querySelector(".scroll-top");
