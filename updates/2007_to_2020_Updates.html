@@ -1,40 +1,35 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-<meta charset="UTF-8" />
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>艾爾之光｜2007～2020 改版大事記</title>
+<title>艾爾之光｜2007～2020 改版大事記（總集）</title>
 
 <style>
 /* ==============================
-   藍色主題（你提供的版本，完全保留）
+   🌈 主題顏色（藍色 = 預設）
    ============================== */
-
 :root {
-  /* 主背景與強調色 */
   --bg-gradient: linear-gradient(to bottom, #e8f5ff, #ffffff);
   --header-gradient: linear-gradient(135deg, #6fa8dc, #9cc8f5);
   --accent-color: #64b5f6;
   --accent-hover: #42a5f5;
 
-  /* 改版頁用：邊框與表格顏色 */
   --section-border: #7ab8f0;
   --section-shadow: rgba(122, 184, 240, 0.4);
-  --table-border: #7ab8f0;
-  --table-head-bg: #e8f3ff;
-  --table-cell-bg: #f6fbff;
 
-  /* 時間軸顏色 */
   --timeline-line: #64b5f6;
   --timeline-dot: #42a5f5;
 
-  /* 浮動按鈕 */
   --float-btn-bg: #64b5f6;
   --float-btn-hover: #42a5f5;
+
+  --title-blue: #0d47a1;
+  --subtitle-blue: #1565c0;
 }
 
-/* ===== 粉色主題（供切換） ===== */
+/* 粉色主題 */
 body.pink {
   --bg-gradient: linear-gradient(to bottom, #ffe6f2, #ffffff);
   --header-gradient: linear-gradient(135deg, #f48fb1, #f8bbd0);
@@ -43,48 +38,64 @@ body.pink {
 
   --section-border: #f48fb1;
   --section-shadow: rgba(244, 143, 177, 0.45);
-  --table-border: #f48fb1;
-  --table-head-bg: #ffe6ef;
-  --table-cell-bg: #fff5f9;
 
   --timeline-line: #f48fb1;
   --timeline-dot: #f06292;
 
   --float-btn-bg: #f48fb1;
   --float-btn-hover: #f06292;
+
+  --title-blue: #a00063;
+  --subtitle-blue: #ad1457;
 }
 
 /* ==============================
-   一般結構
+   一般內容
    ============================== */
-
 body {
   font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
   background: var(--bg-gradient);
   margin: 0;
-  padding: 0;
   color: #333;
 }
 
 header {
+  background: var(--header-gradient);
+  padding: 55px 20px;
   text-align: center;
   color: #111;
-  padding: 50px 20px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-  background: var(--header-gradient);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.18);
   position: relative;
 }
 
 header h1 {
   margin: 0;
-  font-size: 2.2rem;
-  letter-spacing: 1px;
+  font-size: 2.4rem;
 }
 
 header p {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
+  opacity: 0.9;
   margin-top: 10px;
-  opacity: 0.95;
+}
+
+/* 右上主題切換 */
+.theme-toggle-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255,255,255,0.28);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.38);
+  border-radius: 25px;
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.theme-toggle-btn:hover {
+  transform: scale(1.08);
+  background: rgba(255,255,255,0.42);
 }
 
 main {
@@ -94,83 +105,91 @@ main {
 }
 
 section {
-  background: #ffffffcc;
+  background: #fff;
   border: 2px solid var(--section-border);
-  border-radius: 14px;
-  padding: 25px 30px;
-  margin-bottom: 30px;
-  box-shadow: 0 3px 8px var(--section-shadow);
-  backdrop-filter: blur(4px);
+  border-radius: 15px;
+  padding: 25px 28px;
+  margin-bottom: 35px;
+  box-shadow: 0 3px 10px var(--section-shadow);
   position: relative;
 }
 
-section::before {
-  content: "❄️";
-  position: absolute;
-  top: -12px;
-  left: -12px;
-  background: #e3f2fd;
-  border-radius: 50%;
-  padding: 5px;
-  font-size: 1.2rem;
-}
-
-/* 標題 */
+/* 標題色會跟主題變化 */
 h2 {
-  color: #0d47a1;
+  color: var(--title-blue);
   border-left: 6px solid var(--accent-color);
-  padding-left: 10px;
+  padding-left: 12px;
   margin-top: 0;
 }
 
 h3 {
-  color: #1565c0;
-  margin-top: 10px;
+  color: var(--subtitle-blue);
 }
 
-p, li {
-  line-height: 1.7;
-  font-size: 1rem;
+/* ==============================
+   左側懸浮按鈕
+   ============================== */
+.side-buttons {
+  position: fixed;
+  left: 20px;
+  top: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 900;
 }
 
-ul {
-  list-style-type: none;
-  padding-left: 10px;
-}
-
-/* Grid 卡片（2007 每月改版） */
-.update-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 18px;
-  margin-top: 20px;
-}
-
-.update-card {
-  background: var(--table-cell-bg);
-  border: 1.5px solid var(--table-border);
-  border-radius: 12px;
-  padding: 15px 18px;
-  box-shadow: 0 3px 5px rgba(0,0,0,0.08);
+.side-btn {
+  background: var(--float-btn-bg);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
   transition: 0.25s;
 }
 
-.update-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+.side-btn:hover {
+  background: var(--float-btn-hover);
+  transform: scale(1.06);
 }
 
-/* 時間軸（A：水平） */
+/* ==============================
+   返回頂部按鈕（美化後）
+   ============================== */
+.scroll-top {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  text-decoration: none;
+  font-size: 28px;
+  background: var(--float-btn-bg);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 50%;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.scroll-top:hover {
+  background: var(--float-btn-hover);
+  transform: scale(1.1);
+}
+
+/* ==============================
+   時間軸（轉職推出時間線）
+   ============================== */
 .timeline-container {
-  margin: 40px 0;
+  margin-top: 40px;
   overflow-x: auto;
-  padding-bottom: 20px;
+  padding-bottom: 18px;
 }
 
 .timeline-line {
   display: flex;
   align-items: center;
-  gap: 50px;
+  gap: 60px;
   padding: 10px 0;
   position: relative;
 }
@@ -179,26 +198,24 @@ ul {
   content: "";
   position: absolute;
   height: 4px;
-  background: var(--timeline-line);
   width: 100%;
+  background: var(--timeline-line);
+  opacity: 0.5;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 1;
-  opacity: 0.5;
 }
 
 .timeline-item {
-  position: relative;
   text-align: center;
-  z-index: 2;
+  z-index: 1;
 }
 
 .timeline-dot {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   background: var(--timeline-dot);
   border-radius: 50%;
-  margin: 0 auto 10px;
+  margin: 0 auto 8px;
   box-shadow: 0 0 6px var(--timeline-dot);
 }
 
@@ -206,236 +223,111 @@ ul {
   font-weight: bold;
   font-size: 0.95rem;
 }
-
-/* 左側懸浮按鈕 */
-.side-buttons {
-  position: fixed;
-  left: 20px;
-  top: 40%;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  z-index: 999;
-}
-
-.side-btn {
-  background: var(--float-btn-bg);
-  color: white;
-  padding: 12px 20px;
-  border-radius: 999px;
-  font-size: 0.95rem;
-  cursor: pointer;
-  text-decoration: none;
-  transition: 0.2s;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-}
-
-.side-btn:hover {
-  background: var(--float-btn-hover);
-  transform: scale(1.05);
-}
-
-/* 主題切換按鈕 */
-.theme-toggle-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: rgba(255, 255, 255, 0.25);
-  color: #111;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 25px;
-  padding: 8px 18px;
-  cursor: pointer;
-  font-size: 0.95rem;
-  backdrop-filter: blur(6px);
-  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
-}
-
-.theme-toggle-btn:hover {
-  background: rgba(255, 255, 255, 0.4);
-  transform: scale(1.08);
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
-}
 </style>
 
 <script>
-/* 主題切換：藍 ↔ 粉 */
+/* 主題切換 */
 function toggleTheme() {
-  document.body.classList.toggle('pink');
+  document.body.classList.toggle("pink");
 }
 </script>
 
 </head>
 
-<body>
+<body id="top">
 
 <header>
-  <h1>艾爾之光｜2007～2020 改版大事記</h1>
-  <p>以韓國伺服器時程為主的歷史版本整理</p>
+  <h1>艾爾之光｜2007～2020 改版大事記（總集）</h1>
+  <p>以韓國伺服器時間為主的歷史版本整理</p>
 
-  <button class="theme-toggle-btn" onclick="toggleTheme()">
-    切換主題（藍 / 粉）
-  </button>
+  <button class="theme-toggle-btn" onclick="toggleTheme()">切換主題（藍／粉）</button>
 </header>
 
 <!-- 左側懸浮按鈕 -->
 <div class="side-buttons">
-  <a href="#rev-2007" class="side-btn">2007～2020 改版大事記</a>
+  <a href="#year-list" class="side-btn">改版年份清單</a>
   <a href="#job-timeline" class="side-btn">轉職推出時間線</a>
+  <a href="../index.html" class="side-btn">返回首頁</a>
 </div>
 
 <main>
 
-<!-- ===============================
-     2007 改版區塊
-     =============================== -->
-<section id="rev-2007" class="update-section">
-  <h2>📘 2007 年改版大事記（示範資料）</h2>
-  <p>以下為示意資料，你可隨時替換為真正的官方改版內容。</p>
+<!-- ====================================================
+     📌 年份清單
+===================================================== -->
+<section id="year-list">
+  <h2>📅 2007～2020 改版年份清單</h2>
+  <p>點選年份即可查看該年份的詳細改版紀錄。</p>
 
-  <div class="update-grid">
-    <div class="update-card">
-      <h3>1 月</h3>
-      <ul>
-        <li>・新增登入獎勵系統</li>
-        <li>・新增新手村怪物 AI（示意）</li>
-      </ul>
-    </div>
+  <ul>
+    <li><a href="2007_history_updates.html">2007 年 改版紀錄</a></li>
+    <li><a href="2008_history_updates.html">2008 年 改版紀錄</a></li>
+    <li><a href="2009_history_updates.html">2009 年 改版紀錄</a></li>
+    <li><a href="2010_history_updates.html">2010 年 改版紀錄</a></li>
+    <li><a href="2011_history_updates.html">2011 年 改版紀錄</a></li>
+    <li><a href="2012_history_updates.html">2012 年 改版紀錄</a></li>
+    <li><a href="2013_history_updates.html">2013 年 改版紀錄</a></li>
+    <li><a href="2014_history_updates.html">2014 年 改版紀錄</a></li>
+    <li><a href="2015_history_updates.html">2015 年 改版紀錄</a></li>
+    <li><a href="2016_history_updates.html">2016 年 改版紀錄</a></li>
+    <li><a href="2017_history_updates.html">2017 年 改版紀錄</a></li>
+    <li><a href="2018_history_updates.html">2018 年 改版紀錄</a></li>
+    <li><a href="2019_history_updates.html">2019 年 改版紀錄</a></li>
+    <li><a href="2020_history_updates.html">2020 年 改版紀錄</a></li>
+  </ul>
+</section>
 
-    <div class="update-card">
-      <h3>2 月</h3>
-      <ul>
-        <li>・新增「艾爾樹根地帶」副本</li>
-        <li>・改善物品掉落列表</li>
-      </ul>
-    </div>
+<!-- ====================================================
+     📌 轉職推出時間線（放在總集頁面底部）
+===================================================== -->
+<section id="job-timeline">
+  <h2>🕒 轉職推出時間線</h2>
+  <p>此為示範版，你之後可自行替換為正確的韓服轉職推出年份。</p>
 
-    <div class="update-card">
-      <h3>3 月</h3>
-      <ul>
-        <li>・追加早期 PVP 排名制</li>
-        <li>・新增角色配音（示意）</li>
-      </ul>
-    </div>
+  <div class="timeline-container">
+    <div class="timeline-line">
 
-    <div class="update-card">
-      <h3>4 月</h3>
-      <ul>
-        <li>・新增春季活動副本</li>
-        <li>・新增 +5 武器強化成功率提升</li>
-      </ul>
-    </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-label">2007<br>第一波職業</div>
+      </div>
 
-    <div class="update-card">
-      <h3>5 月</h3>
-      <ul>
-        <li>・艾爾之光首次商城上架時裝</li>
-        <li>・改善好友清單介面</li>
-      </ul>
-    </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-label">2009<br>第二轉職</div>
+      </div>
 
-    <div class="update-card">
-      <h3>6 月</h3>
-      <ul>
-        <li>・新增夏日泳裝（示意）</li>
-        <li>・寵物介面新版 UI 上線</li>
-      </ul>
-    </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-label">2013<br>超越轉職</div>
+      </div>
 
-    <div class="update-card">
-      <h3>7 月</h3>
-      <ul>
-        <li>・新增「貝斯馬」地圖</li>
-        <li>・新增道具市場雛形（示意）</li>
-      </ul>
-    </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-label">2016<br>重生職業</div>
+      </div>
 
-    <div class="update-card">
-      <h3>8 月</h3>
-      <ul>
-        <li>・怪物 AI 調整與攻擊速度提升</li>
-        <li>・新增每日任務系統</li>
-      </ul>
-    </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-label">2019<br>第三路線</div>
+      </div>
 
-    <div class="update-card">
-      <h3>9 月</h3>
-      <ul>
-        <li>・新增中秋節活動副本</li>
-        <li>・技能冷卻機制調整（示意）</li>
-      </ul>
-    </div>
-
-    <div class="update-card">
-      <h3>10 月</h3>
-      <ul>
-        <li>・新增萬聖節限定副本</li>
-        <li>・新增南門村 NPC</li>
-      </ul>
-    </div>
-
-    <div class="update-card">
-      <h3>11 月</h3>
-      <ul>
-        <li>・改善性能與效能優化</li>
-        <li>・新增公會公告欄</li>
-      </ul>
-    </div>
-
-    <div class="update-card">
-      <h3>12 月</h3>
-      <ul>
-        <li>・新增聖誕節活動</li>
-        <li>・首次推出冬季限定時裝</li>
-      </ul>
     </div>
   </div>
 </section>
 
-       <!-- 主題切換按鈕 -->
-    <button id="themeToggle" class="theme-toggle">切換主題</button>
+</main>
 
-    <!-- 時間軸浮動按鈕 -->
-    <a href="#top" class="scroll-top">⬆</a>
+<!-- 返回頂部按鈕 -->
+<a href="#top" class="scroll-top">⬆</a>
 
-    <script>
-        // =========================
-        //  主題切換（藍色 ↔ 粉色）
-        // =========================
-        const themeToggle = document.getElementById("themeToggle");
-        const body = document.body;
-
-        // 檢查本地儲存的主題設定
-        const savedTheme = localStorage.getItem("theme");
-        if (savedTheme) {
-            body.className = savedTheme;
-        }
-
-        themeToggle.addEventListener("click", () => {
-            // 切換 class (blue-theme <-> pink-theme)
-            if (body.classList.contains("blue-theme")) {
-                body.classList.remove("blue-theme");
-                body.classList.add("pink-theme");
-                localStorage.setItem("theme", "pink-theme");
-            } else {
-                body.classList.remove("pink-theme");
-                body.classList.add("blue-theme");
-                localStorage.setItem("theme", "blue-theme");
-            }
-        });
-
-        // =========================
-        //  返回頂部按鈕顯示/隱藏
-        // =========================
-        const scrollBtn = document.querySelector(".scroll-top");
-
-        window.addEventListener("scroll", () => {
-            scrollBtn.style.opacity = window.scrollY > 300 ? "1" : "0";
-        });
-    </script>
+<script>
+/* 返回頂部按鈕顯示/隱藏 */
+const scrollBtn = document.querySelector(".scroll-top");
+window.addEventListener("scroll", () => {
+  scrollBtn.style.opacity = window.scrollY > 300 ? "1" : "0";
+});
+</script>
 
 </body>
 </html>
-
-
-  
