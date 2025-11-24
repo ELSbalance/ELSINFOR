@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2022 年更新總覽｜艾爾之光改版資料整理</title>
+
+  <!-- 套用主題 CSS（藍/粉可切換） -->
+  <link id="theme-link" rel="stylesheet" href="../assets/css/blue_style.css">
+
+  <!-- 主題切換 JS -->
+  <script defer src="../assets/js/color_switch.js"></script>
+
+  <!-- 摺疊區塊功能 JS -->
+  <script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".month-block summary").forEach(summary => {
+        summary.addEventListener("click", () => {
+          summary.parentElement.classList.toggle("open");
+        });
+      });
+      document.querySelectorAll(".update-week summary").forEach(summary => {
+        summary.addEventListener("click", () => {
+          summary.parentElement.classList.toggle("open");
+        });
+      });
+    });
+  </script>
+
+  <style>
+    .return-btn {
+      display: inline-block;
+      color: white;
+      padding: 10px 22px;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.2s;
+      margin-bottom: 25px;
+      font-weight: 500;
+    }
+    .return-btn:hover { transform: scale(1.05); }
+
+    body.blue-theme .return-btn { background-color: #64b5f6; }
+    body.blue-theme .return-btn:hover { background-color: #42a5f5; }
+    body.pink-theme .return-btn { background-color: #f48fb1; }
+    body.pink-theme .return-btn:hover { background-color: #f06292; }
+
+    header.inner-page { background: transparent; color: #111; text-align: center; padding: 30px 20px; position: relative; }
+    footer.inner-page { text-align: center; color: #777; padding: 30px 10px 50px; font-size: 0.95rem; }
+
+    details.month-block {
+      margin-bottom: 25px;
+      border: 2px solid #bbdefb;
+      border-radius: 12px;
+      padding: 10px 15px;
+      background: #f9f9ffcc;
+      backdrop-filter: blur(4px);
+    }
+    details.month-block summary {
+      cursor: pointer;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    details.update-week {
+      margin: 10px 0 10px 15px;
+      border: 1px solid #b3e5fc;
+      border-radius: 10px;
+      padding: 10px 15px;
+      background: #ffffffcc;
+      backdrop-filter: blur(4px);
+    }
+    details.update-week summary {
+      cursor: pointer;
+      font-weight: 600;
+      list-style: none;
+    }
+    details.update-week ul {
+      margin-top: 8px;
+      padding-left: 20px;
+    }
+
+    main.content {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="inner-page">
+    <h1>2022 年艾爾之光更新總覽</h1>
+    <button id="theme-toggle" class="theme-toggle-btn">🌸 切換粉色</button>
+  </header>
+
+  <main class="content">
+    <a href="../index.html" class="return-btn">← 返回首頁</a>
+    <section class="inner-page">
+      <h2>📅 2022 年度更新（韓版時程）</h2>
+
+      <!-- 七月 -->
+      <details class="month-block">
+        <summary>7 月</summary>
+        <details class="update-week">
+          <summary>7/7 - PR 蕾娜4分支、新時裝：青少年啦啦隊</summary>
+          <ul>
+            <li>PR 蕾娜4分支</li>
+            <li>新時裝：青少年啦啦隊</li>
+          </ul>
+        </details>
+      </details>
+
+      <!-- 八月 -->
+      <details class="month-block">
+        <summary>8 月</summary>
+        <details class="update-week">
+          <summary>8/3 - 新冰裝與坐騎</summary>
+          <ul>
+            <li>新冰裝：초록빛 설원</li>
+            <li>新坐騎：冰雪之翼</li>
+          </ul>
+        </details>
+      </details>
+
+      <!-- 九月 -->
+      <details class="month-block">
+        <summary>9 月</summary>
+        <details class="update-week">
+          <summary>9/1 - 平衡改動</summary>
+          <ul>
+            <li>修正角色技能傷害公式</li>
+            <li>調整副本掉落率</li>
+          </ul>
+        </details>
+      </details>
+
+      <!-- 十月 -->
+      <details class="month-block">
+        <summary>10 月</summary>
+        <details class="update-week">
+          <summary>10/12 - 新活動開放</summary>
+          <ul>
+            <li>萬聖節活動啟動</li>
+            <li>新增南瓜主題時裝</li>
+          </ul>
+        </details>
+      </details>
+
+      <!-- 十一月 -->
+      <details class="month-block">
+        <summary>11 月</summary>
+        <details class="update-week">
+          <summary>11/9 - 商城更新</summary>
+          <ul>
+            <li>復刻時裝：冬季暖意套裝</li>
+            <li>新增自定義裝飾</li>
+          </ul>
+        </details>
+      </details>
+
+      <!-- 十二月 -->
+      <details class="month-block">
+        <summary>12 月</summary>
+        <details class="update-week">
+          <summary>12/21 - 聖誕節活動與燃燒活動</summary>
+          <ul>
+            <li>聖誕節活動開跑</li>
+            <li>新增聖誕主題時裝</li>
+            <li>16周年燃燒活動</li>
+          </ul>
+        </details>
+      </details>
+
+    </section>
+  </main>
+
+  <footer class="inner-page">
+    © 2022 艾爾之光改版資料整理站｜
+  </footer>
+</body>
+</html>
