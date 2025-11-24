@@ -5,12 +5,11 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>2008 年改版紀錄｜艾爾之光改版資料整理</title>
 
-  <!-- 使用你現有的共用藍色主題 CSS（不要改動） -->
+  <!-- 共用主題 CSS -->
   <link id="theme-link" rel="stylesheet" href="../assets/css/blue_style.css">
 
-  <!-- 小範圍內嵌樣式（只針對本頁的排版）-->
+  <!-- 本頁專屬排版 -->
   <style>
-    /* 本頁專屬排版（不會蓋掉主題色） */
     main.content {
       max-width: 1100px;
       margin: 36px auto;
@@ -35,7 +34,7 @@
     }
 
     .month-card {
-      background: var(--table-cell-bg, #ffffffcc); /* 會跟主題 CSS 的變數搭配 */
+      background: var(--table-cell-bg, #ffffffcc);
       border: 1.5px solid var(--table-border, #bbdefb);
       border-radius: 12px;
       padding: 14px 16px;
@@ -50,7 +49,7 @@
     .month-card h3 {
       margin: 0 0 8px 0;
       font-size: 1.05rem;
-      color: var(--title-blue, #0d47a1); /* 會隨主題改色 */
+      color: var(--title-blue, #0d47a1);
     }
 
     .month-card ul {
@@ -65,7 +64,7 @@
       margin-right: 6px;
     }
 
-    /* 返回首頁按鈕（跟你的共用樣式一致但稍微調整） */
+    /* 返回首頁按鈕 */
     .nav-row {
       display:flex;
       gap:12px;
@@ -84,10 +83,6 @@
       font-weight:600;
     }
     .return-btn-small:hover { transform: scale(1.03); }
-
-    /* 左側浮動快速按鈕（調整大小與層級） */
-    .side-buttons { left: 14px; top: 40%; }
-    .side-btn { padding:10px 14px; font-size:0.92rem; }
 
     /* 回到頂端圓形按鈕 */
     .scroll-top {
@@ -110,7 +105,6 @@
     }
     .scroll-top:hover { transform: translateY(-3px); }
 
-    /* 手機優化 */
     @media (max-width:600px) {
       .month-grid { gap:12px; }
       .month-card { padding:12px; }
@@ -118,24 +112,21 @@
     }
   </style>
 
-  <!-- 初始化主題（根據 localStorage）與切換按鈕邏輯 -->
+  <!-- 主題切換腳本 -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const themeLink = document.getElementById("theme-link");
-      // 此頁在 updates 資料夾，所以 cssPrefix 要 ../assets/css/
       const cssPrefix = "../assets/css/";
       const saved = localStorage.getItem("theme") || "blue";
-      // 按前面的慣例 `theme` 存值為 "pink" 或 "blue"
+
       if (saved === "pink") {
         themeLink.href = cssPrefix + "pink_style.css";
-        // 加上 body class（部分樣式可能以 body.pink 控制）
         document.body.classList.add("pink");
       } else {
         themeLink.href = cssPrefix + "blue_style.css";
         document.body.classList.remove("pink");
       }
 
-      // 將按鈕事件綁到頁面上（右上按鈕）
       const toggleBtn = document.getElementById("theme-toggle");
       if (toggleBtn) {
         function updateToggleLabel() {
@@ -156,10 +147,10 @@
           }
           updateToggleLabel();
         });
+
         updateToggleLabel();
       }
 
-      // 回到頂端按鈕顯示控制
       const scrollTopBtn = document.querySelector(".scroll-top");
       if (scrollTopBtn) {
         window.addEventListener("scroll", () => {
@@ -175,21 +166,15 @@
     <h1>艾爾之光｜2008 年改版紀錄</h1>
     <p class="page-header">（以韓國伺服器時間為主 — 以下為年度整理）</p>
 
-    <!-- 右上主題切換（會由上面 script 初始化文字） -->
+    <!-- 右上切換主題 -->
     <button id="theme-toggle" class="theme-toggle-btn" style="position:absolute; top:18px; right:18px;">切換主題</button>
   </header>
 
-  <!-- 左側快速按鈕 -->
-  <div class="side-buttons">
-    <a class="side-btn" href="../index.html" style="display:inline-block;background:var(--float-btn-bg,#64b5f6);color:#fff;border-radius:999px;padding:10px 14px;text-decoration:none;">返回首頁</a>
-    <a class="side-btn" href="#top" style="display:inline-block;background:var(--float-btn-bg,#64b5f6);color:#fff;border-radius:999px;padding:10px 14px;text-decoration:none;">回到頂端</a>
-  </div>
+  <!-- ★ 左側浮動按鈕已完全刪除 ★ -->
 
   <main class="content">
     <div class="nav-row">
       <a class="return-btn-small" href="../index.html">← 返回首頁</a>
-      <div style="flex:1"></div>
-      <div style="color:var(--muted,#666); font-size:0.95rem;">提示：可使用右上「切換主題」快速換藍/粉</div>
     </div>
 
     <section class="inner-page update-section">
@@ -230,7 +215,7 @@
           <h3>4 月</h3>
           <ul>
             <li><span class="meta-date">2008.04.03</span>推薦人系統（추천인 시스템）</li>
-            <li><span class="meta-date">2008.04.10</span>祭司系統（사제 시스템）</li>
+            <li><span class="meta-date">2008.04.10</span>師徒系統（사제 시스템）</li>
             <li><span class="meta-date">2008.04.16 ~ 23</span>闇黑克勞爾號、夢境平原（ACT.2）推出</li>
             <li><span class="meta-date">2008.04.17</span>商城（Cash Shop）功能開放</li>
           </ul>
@@ -249,7 +234,7 @@
         <article class="month-card">
           <h3>6 月</h3>
           <ul>
-            <li>持續地區與副本優化、BUG 修復與性能改善（為當季例行調整）</li>
+            <li>暫無資料</li>
           </ul>
         </article>
 
@@ -257,7 +242,7 @@
         <article class="month-card">
           <h3>7 月</h3>
           <ul>
-            <li><span class="meta-date">2008.07.17</span>秘密副本「巨龍祭壇 / 厄泰拉核心」推出，練習頻道（ACT.3 X-Mode）追加</li>
+            <li><span class="meta-date">2008.07.17</span>秘密副本 - 巨龍祭壇、厄泰拉核心 推出，練習頻道（ACT.3 X-Mode）追加</li>
             <li><span class="meta-date">2008.07.24</span>ACT3、伊米爾的時空（街機模式）推出；等級上限 40 → 50</li>
             <li><span class="meta-date">2008.07.31 ~ 08.07</span>雷文一轉正式推出</li>
           </ul>
@@ -267,7 +252,7 @@
         <article class="month-card">
           <h3>8 月</h3>
           <ul>
-            <li>夏季相關平衡與活動內容上線（含副本與商城輪替）</li>
+            <li>暫無資料</li>
           </ul>
         </article>
 
@@ -275,7 +260,7 @@
         <article class="month-card">
           <h3>9 月</h3>
           <ul>
-            <li>版本優化與活動：例行版本維護與資料更新</li>
+            <li>暫無資料</li>
           </ul>
         </article>
 
@@ -303,12 +288,13 @@
         <article class="month-card">
           <h3>12 月</h3>
           <ul>
-            <li><span class="meta-date">2008.12.04</span>新增快捷鍵系統；新副本（奉獻之神殿入口、螺旋迴廊）陸續推出</li>
+            <li><span class="meta-date">2008.12.04</span>新增快捷鍵系統；新副本 奉獻之神殿入口、螺旋迴廊 推出</li>
             <li><span class="meta-date">2008.12.18</span>新角色「伊芙」推出（Season 2 ACT.1 THE QUEEN OF NASOD）</li>
             <li><span class="meta-date">2008.12.24</span>新村莊「沛塔」更新</li>
-            <li><span class="meta-date">2008.12.31</span>剉冰機系統上市（2 週販售 → 2 週休市輪替）</li>
+            <li><span class="meta-date">2008.12.31</span>剉冰機系統上市（2 週販售 → 2 週休息輪替）</li>
           </ul>
         </article>
+
       </div>
     </section>
   </main>
@@ -317,18 +303,7 @@
     © 2025 艾爾之光改版資料整理站
   </footer>
 
-  <!-- 回到頂端按鈕 -->
   <a class="scroll-top" href="#top" aria-label="回到頂端">⬆</a>
 
-  <!-- 小腳本：處理回到頂端按鈕顯示（已在上方初始化主題） -->
-  <script>
-    (function () {
-      const scrollBtn = document.querySelector(".scroll-top");
-      if (!scrollBtn) return;
-      window.addEventListener("scroll", () => {
-        scrollBtn.style.opacity = window.scrollY > 300 ? "1" : "0";
-      });
-    })();
-  </script>
 </body>
 </html>
