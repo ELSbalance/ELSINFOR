@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>2009 年改版紀錄｜艾爾之光改版資料整理</title>
+
+  <!-- 共用主題 CSS -->
+  <link id="theme-link" rel="stylesheet" href="../assets/css/blue_style.css">
+
+  <!-- 本頁專屬排版 -->
+  <style>
+    main.content {
+      max-width: 1100px;
+      margin: 36px auto;
+      padding: 0 20px;
+    }
+
+    .page-header { margin-bottom: 18px; }
+    .intro { margin: 8px 0 20px; color: #444; }
+
+    .month-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 12px;
+    }
+
+    .month-card {
+      background: var(--table-cell-bg, #ffffffcc);
+      border: 1.5px solid var(--table-border, #bbdefb);
+      border-radius: 12px;
+      padding: 14px 16px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+      transition: transform .18s, box-shadow .18s;
+    }
+    .month-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    .month-card h3 {
+      margin: 0 0 8px 0;
+      font-size: 1.05rem;
+      color: var(--title-blue, #0d47a1);
+    }
+
+    .month-card ul {
+      margin: 0;
+      padding-left: 18px;
+      line-height: 1.6;
+    }
+
+    .meta-date {
+      font-weight: 600;
+      color: var(--subtitle-blue, #1565c0);
+      margin-right: 6px;
+    }
+
+    .side-buttons {
+      position: fixed;
+      left: 18px;
+      bottom: 120px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      z-index: 1500;
+    }
+
+    .side-btn {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      text-decoration: none;
+      background: var(--accent-color,#64b5f6);
+      color: #fff;
+      border-radius: 50%;
+      font-size: 20px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+      transition: transform .18s;
+    }
+    .side-btn:hover { transform: translateY(-3px); }
+
+    .scroll-top {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width:44px;
+      height:44px;
+      display:grid;
+      place-items:center;
+      text-decoration:none;
+      font-size:20px;
+      background:var(--accent-color,#64b5f6);
+      color:white;
+      border-radius:50%;
+      box-shadow:0 6px 18px rgba(0,0,0,0.18);
+      opacity:0;
+      transition:opacity .22s, transform .14s;
+      z-index:1200;
+    }
+    .scroll-top:hover { transform: translateY(-3px); }
+
+    @media (max-width:600px) {
+      .month-grid { gap:12px; }
+      .month-card { padding:12px; }
+    }
+  </style>
+
+  <!-- 主題切換腳本（原封不動） -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const themeLink = document.getElementById("theme-link");
+      const cssPrefix = "../assets/css/";
+      const saved = localStorage.getItem("theme") || "blue";
+
+      if (saved === "pink") {
+        themeLink.href = cssPrefix + "pink_style.css";
+        document.body.classList.add("pink");
+      } else {
+        themeLink.href = cssPrefix + "blue_style.css";
+        document.body.classList.remove("pink");
+      }
+
+      const toggleBtn = document.getElementById("theme-toggle");
+      if (toggleBtn) {
+        function updateToggleLabel() {
+          const cur = localStorage.getItem("theme") || "blue";
+          toggleBtn.textContent = cur === "pink" ? "❄ 切換藍調" : "🌸 切換粉色";
+        }
+
+        toggleBtn.addEventListener("click", () => {
+          const current = localStorage.getItem("theme") || "blue";
+          if (current === "blue") {
+            themeLink.href = cssPrefix + "pink_style.css";
+            localStorage.setItem("theme","pink");
+            document.body.classList.add("pink");
+          } else {
+            themeLink.href = cssPrefix + "blue_style.css";
+            localStorage.setItem("theme","blue");
+            document.body.classList.remove("pink");
+          }
+          updateToggleLabel();
+        });
+
+        updateToggleLabel();
+      }
+
+      const scrollTopBtn = document.querySelector(".scroll-top");
+      if (scrollTopBtn) {
+        window.addEventListener("scroll", () => {
+          scrollTopBtn.style.opacity = window.scrollY > 300 ? "1" : "0";
+        });
+      }
+    });
+  </script>
+</head>
+
+<body id="top">
+  <header class="inner-page">
+    <h1>艾爾之光｜2009 年改版紀錄</h1>
+    <p class="page-header">（以韓國伺服器時間為主 — 以下為年度整理）</p>
+
+    <!-- 主題切換 -->
+    <button id="theme-toggle" class="theme-toggle-btn"
+      style="position:absolute; top:18px; right:18px;">切換主題</button>
+  </header>
+
+  <!-- 左側懸浮按鈕 -->
+  <div class="side-buttons">
+    <a class="side-btn" href="../index.html" title="返回首頁">🏠</a>
+    <a class="side-btn" href="../updates/2007_to_2020_Updates.html" title="返回年份列表">↩</a>
+  </div>
+
+  <main class="content">
+
+    <section class="inner-page update-section">
+      <h2>📅 2009 年重點改版時程（總覽）</h2>
+
+      <div class="month-grid">
+
+        <!-- 1 月 -->
+        <article class="month-card">
+          <h3>1 月</h3>
+          <ul>
+            <li><span class="meta-date">2009.01.22</span>厄泰拉秘密副本追加</li>
+          </ul>
+        </article>
+
+        <!-- 2 月 -->
+        <article class="month-card">
+          <h3>2 月</h3>
+          <ul>
+            <li><span class="meta-date">2009.02.19</span>伊芙 1轉 推出</li>
+          </ul>
+        </article>
+
+        <!-- 3 月 -->
+        <article class="month-card">
+          <h3>3 月</h3>
+          <ul>
+            <li><span class="meta-date">2009.03.26</span>大規模村莊重製（從 2D 紙片村 → 現在格式），卡蜜拉／艾莉兒／海蓮首次登場、伊米爾的時空刪除、+9強化符咒推出、貝斯馬與沛塔正式分區</li>
+          </ul>
+        </article>
+
+        <!-- 4 月 -->
+        <article class="month-card">
+          <h3>4 月</h3>
+          <ul>
+            <li><span class="meta-date">2009.04.23</span>防具系統改版</li>
+            <li><span class="meta-date">2009.04.30</span>威廉的時空(現赫尼爾的時空之前身)以活動方式初登場</li>
+          </ul>
+        </article>
+
+        <!-- 5 月 -->
+        <article class="month-card">
+          <h3>5 月</h3>
+          <ul>
+            <li><span class="meta-date">2009.05.28</span>沛塔第 2 次更新（Season 2 ACT.2 THE BEGINNING）</li>
+          </ul>
+        </article>
+
+        <!-- 6 月 -->
+        <article class="month-card">
+          <h3>6 月</h3>
+          <ul>
+            <li><span class="meta-date">2009.06.04</span>技能樹改版(放射型 → 前置需求式)、新增職業被動、第 2 次平衡改版、取消蓄力施放技能方式</li>
+            <li><span class="meta-date">2009.06.11</span>即時背包、即時升級系統實裝</li>
+          </ul>
+        </article>
+
+        <!-- 7 月 -->
+        <article class="month-card">
+          <h3>7 月</h3>
+          <ul>
+            <li><span class="meta-date">2009.07.23</span>沛塔新副本 - 沛塔中心、奉獻祭壇 推出</li>
+            <li><span class="meta-date">2009.07.30</span>赫尼爾時空推出、新 NPC 格萊夫登場、交換系統 & 佈告欄系統追加</li>
+          </ul>
+        </article>
+
+        <!-- 8 月 -->
+        <article class="month-card">
+          <h3>8 月</h3>
+          <ul>
+            <li><span class="meta-date">2009.08.06</span>銀行功能推出、排行系統追加推出</li>
+            <li><span class="meta-date">2009.08.13</span>新技能推出</li>
+            <li><span class="meta-date">2009.08.27</span>新技能平衡調整</li>
+          </ul>
+        </article>
+
+        <!-- 9 月（無資料） -->
+        <article class="month-card">
+          <h3>9 月</h3>
+          <ul><li>暫無資料</li></ul>
+        </article>
+
+        <!-- 10 月 -->
+        <article class="month-card">
+          <h3>10 月</h3>
+          <ul>
+            <li><span class="meta-date">2009.10.29</span>ACT3.班德王國的危機、班德郊區(村莊)、新NPC 推出</li>
+          </ul>
+        </article>
+
+        <!-- 11 月 -->
+        <article class="month-card">
+          <h3>11 月</h3>
+          <ul>
+            <li><span class="meta-date">2009.11.05</span>新副本 - 第三居住地區、希望之橋 推出、導入公會系統</li>
+            <li><span class="meta-date">2009.11.12</span>初次二轉更新 - 領主騎士、符文殺手</li>
+          </ul>
+        </article>
+
+        <!-- 12 月 -->
+        <article class="month-card">
+          <h3>12 月</h3>
+          <ul>
+            <li><span class="meta-date">2009.12.10</span>第 1 次公會技能更新（Season 2 ACT.3 PART.2 THE SECRET GIFT）</li>
+            <li><span class="meta-date">2009.12.17</span>蕾娜二轉更新 - 風行者、守護者</li>
+            <li><span class="meta-date">2009.12.24</span>物品系統(紋章、秘藥、精靈召喚)、"蓋亞"伺服器開放</li>
+            <li><span class="meta-date">2009.12.30</span>第 2 次公會技能更新</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="inner-page" style="text-align:center;padding:26px 10px 60px;">
+    © 2025 艾爾之光改版資料整理站
+  </footer>
+
+  <a class="scroll-top" href="#top" aria-label="回到頂端">⬆</a>
+
+</body>
+</html>
