@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>2017 年改版紀錄｜艾爾之光改版資料整理</title>
+
+  <link id="theme-link" rel="stylesheet" href="../assets/css/blue_style.css">
+
+  <style>
+    main.content { max-width: 1100px; margin: 36px auto; padding: 0 20px; }
+    .page-header { margin-bottom: 18px; }
+    .month-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:18px; margin-top:12px; }
+    .month-card { background: var(--table-cell-bg,#ffffffcc); border:1.5px solid var(--table-border,#bbdefb); border-radius:12px; padding:14px 16px; box-shadow:0 3px 8px rgba(0,0,0,0.06); transition: transform .18s, box-shadow .18s; }
+    .month-card:hover { transform: translateY(-4px); box-shadow:0 6px 18px rgba(0,0,0,0.08); }
+    .month-card h3 { margin:0 0 8px 0; font-size:1.05rem; color: var(--title-blue,#0d47a1); }
+    .month-card ul { margin:0; padding-left:18px; line-height:1.6; }
+    .meta-date { font-weight:600; color: var(--subtitle-blue,#1565c0); margin-right:6px; }
+
+    .side-buttons { position:fixed; left:18px; bottom:120px; display:flex; flex-direction:column; gap:14px; z-index:1500; }
+    .side-btn { width:48px; height:48px; display:grid; place-items:center; text-decoration:none; background: var(--accent-color,#64b5f6); color:#fff; border-radius:50%; font-size:20px; box-shadow:0 6px 18px rgba(0,0,0,0.18); transition: transform .18s; }
+    .side-btn:hover { transform: translateY(-3px); }
+
+    .scroll-top { position:fixed; right:22px; bottom:22px; width:44px; height:44px; display:grid; place-items:center; text-decoration:none; font-size:20px; background:var(--accent-color,#64b5f6); color:white; border-radius:50%; box-shadow:0 6px 18px rgba(0,0,0,0.18); opacity:0; transition:opacity .22s, transform .14s; z-index:1200; }
+    .scroll-top:hover { transform:translateY(-3px); }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const themeLink = document.getElementById("theme-link");
+      const cssPrefix = "../assets/css/";
+      const saved = localStorage.getItem("theme") || "blue";
+
+      if(saved==="pink") { themeLink.href = cssPrefix+"pink_style.css"; document.body.classList.add("pink"); }
+      else { themeLink.href = cssPrefix+"blue_style.css"; document.body.classList.remove("pink"); }
+
+      const toggleBtn = document.getElementById("theme-toggle");
+      if(toggleBtn){
+        function updateToggleLabel(){
+          const cur = localStorage.getItem("theme") || "blue";
+          toggleBtn.textContent = cur==="pink" ? "❄ 切換藍調":"🌸 切換粉色";
+        }
+        toggleBtn.addEventListener("click", ()=>{
+          const current = localStorage.getItem("theme") || "blue";
+          if(current==="blue"){ themeLink.href = cssPrefix+"pink_style.css"; localStorage.setItem("theme","pink"); document.body.classList.add("pink"); }
+          else{ themeLink.href = cssPrefix+"blue_style.css"; localStorage.setItem("theme","blue"); document.body.classList.remove("pink"); }
+          updateToggleLabel();
+        });
+        updateToggleLabel();
+      }
+
+      const scrollTopBtn = document.querySelector(".scroll-top");
+      if(scrollTopBtn){
+        window.addEventListener("scroll",()=>{ scrollTopBtn.style.opacity = window.scrollY>300 ? "1":"0"; });
+      }
+    });
+  </script>
+</head>
+
+<body id="top">
+  <header class="inner-page">
+    <h1>艾爾之光｜2017 年改版紀錄</h1>
+    <p class="page-header">（以韓國伺服器時間為主 — 以下為年度整理）</p>
+    <button id="theme-toggle" style="position:absolute; top:18px; right:18px;">切換主題</button>
+  </header>
+
+  <div class="side-buttons">
+    <a class="side-btn" href="../index.html" title="返回首頁">🏠</a>
+    <a class="side-btn" href="../updates/2007_to_2020_Updates.html" title="返回年份列表">↩</a>
+  </div>
+
+  <main class="content">
+    <section class="inner-page update-section">
+      <h2>📅 2017 年重點改版時程（總覽）</h2>
+      <div class="month-grid">
+
+        <!-- 1 月 -->
+        <article class="month-card">
+          <h3>1 月</h3>
+          <ul>
+            <li><span class="meta-date">2017.01.12</span>亞殷 二分支 轉職更新 - 1轉：神融介 & 2轉：綻心使、副本/對戰技能提示框分離(一轉)</li>
+            <li><span class="meta-date">2017.01.25</span>亞殷 二分支 超越轉職更新、副本/對戰技能提示框分離(二轉、超越)、亞坦斯分布於各村莊、復原捲適用方式改善</li>
+          </ul>
+        </article>
+
+        <!-- 2 月 -->
+        <article class="month-card">
+          <h3>2 月</h3>
+          <ul>
+            <li><span class="meta-date">2017.02.09</span>亞殷 三分支 轉職更新 - 1轉：斥魂 & 2轉：叛神、第17次平衡改版Part 5、衣櫥、自定義可選套用燈光功能、個人商店改善、佈告欄支援單字搜尋</li>
+            <li><span class="meta-date">2017.02.23</span>亞殷 三分支 超越轉職更新、對戰正式賽季開始、各種便利性改善</li>
+          </ul>
+        </article>
+
+        <!-- 3 月 -->
+        <article class="month-card">
+          <h3>3 月</h3>
+          <ul>
+            <li><span class="meta-date">2017.03.02</span>噗魯私立高校活動副本</li>
+            <li><span class="meta-date">2017.03.16</span>艾特島第二次改版、公會第二次改版、自定義動作欄位擴張、露/希爾自定義分離、各種便利性改善</li>
+            <li><span class="meta-date">2017.03.30</span>物品鎖定功能、第三波前半遊玩改善、部分NPC/角色插圖改善、停止 EL POINT SHOP、各種便利性改善、平衡小幅調整、執事體驗副本</li>
+          </ul>
+        </article>
+
+        <!-- 4 月 -->
+        <article class="month-card">
+          <h3>4 月</h3>
+          <ul>
+            <li><span class="meta-date">2017.04.13</span>成就系統實裝、Winner模式公式對戰化、時空裝備改善、各種便利性改善、覺醒自定義追加</li>
+            <li><span class="meta-date">2017.04.27</span>對戰第二次聯盟賽開始、第18次平衡改版、特殊副本UI改善、公會視窗改善</li>
+          </ul>
+        </article>
+
+        <!-- 5 月 -->
+        <article class="month-card">
+          <h3>5 月</h3>
+          <ul>
+            <li><span class="meta-date">2017.05.02</span>트레저헌터活動副本</li>
+            <li><span class="meta-date">2017.05.18</span>新增特效透明度調整功能、第18次平衡改版Part 2</li>
+          </ul>
+        </article>
+
+        <!-- 6 月 -->
+        <article class="month-card">
+          <h3>6 月</h3>
+          <ul>
+            <li><span class="meta-date">2017.06.01</span>新增 凝聚邪念的空間 副本、二轉/卡蜜拉 封印技能 任務改版</li>
+            <li><span class="meta-date">2017.06.15</span>艾爾迴廊-開始 更新、第18次平衡改版Part 3、角色未操作提醒功能</li>
+            <li><span class="meta-date">2017.06.22</span>艾爾迴廊-試煉 更新</li>
+            <li><span class="meta-date">2017.06.29</span>艾爾迴廊-選擇 更新、公會Buff改善、自定義追加框架功能</li>
+          </ul>
+        </article>
+
+        <!-- 7 月 -->
+        <article class="month-card">
+          <h3>7 月</h3>
+          <ul>
+            <li><span class="meta-date">2017.07.09</span>線下活動 - 天生艾緣</li>
+            <li><span class="meta-date">2017.07.13</span>新地區更新 - 艾利亞諾德、NPC、副本更新(艾爾迴廊、水龍禁區)、增加艾爾之淚裝備、技能變更 / 快速欄擴張、月常任務、超越技能特性、忘卻卷軸改善為可製作、新增超技能欄位 + 移除 B 型欄位、技能欄位移動功能、第18次平衡改版Part 4、對戰Pre-Season 開始、「真」技能/特性的習得條件改變、衣架解除、所有技能立繪能力賦予功能</li>
+            <li><span class="meta-date">2017.07.20</span>新副本 - 艾利亞諾德城市 更新</li>
+            <li><span class="meta-date">2017.07.27</span>新副本 - 戴福里安的研究所 更新(其餘劇情 8/3 追加)、對戰第三季 開始、第18次平衡改版Part 5</li>
+          </ul>
+        </article>
+
+        <!-- 8 月 -->
+        <article class="month-card">
+          <h3>8 月</h3>
+          <ul>
+            <li><span class="meta-date">2017.08.10</span>新副本 - 艾爾之塔防禦戰 更新</li>
+            <li><span class="meta-date">2017.08.24</span>專門職業改版(可用ED更換專門職業)、新增神秘艾爾魔方/神秘的艾爾燒瓶、師徒系統改版、艾特島常駐開放、第18次平衡改版Part 6</li>
+          </ul>
+        </article>
+
+        <!-- 9 月 -->
+        <article class="month-card">
+          <h3>9 月</h3>
+          <ul>
+            <li><span class="meta-date">2017.09.14</span>追加商店搜尋/商品登錄功能、可查看帳號內其他角色銀行之物品</li>
+            <li><span class="meta-date">2017.09.28</span>第18次平衡改版Part 7、對戰第四季 開始、史詩任務改善、公會任務變更、中～高級技能任務改善、ADD 能量融合理論副本改善、祕密副本 / 英雄副本改善、Fever 系統改善、艾利亞諾德 4&5 副本故事模式(戴福里安的研究所、艾爾之塔防禦戰)</li>
+          </ul>
+        </article>
+
+        <!-- 10 月 -->
+        <article class="month-card">
+          <h3>10 月</h3>
+          <ul>
+            <li><span class="meta-date">2017.10.19</span>오싹오싹 공동묘지活動副本</li>
+          </ul>
+        </article>
+
+        <!-- 11 月 -->
+        <article class="month-card">
+          <h3>11 月</h3>
+          <ul>
+            <li><span class="meta-date">2017.11.02</span>第18次平衡改版Part 8、艾利亞諾德城市副本改善、 오싹오싹 공동묘지 숨바꼭질活動副本</li>
+            <li><span class="meta-date">2017.11.10</span>艾爾之光動畫 "艾爾聖女"正式放映</li>
+            <li><span class="meta-date">2017.11.15</span>ED持有/佈告欄交易限制擴張、布告欄新增效果搜尋功能、隨機配對BUFF上修</li>
+            <li><span class="meta-date">2017.11.30</span>3轉轉職更新 - 全角色一支線更新、角色手腳大小改善、新副本 - 被遺忘的艾利安聖地、艾爾迴廊副本改善、成就追加ADD 能量融合理論、對戰Pre-Season 開始 (巔峰系統 / 超越技能[真]效果開放 / 新增語音/技能欄位追加擴張5格 / 技能轉換功能 )</li>
+          </ul>
+        </article>
+
+        <!-- 12 月 -->
+        <article class="month-card">
+          <h3>12 月</h3>
+          <ul>
+            <li><span class="meta-date">2017.12.28</span>3轉轉職更新 - 全角色二支線更新</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="inner-page" style="text-align:center;padding:26px 10px 60px;">
+    © 2025 艾爾之光改版資料整理站
+  </footer>
+
+  <a class="scroll-top" href="#top" aria-label="回到頂端">⬆</a>
+
+</body>
+</html>
