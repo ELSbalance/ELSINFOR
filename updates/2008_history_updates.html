@@ -64,25 +64,31 @@
       margin-right: 6px;
     }
 
-    /* 返回首頁按鈕 */
-    .nav-row {
-      display:flex;
-      gap:12px;
-      align-items:center;
-      margin-bottom:12px;
+    /* 左側懸浮按鈕 */
+    .side-buttons {
+      position: fixed;
+      left: 18px;
+      bottom: 120px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      z-index: 1500;
     }
 
-    .return-btn-small {
-      display:inline-block;
-      padding:8px 16px;
-      border-radius:20px;
-      text-decoration:none;
-      color:#fff;
-      background:var(--accent-color, #64b5f6);
-      transition:transform .15s;
-      font-weight:600;
+    .side-btn {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      text-decoration: none;
+      background: var(--accent-color,#64b5f6);
+      color: #fff;
+      border-radius: 50%;
+      font-size: 20px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+      transition: transform .18s;
     }
-    .return-btn-small:hover { transform: scale(1.03); }
+    .side-btn:hover { transform: translateY(-3px); }
 
     /* 回到頂端圓形按鈕 */
     .scroll-top {
@@ -108,7 +114,6 @@
     @media (max-width:600px) {
       .month-grid { gap:12px; }
       .month-card { padding:12px; }
-      .return-btn-small { padding:8px 12px; }
     }
   </style>
 
@@ -170,24 +175,25 @@
     <button id="theme-toggle" class="theme-toggle-btn" style="position:absolute; top:18px; right:18px;">切換主題</button>
   </header>
 
-  <!-- ★ 左側浮動按鈕已完全刪除 ★ -->
+  <!-- 左側懸浮按鈕 -->
+  <div class="side-buttons">
+    <a class="side-btn" href="../index.html" title="返回首頁">🏠</a>
+    <a class="side-btn" href="../updates/2007_to_2020_Updates.html" title="返回年份列表">↩</a>
+  </div>
 
   <main class="content">
-    <div class="nav-row">
-      <a class="return-btn-small" href="../index.html">← 返回首頁</a>
-    </div>
 
     <section class="inner-page update-section">
       <h2>📅 2008 年重點改版時程（總覽）</h2>
-      <p class="intro">下面以月份卡片呈現。內容依你提供的整理，為長年紀錄的摘錄（示範排版）。</p>
 
       <div class="month-grid">
+
         <!-- 1 月 -->
         <article class="month-card">
           <h3>1 月</h3>
           <ul>
-            <li><span class="meta-date">2008.01.03</span>艾索德、愛莎、蕾娜 最初角色推出</li>
-            <li><span class="meta-date">2008.01.10</span>（延伸 1/24、1/31、2/14）新地區「貝斯馬」相關更新</li>
+            <li><span class="meta-date">2008.01.03</span>艾索德、愛莎、蕾娜 最初角色 推出</li>
+            <li><span class="meta-date">2008.01.10</span>（1/24、1/31、2/14） 新地區「貝斯馬」更新</li>
           </ul>
         </article>
 
@@ -205,7 +211,7 @@
           <ul>
             <li><span class="meta-date">2008.03.06</span>艾德 - 秘密副本追加</li>
             <li><span class="meta-date">2008.03.13</span>魔法石鑲嵌系統</li>
-            <li><span class="meta-date">2008.03.20</span>蕾娜 1轉更新</li>
+            <li><span class="meta-date">2008.03.20</span>蕾娜 1轉 更新</li>
             <li><span class="meta-date">2008.03.27</span>愛莎 1轉更新</li>
           </ul>
         </article>
@@ -214,10 +220,10 @@
         <article class="month-card">
           <h3>4 月</h3>
           <ul>
-            <li><span class="meta-date">2008.04.03</span>推薦人系統（추천인 시스템）</li>
-            <li><span class="meta-date">2008.04.10</span>師徒系統（사제 시스템）</li>
-            <li><span class="meta-date">2008.04.16 ~ 23</span>闇黑克勞爾號、夢境平原（ACT.2）推出</li>
-            <li><span class="meta-date">2008.04.17</span>商城（Cash Shop）功能開放</li>
+            <li><span class="meta-date">2008.04.03</span>추천인 시스템</li>
+            <li><span class="meta-date">2008.04.10</span>사제 시스템</li>
+            <li><span class="meta-date">2008.04.16 ~ 23</span>闇黑克勞爾號、夢境平原 推出(ACT.2)</li>
+            <li><span class="meta-date">2008.04.17</span>商城(Cash Shop)功能開放</li>
           </ul>
         </article>
 
@@ -225,8 +231,9 @@
         <article class="month-card">
           <h3>5 月</h3>
           <ul>
-            <li><span class="meta-date">2008.05.08</span>雷文推出、運送隧道B4-1、新村莊「厄泰拉」推出</li>
-            <li>ACT1~ACT4 持續內容更新</li>
+            <li><span class="meta-date">2008.05.08</span>雷文、運送隧道B4-1 推出</li>
+            <li>新村莊"厄泰拉"推出</li>
+            <li>ACT1~ACT4 更新</li>
           </ul>
         </article>
 
@@ -242,35 +249,31 @@
         <article class="month-card">
           <h3>7 月</h3>
           <ul>
-            <li><span class="meta-date">2008.07.17</span>秘密副本 - 巨龍祭壇、厄泰拉核心 推出，練習頻道（ACT.3 X-Mode）追加</li>
-            <li><span class="meta-date">2008.07.24</span>ACT3、伊米爾的時空（街機模式）推出；等級上限 40 → 50</li>
-            <li><span class="meta-date">2008.07.31 ~ 08.07</span>雷文一轉正式推出</li>
+            <li><span class="meta-date">2008.07.17</span>秘密副本 巨龍祭壇、厄泰拉核心 推出、練習頻道追加（ACT.3 X-Mode）</li>
+            <li><span class="meta-date">2008.07.24</span>ACT3、伊米爾的時空(街機模式)推出、等級上限從 40 → 50</li>
+            <li><span class="meta-date">2008.07.31 ~ 08.07</span>雷文一轉 推出</li>
           </ul>
         </article>
 
         <!-- 8 月 -->
         <article class="month-card">
           <h3>8 月</h3>
-          <ul>
-            <li>暫無資料</li>
-          </ul>
+          <ul><li>暫無資料</li></ul>
         </article>
 
         <!-- 9 月 -->
         <article class="month-card">
           <h3>9 月</h3>
-          <ul>
-            <li>暫無資料</li>
-          </ul>
+          <ul><li>暫無資料</li></ul>
         </article>
 
         <!-- 10 月 -->
         <article class="month-card">
           <h3>10 月</h3>
           <ul>
-            <li><span class="meta-date">2008.10.09</span>信箱系統（ACT.4）</li>
-            <li><span class="meta-date">2008.10.16</span>稱號系統上線</li>
-            <li><span class="meta-date">2008.10.23</span>屬性系統引入</li>
+            <li><span class="meta-date">2008.10.09</span>信箱系統（ACT.4)</li>
+            <li><span class="meta-date">2008.10.16</span>稱號系統</li>
+            <li><span class="meta-date">2008.10.23</span>屬性系統</li>
           </ul>
         </article>
 
@@ -278,9 +281,9 @@
         <article class="month-card">
           <h3>11 月</h3>
           <ul>
-            <li><span class="meta-date">2008.11.06</span>第 1 次平衡改版（大範圍技能數值調整）</li>
-            <li><span class="meta-date">2008.11.20</span>物品稀有度細分（進化、華麗、稀少等）</li>
-            <li><span class="meta-date">2008.11.27</span>新地區「沛塔」與新 NPC 推出</li>
+            <li><span class="meta-date">2008.11.06</span>第 1 次平衡改版</li>
+            <li><span class="meta-date">2008.11.20</span>物品稀有度細分（進化、華麗、稀少...等）</li>
+            <li><span class="meta-date">2008.11.27</span>新地區-沛塔 與 新NPC 推出</li>
           </ul>
         </article>
 
@@ -288,10 +291,11 @@
         <article class="month-card">
           <h3>12 月</h3>
           <ul>
-            <li><span class="meta-date">2008.12.04</span>新增快捷鍵系統；新副本 奉獻之神殿入口、螺旋迴廊 推出</li>
-            <li><span class="meta-date">2008.12.18</span>新角色「伊芙」推出（Season 2 ACT.1 THE QUEEN OF NASOD）</li>
-            <li><span class="meta-date">2008.12.24</span>新村莊「沛塔」更新</li>
-            <li><span class="meta-date">2008.12.31</span>剉冰機系統上市（2 週販售 → 2 週休息輪替）</li>
+            <li><span class="meta-date">2008.12.04</span>新增快捷鍵系統</li>
+            <li><span class="meta-date">2008.12.04~11</span>新副本 - 奉獻之神殿入口、螺旋迴廊 推出</li>
+            <li><span class="meta-date">2008.12.18</span>新角色 "伊芙" 推出（Season 2 ACT.1 THE QUEEN OF NASOD）、廣場與村莊改編  對象：魔奇、艾德、貝斯馬、厄泰拉</li>
+            <li><span class="meta-date">2008.12.24</span>新村莊 - 沛塔更新</li>
+            <li><span class="meta-date">2008.12.31</span>剉冰機系統 上市（2 週販售 → 2 週休息輪替）</li>
           </ul>
         </article>
 
