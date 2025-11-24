@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>2016 年改版紀錄｜艾爾之光改版資料整理</title>
+
+  <!-- 共用主題 CSS -->
+  <link id="theme-link" rel="stylesheet" href="../assets/css/blue_style.css">
+
+  <!-- 本頁專屬排版 -->
+  <style>
+    main.content {
+      max-width: 1100px;
+      margin: 36px auto;
+      padding: 0 20px;
+    }
+
+    .page-header { margin-bottom: 18px; }
+    .intro { margin: 8px 0 20px; color: #444; }
+
+    .month-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 12px;
+    }
+
+    .month-card {
+      background: var(--table-cell-bg, #ffffffcc);
+      border: 1.5px solid var(--table-border, #bbdefb);
+      border-radius: 12px;
+      padding: 14px 16px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+      transition: transform .18s, box-shadow .18s;
+    }
+    .month-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    .month-card h3 {
+      margin: 0 0 8px 0;
+      font-size: 1.05rem;
+      color: var(--title-blue, #0d47a1);
+    }
+
+    .month-card ul {
+      margin: 0;
+      padding-left: 18px;
+      line-height: 1.6;
+    }
+
+    .meta-date {
+      font-weight: 600;
+      color: var(--subtitle-blue, #1565c0);
+      margin-right: 6px;
+    }
+
+    .side-buttons {
+      position: fixed;
+      left: 18px;
+      bottom: 120px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      z-index: 1500;
+    }
+
+    .side-btn {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      text-decoration: none;
+      background: var(--accent-color,#64b5f6);
+      color: #fff;
+      border-radius: 50%;
+      font-size: 20px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+      transition: transform .18s;
+    }
+    .side-btn:hover { transform: translateY(-3px); }
+
+    .scroll-top {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width:44px;
+      height:44px;
+      display:grid;
+      place-items:center;
+      text-decoration:none;
+      font-size:20px;
+      background:var(--accent-color,#64b5f6);
+      color:white;
+      border-radius:50%;
+      box-shadow:0 6px 18px rgba(0,0,0,0.18);
+      opacity:0;
+      transition:opacity .22s, transform .14s;
+      z-index:1200;
+    }
+    .scroll-top:hover { transform: translateY(-3px); }
+
+    @media (max-width:600px) {
+      .month-grid { gap:12px; }
+      .month-card { padding:12px; }
+    }
+  </style>
+
+  <!-- 主題切換腳本 -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const themeLink = document.getElementById("theme-link");
+      const cssPrefix = "../assets/css/";
+      const saved = localStorage.getItem("theme") || "blue";
+
+      if (saved === "pink") {
+        themeLink.href = cssPrefix + "pink_style.css";
+        document.body.classList.add("pink");
+      } else {
+        themeLink.href = cssPrefix + "blue_style.css";
+        document.body.classList.remove("pink");
+      }
+
+      const toggleBtn = document.getElementById("theme-toggle");
+      if (toggleBtn) {
+        function updateToggleLabel() {
+          const cur = localStorage.getItem("theme") || "blue";
+          toggleBtn.textContent = cur === "pink" ? "❄ 切換藍調" : "🌸 切換粉色";
+        }
+
+        toggleBtn.addEventListener("click", () => {
+          const current = localStorage.getItem("theme") || "blue";
+          if (current === "blue") {
+            themeLink.href = cssPrefix + "pink_style.css";
+            localStorage.setItem("theme","pink");
+            document.body.classList.add("pink");
+          } else {
+            themeLink.href = cssPrefix + "blue_style.css";
+            localStorage.setItem("theme","blue");
+            document.body.classList.remove("pink");
+          }
+          updateToggleLabel();
+        });
+
+        updateToggleLabel();
+      }
+
+      const scrollTopBtn = document.querySelector(".scroll-top");
+      if (scrollTopBtn) {
+        window.addEventListener("scroll", () => {
+          scrollTopBtn.style.opacity = window.scrollY > 300 ? "1" : "0";
+        });
+      }
+    });
+  </script>
+</head>
+
+<body id="top">
+  <header class="inner-page">
+    <h1>艾爾之光｜2016 年改版紀錄</h1>
+    <p class="page-header">（以韓國伺服器時間為主 — 以下為年度整理）</p>
+
+    <!-- 主題切換 -->
+    <button id="theme-toggle" class="theme-toggle-btn"
+      style="position:absolute; top:18px; right:18px;">切換主題</button>
+  </header>
+
+  <!-- 左側懸浮按鈕 -->
+  <div class="side-buttons">
+    <a class="side-btn" href="../index.html" title="返回首頁">🏠</a>
+    <a class="side-btn" href="../updates/2007_to_2020_Updates.html" title="返回年份列表">↩</a>
+  </div>
+
+  <main class="content">
+
+    <section class="inner-page update-section">
+      <h2>📅 2016 年重點改版時程（總覽）</h2>
+
+      <div class="month-grid">
+
+        <!-- 1 月 -->
+        <article class="month-card">
+          <h3>1 月</h3>
+          <ul>
+            <li><span class="meta-date">2016.01.14</span>艾特利昂 MK2 第二階段 - Rise 開始</li>
+            <li><span class="meta-date">2016.01.28</span>蘿潔 二分支更新 - 1轉：嗜血槍手 & 2轉：緋紅玫瑰</li>
+          </ul>
+        </article>
+
+        <!-- 2 月 -->
+        <article class="month-card">
+          <h3>2 月</h3>
+          <ul>
+            <li><span class="meta-date">2016.02.04</span>第14次平衡改版</li>
+            <li><span class="meta-date">2016.02.18</span>蘿潔 三分支更新 - 1轉：戰爭女神 & 2轉：芙蕾雅、套裝上衣/下衣欄位分離</li>
+            <li><span class="meta-date">2016.02.25</span>暗黑艾特利昂MK2 第三階段 - 最後之力 開始、移除本地排行</li>
+          </ul>
+        </article>
+
+        <!-- 3 月 -->
+        <article class="month-card">
+          <h3>3 月</h3>
+          <ul>
+            <li><span class="meta-date">2016.03.10</span>英雄副本體驗版更新、EL Point 發放結束（於2017 年 3 月正式停止）</li>
+            <li><span class="meta-date">2016.03.24</span>蘿潔 四分支更新 - 1轉：鋼鐵槍手 & 2轉：機械之靈、追加衣櫥搜尋功能、I與L字體區分</li>
+          </ul>
+        </article>
+
+        <!-- 4 月 -->
+        <article class="month-card">
+          <h3>4 月</h3>
+          <ul>
+            <li><span class="meta-date">2016.04.07</span>英雄副本 更新、新增角色刪除之緩衝期、防禦力/極大化/黑暗之門/裝備鑑定 改編</li>
+            <li><span class="meta-date">2016.04.21</span>第15次平衡改版、網咖福利改版、新增 對戰 Winner Mode & 1:1 申請、下方公告框之尺寸調整</li>
+          </ul>
+        </article>
+
+        <!-- 5 月 -->
+        <article class="month-card">
+          <h3>5 月</h3>
+          <ul>
+            <li><span class="meta-date">2016.05.03</span>露希爾 三分支更新 - 1轉：深淵鬼皇 & 2轉：冷焰邪魔、背包各別擴張功能開放</li>
+            <li><span class="meta-date">2016.05.12</span>艾爾之光攝影棚功能開放</li>
+            <li><span class="meta-date">2016.05.19</span>拉諾斯秘密副本追加、舊秘密副本改版</li>
+          </ul>
+        </article>
+
+        <!-- 6 月 -->
+        <article class="month-card">
+          <h3>6 月</h3>
+          <ul>
+            <li><span class="meta-date">2016.06.02</span>任務追加(亞坦斯迎賓會)</li>
+            <li><span class="meta-date">2016.06.16</span>天上的樂園 更新、新村莊 - 艾里西溫、新增NPC、滿等級提升至99等</li>
+            <li><span class="meta-date">2016.06.30</span>第16次平衡改版、亂鬥戰模式更新、聊天視窗骰子系統</li>
+          </ul>
+        </article>
+
+        <!-- 7 月 -->
+        <article class="month-card">
+          <h3>7 月</h3>
+          <ul>
+            <li><span class="meta-date">2016.07.14</span>超越 轉職更新、強化系統改版</li>
+            <li><span class="meta-date">2016.07.20</span>英雄副本 地獄模式</li>
+            <li><span class="meta-date">2016.07.28</span>超越 第2次更新、追加艾里希溫原野地圖</li>
+          </ul>
+        </article>
+
+        <!-- 8 月 -->
+        <article class="month-card">
+          <h3>8 月</h3>
+          <ul>
+            <li><span class="meta-date">2016.08.11</span>超越 第3次更新、赫尼爾時空 第四次改版、剉冰機改編</li>
+            <li><span class="meta-date">2016.08.25</span>太陽之神的要塞 更新、超越 第4次更新、對戰改版、對戰第五季開始、1:1 三戰兩勝、錦標賽模式追加</li>
+          </ul>
+        </article>
+
+        <!-- 9 月 -->
+        <article class="month-card">
+          <h3>9 月</h3>
+          <ul>
+            <li><span class="meta-date">2016.09.08</span>ADD能量融合理論 - 傳說武器(默示錄Type - Void武器)、副本更新</li>
+            <li><span class="meta-date">2016.09.29</span>艾爾共鳴更新 - 追加共鳴度系統、溫泉系統暫時開放、飾品欄位增加、圖像改善、對話禁言功能</li>
+          </ul>
+        </article>
+
+        <!-- 10 月 -->
+        <article class="month-card">
+          <h3>10 月</h3>
+          <ul>
+            <li><span class="meta-date">2016.10.13</span>技能[真]效果 更新、第17次平衡改版Part 1</li>
+            <li><span class="meta-date">2016.10.20</span>第17次平衡改版Part 2</li>
+          </ul>
+        </article>
+
+        <!-- 11 月 -->
+        <article class="month-card">
+          <h3>11 月</h3>
+          <ul>
+            <li><span class="meta-date">2016.11.03</span>全職業新增超越第三招必殺技、秘密副本及魯多模式改善、屬性改版(可上四屬性)、第17次平衡改版Part 3、第一波前半遊玩改善</li>
+            <li><span class="meta-date">2016.11.16</span>新副本 - 靜止的太陽的記憶 更新、結算畫面改善、第二波前半遊玩改善、第17次平衡改版Part 4</li>
+          </ul>
+        </article>
+
+        <!-- 12 月 -->
+        <article class="month-card">
+          <h3>12 月</h3>
+          <ul>
+            <li><span class="meta-date">2016.12.01</span>溫泉功能正式開放、副本 重新挑戰(F8) 功能開放</li>
+            <li><span class="meta-date">2016.12.16</span>新角色 亞殷 推出、一分支轉職更新 - 1轉：神之代理 & 2轉：喚武使、寵物餵食改善</li>
+            <li><span class="meta-date">2016.12.29</span>亞殷 一分支 超越轉職更新 、베스테라 군단、副本/對戰技能提示框分離(0轉)、2017網咖硬幣清單改善</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="inner-page" style="text-align:center;padding:26px 10px 60px;">
+    © 2025 艾爾之光改版資料整理站
+  </footer>
+
+  <a class="scroll-top" href="#top" aria-label="回到頂端">⬆</a>
+
+</body>
+</html>
