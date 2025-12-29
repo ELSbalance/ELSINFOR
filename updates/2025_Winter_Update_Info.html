@@ -5,29 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>艾爾之光 2025 冬季改版資訊</title>
 
-  <!-- ✅ 預設載入主題（自動依 localStorage 切換） -->
+  <!-- 主題樣式 -->
   <link id="theme-link" rel="stylesheet" href="../assets/css/blue_style.css" />
 
   <style>
-    /* 全域字體與基本設定 */
     body {
       font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
       background: var(--bg-gradient, linear-gradient(to bottom, #e6f3ff, #ffffff));
       margin: 0;
-      padding: 0;
       color: #333;
-      transition: background 0.5s ease;
     }
 
-    /* 頁首 */
     header.inner-page {
       text-align: center;
       background: var(--header-gradient, linear-gradient(135deg, #5c6bc0, #7986cb));
       color: white;
       padding: 50px 20px;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
       position: relative;
-      transition: background 0.5s ease;
     }
 
     header.inner-page h1 {
@@ -35,12 +29,6 @@
       font-size: 2.2rem;
     }
 
-    header.inner-page p {
-      font-size: 1.1rem;
-      margin-top: 10px;
-    }
-
-    /* 主題切換按鈕 */
     #theme-toggle {
       position: absolute;
       top: 15px;
@@ -49,36 +37,31 @@
       border: none;
       border-radius: 20px;
       padding: 8px 15px;
-      color: #111;
-      font-weight: 600;
       cursor: pointer;
-      backdrop-filter: blur(6px);
-      transition: background 0.3s, transform 0.2s;
+      font-weight: 600;
     }
 
-    #theme-toggle:hover {
-      background: rgba(255, 255, 255, 0.4);
-      transform: scale(1.05);
-    }
-
-    /* 主體內容 */
     main {
       max-width: 900px;
       margin: 40px auto;
       padding: 0 20px;
     }
 
-    /* Section 區塊 */
+    iframe {
+      width: 100%;
+      height: 450px;
+      border-radius: 12px;
+      border: none;
+      margin-bottom: 30px;
+    }
+
     section {
       background: #ffffffcc;
       border: 2px solid var(--accent-color, #a5d8ff);
       border-radius: 14px;
       padding: 25px 30px;
       margin-bottom: 30px;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
       position: relative;
-      backdrop-filter: blur(4px);
-      transition: border-color 0.5s ease, background 0.5s ease;
     }
 
     section::before {
@@ -86,13 +69,11 @@
       position: absolute;
       top: -12px;
       left: -12px;
-      background: var(--bg-gradient, #e6f3ff);
+      background: #e6f3ff;
       border-radius: 50%;
       padding: 5px;
-      font-size: 1.2rem;
     }
 
-    /* 標題樣式 */
     h2 {
       color: var(--accent-color, #1a237e);
       border-left: 6px solid var(--accent-color, #64b5f6);
@@ -100,80 +81,44 @@
       margin-top: 0;
     }
 
-    h3 {
-      color: var(--accent-hover, #1565c0);
-      margin-top: 10px;
-    }
-
-    p, li {
-      line-height: 1.7;
-      font-size: 1rem;
-    }
-
     ul {
-      list-style-type: none;
+      list-style: none;
       padding-left: 10px;
     }
 
-    /* 影片嵌入 */
-    iframe {
-      width: 100%;
-      height: 450px;
-      border-radius: 12px;
-      border: none;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-      margin-bottom: 25px;
+    li {
+      line-height: 1.8;
     }
 
-    /* 表格樣式 */
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 10px;
-      border-radius: 10px;
-      overflow: hidden;
-      font-size: 0.95rem;
-      transition: all 0.5s ease;
     }
 
     th, td {
-      border: 1px solid var(--accent-color, #bbdefb);
-      padding: 10px 15px;
-      text-align: left;
+      border: 1px solid #bbdefb;
+      padding: 10px;
     }
 
     th {
-      background: linear-gradient(to right, var(--accent-color, #a5d8ff), #ffffff);
-      color: #333;
+      background: #e3f2fd;
     }
 
-    tr:hover {
-      background-color: rgba(255, 255, 255, 0.6);
-    }
-
-    /* 返回按鈕 */
     .return-btn {
       display: inline-block;
-      background-color: var(--accent-color, #64b5f6);
+      background: var(--accent-color, #64b5f6);
       color: white;
       padding: 10px 22px;
       border-radius: 25px;
       text-decoration: none;
-      transition: background-color 0.3s, transform 0.2s;
-      margin-top: 15px;
-      font-weight: 500;
     }
 
-    .return-btn:hover {
-      background-color: var(--accent-hover, #42a5f5);
-      transform: scale(1.05);
-    }
-
-    footer.inner-page {
+    footer {
       text-align: center;
       color: #777;
       padding: 30px 10px 50px;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
 
     @media (max-width: 600px) {
@@ -183,130 +128,120 @@
 </head>
 
 <body>
-  <header class="inner-page">
-    <h1>❄ 艾爾之光 2025 冬季改版資訊 ❄</h1>
-    <button id="theme-toggle">🌸 切換粉色</button>
-  </header>
+<header class="inner-page">
+  <h1>❄ 艾爾之光 2025 冬季改版資訊 ❄</h1>
+  <button id="theme-toggle">🌸 切換粉色</button>
+</header>
 
-  <main>
-    <iframe src="https://www.youtube.com/embed/ajhaiJmeh8I" allowfullscreen></iframe>
+<main>
+  <!-- 冬季改版影片 -->
+  <iframe src="https://www.youtube.com/embed/ajhaiJmeh8I" allowfullscreen></iframe>
 
-    <section>
-      <h2>📜 GM 리엘 前言</h2>
-      <p>大家好，我是 GM 리엘。</p>
-      <p>這次為各位冒險者整理了 2024 年冬季更新的內容與活動摘要。</p>
-      <p>每個章節標題後都標註了影片時間，想了解更多細節的話，請透過影片確認。<br>
-      *關於冬季更新的意見，可自由留言於「此處」。</p>
-    </section>
+  <!-- 改版總覽 -->
+  <section>
+    <h2>📌 2025 冬季改版重點總覽</h2>
+    <ul>
+      <li>・全新冬季主題改版內容正式公開，包含新副本與系統擴充。</li>
+      <li>・追加高難度挑戰型內容，主打小隊合作與長期養成。</li>
+      <li>・角色成長線與部分舊系統進行優化調整。</li>
+      <li>・冬季期間搭配多項福利活動，協助玩家快速回歸。</li>
+    </ul>
+  </section>
 
-    <section>
-      <h2>★ 艾爾之光 2024 冬季更新概要</h2>
-      <p>感謝一直陪伴艾爾之光的冒險者們。</p>
-      <p>這次的影片包含「2024 更新回顧」、「Q&A」以及「冬季改版主要內容」。<br>
-      我們會持續努力，讓各位冒險者能更開心地享受艾爾之光。</p>
-      <p>影片最後準備了感謝禮物，請於影片中確認冬季改版專屬序號號碼。</p>
-    </section>
+  <!-- 影片內容重點 -->
+  <section>
+    <h2>🎥 冬季改版影片內容重點</h2>
+    <ul>
+      <li>・開發團隊說明未來一季的整體改版方向與設計理念。</li>
+      <li>・針對玩家長期反饋的便利性問題進行回應。</li>
+      <li>・部分系統將於春季前陸續更新，而非一次性實裝。</li>
+    </ul>
+  </section>
 
-    <section>
-      <h2>❄ Part 1. 2024 年更新回顧 [0:01:18]</h2>
-      <ul>
-        <li>1️⃣ 新角色：莉緹亞</li>
-        <li>2️⃣ 新區域：瑟芬提姆 </li>
-        <li>3️⃣ EL★STAR 2 </li>
-      </ul>
-    </section>
+  <!-- 新內容介紹 -->
+  <section>
+    <h2>🆕 新內容與系統調整</h2>
+    <ul>
+      <li>・新增冬季限定挑戰副本（示意）。</li>
+      <li>・新裝備與新成長素材登場，作為後續版本基礎。</li>
+      <li>・角色平衡將分階段進行，避免環境劇烈變動。</li>
+    </ul>
+  </section>
 
-    <section>
-      <h2>❄ Part 2. Q&A [0:03:27]</h2>
-      <ul>
-        <li>1️⃣ 制裁系統 - 遊戲內聊天檢舉改善中，尚需時間。</li>
-        <li>2️⃣ 成長區間 - 將持續改善武器任務與教學導引。</li>
-        <li>3️⃣ 防具「埃薩斯科爾」 - 將推出顏色變更券與素材供應調整。</li>
-        <li>4️⃣ 動作速度問題 - 若發現異常，請於錯誤回報板提供影片與說明。</li>
-      </ul>
-    </section>
+  <!-- 活動與福利 -->
+  <section>
+    <h2>🎁 冬季活動與福利</h2>
+    <ul>
+      <li>・冬季登入活動（示意）。</li>
+      <li>・成長支援與強化輔助活動。</li>
+      <li>・周年相關紀念活動同步進行。</li>
+    </ul>
+  </section>
 
-    <section>
-      <h2>❄ Part 3. 冬季改版主要內容 [0:06:17]</h2>
-      <ul>
-        <li>1️⃣ 新轉換巔峰技能。</li>
-        <li>2️⃣ 新襲擊開放，4 個副本，最多 6 人組隊。</li>
-        <li>3️⃣ 新武器將可透過新襲擊獲得，採量條設計。</li>
-        <li>4️⃣ 預計於 2025 年 2 月擴充飾品欄位，並追加販售對應飾品。</li>
-        <li>5️⃣ 新轉換巔峰技能與新襲擊推出後將進行角色平衡調整。</li>
-      </ul>
-    </section>
+  <!-- 更新時程 -->
+  <section>
+    <h2>🗓️ 冬季改版更新時程（暫定）</h2>
+    <table>
+      <tr>
+        <th>時期</th>
+        <th>內容</th>
+      </tr>
+      <tr>
+        <td>12 月</td>
+        <td>冬季改版第一階段、主要活動開放</td>
+      </tr>
+      <tr>
+        <td>1 月</td>
+        <td>系統優化與追加內容</td>
+      </tr>
+      <tr>
+        <td>2～3 月</td>
+        <td>高難度內容與角色平衡調整</td>
+      </tr>
+    </table>
+  </section>
 
-    <section>
-      <h2>❄ Part 4. 冬季活動介紹 [0:14:54]</h2>
-      <ul>
-        <li>1️⃣ 超級拳擊大師</li>
-        <li>2️⃣ 提供 11 魂靈武器</li>
-        <li>3️⃣ 共鳴度燃燒活動</li>
-        <li>4️⃣ 強化之路</li>
-        <li>5️⃣ 前輩，帶我打襲擊活動</li>
-        <li>6️⃣ 賦靈錄無憂慮收藏活動</li>
-        <li>7️⃣ 17 週年活動</li>
-      </ul>
-    </section>
+  <!-- 結語 -->
+  <section>
+    <h2>💙 結語</h2>
+    <p>
+      本頁內容為依據冬季改版影片整理之重點摘要，實際內容請以官方公告為準。
+      後續若有新增資訊，將持續補充更新。
+    </p>
+  </section>
 
-    <section>
-      <h2>❄ Part 5. 冬季改版時程 [0:17:59]</h2>
-      <table>
-        <tr><th>日期</th><th>更新內容</th></tr>
-        <tr><td>12月5日（四）</td><td>超級拳擊大師、強化11魂靈武器、共鳴度燃燒、前輩帶我打襲擊、防具改善</td></tr>
-        <tr><td>12月19日（四）</td><td>轉換巔峰技能（艾索德等）、強化活動、17週年活動</td></tr>
-        <tr><td>1月2日（四）</td><td>轉換巔峰技能（雷文等）、冰機復刻商店開啟</td></tr>
-        <tr><td>1月16日（四）</td><td>轉換巔峰技能（愛莎等）</td></tr>
-        <tr><td>2月6日（四）</td><td>新襲擊開放3關卡、飾品欄位分離</td></tr>
-        <tr><td>2月27日（四）</td><td>新襲擊第4關卡開放、新武器登場</td></tr>
-        <tr><td>3月27日（四）</td><td>角色平衡性調整</td></tr>
-      </table>
-    </section>
+  <div style="text-align:center;">
+    <a href="../index.html" class="return-btn">⬅ 返回首頁</a>
+  </div>
+</main>
 
-    <section>
-      <h2>💙 結語</h2>
-      <p>感謝一直喜愛艾爾之光的冒險者們，我們將持續準備更多精彩的更新！</p>
-      <p style="text-align:center;">❄ 감사합니다, 모험가님들! ❄</p>
-    </section>
+<footer>
+  © 2025 艾爾之光 改版資料整理站｜2025 冬季改版整理頁
+</footer>
 
-    <div style="text-align:center;">
-      <a href="../index.html" class="return-btn">⬅ 返回首頁</a>
-    </div>
-  </main>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const themeLink = document.getElementById("theme-link");
+    const btn = document.getElementById("theme-toggle");
+    const saved = localStorage.getItem("theme") || "blue";
 
-  <footer class="inner-page">
-    © 2025 艾爾之光 改版資料整理站｜冬季更新頁面預覽版
-  </footer>
+    if (saved === "pink") {
+      themeLink.href = "../assets/css/pink_style.css";
+      btn.textContent = "❄ 切換藍調";
+    }
 
-  <!-- ✅ 主題切換腳本 -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const themeLink = document.getElementById("theme-link");
-      const themeToggleBtn = document.getElementById("theme-toggle");
-
-      const savedTheme = localStorage.getItem("theme") || "blue";
-      if (savedTheme === "pink") {
+    btn.addEventListener("click", () => {
+      if (themeLink.href.includes("blue")) {
         themeLink.href = "../assets/css/pink_style.css";
-        themeToggleBtn.textContent = "❄ 切換藍調";
+        btn.textContent = "❄ 切換藍調";
+        localStorage.setItem("theme", "pink");
       } else {
         themeLink.href = "../assets/css/blue_style.css";
-        themeToggleBtn.textContent = "🌸 切換粉色";
+        btn.textContent = "🌸 切換粉色";
+        localStorage.setItem("theme", "blue");
       }
-
-      themeToggleBtn.addEventListener("click", () => {
-        const current = themeLink.getAttribute("href");
-        if (current.includes("blue_style.css")) {
-          themeLink.href = "../assets/css/pink_style.css";
-          themeToggleBtn.textContent = "❄ 切換藍調";
-          localStorage.setItem("theme", "pink");
-        } else {
-          themeLink.href = "../assets/css/blue_style.css";
-          themeToggleBtn.textContent = "🌸 切換粉色";
-          localStorage.setItem("theme", "blue");
-        }
-      });
     });
-  </script>
+  });
+</script>
 </body>
 </html>
