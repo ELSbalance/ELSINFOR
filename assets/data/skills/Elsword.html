@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>艾索德｜角色技能</title>
+
+  <!-- 主題 CSS -->
+  <link id="theme-link" rel="stylesheet" href="../assets/css/blue_style.css">
+
+  <style>
+    main.content {
+      max-width: 900px;
+      margin: 36px auto;
+      padding: 0 20px;
+    }
+
+    .role-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .job-selector {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .job-btn {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 200px;
+      padding: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: #eee;
+      transition: background 0.3s;
+      font-weight: bold;
+    }
+    .job-btn:hover { background-color: #ccc; }
+
+    .job-btn span { /* 職業文字 */
+      font-weight: bold;
+    }
+
+    .job-btn img {
+      width: 50px;
+      height: 50px;
+    }
+
+    .job-skills table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    .job-skills th, .job-skills td {
+      border: 1px solid #aaa;
+      padding: 8px;
+      text-align: center;
+    }
+
+    /* 左側懸浮按鈕 */
+    .side-buttons {
+      position: fixed;
+      left: 18px;
+      bottom: 120px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      z-index: 1500;
+    }
+
+    .side-btn {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      text-decoration: none;
+      background: var(--accent-color,#64b5f6);
+      color: #fff;
+      border-radius: 50%;
+      font-size: 20px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+      transition: transform .18s;
+    }
+    .side-btn:hover { transform: translateY(-3px); }
+
+    /* 回到頂端 */
+    .scroll-top {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width:44px;
+      height:44px;
+      display:grid;
+      place-items:center;
+      text-decoration:none;
+      font-size:20px;
+      background:var(--accent-color,#64b5f6);
+      color:white;
+      border-radius:50%;
+      box-shadow:0 6px 18px rgba(0,0,0,0.18);
+      opacity:0;
+      transition:opacity .22s, transform .14s;
+      z-index:1200;
+    }
+    .scroll-top:hover { transform: translateY(-3px); }
+  </style>
+
+  <!-- 背景色切換腳本 -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const themeLink = document.getElementById("theme-link");
+      const cssPrefix = "../assets/css/";
+      const saved = localStorage.getItem("theme") || "blue";
+
+      if (saved === "pink") {
+        themeLink.href = cssPrefix + "pink_style.css";
+        document.body.classList.add("pink");
+      } else {
+        themeLink.href = cssPrefix + "blue_style.css";
+        document.body.classList.remove("pink");
+      }
+
+      const toggleBtn = document.getElementById("theme-toggle");
+      if (toggleBtn) {
+        function updateToggleLabel() {
+          const cur = localStorage.getItem("theme") || "blue";
+          toggleBtn.textContent = cur === "pink" ? "❄ 切換藍調" : "🌸 切換粉色";
+        }
+
+        toggleBtn.addEventListener("click", () => {
+          const current = localStorage.getItem("theme") || "blue";
+          if (current === "blue") {
+            themeLink.href = cssPrefix + "pink_style.css";
+            localStorage.setItem("theme","pink");
+            document.body.classList.add("pink");
+          } else {
+            themeLink.href = cssPrefix + "blue_style.css";
+            localStorage.setItem("theme","blue");
+            document.body.classList.remove("pink");
+          }
+          updateToggleLabel();
+        });
+
+        updateToggleLabel();
+      }
+
+      const scrollTopBtn = document.querySelector(".scroll-top");
+      if (scrollTopBtn) {
+        window.addEventListener("scroll", () => {
+          scrollTopBtn.style.opacity = window.scrollY > 300 ? "1" : "0";
+        });
+      }
+    });
+  </script>
+</head>
+
+<body id="top">
+
+  <header class="inner-page">
+    <h1>艾索德｜角色技能</h1>
+    <button id="theme-toggle" style="position:absolute; top:18px; right:18px;">切換主題</button>
+  </header>
+
+  <!-- 左側返回按鈕 -->
+  <div class="side-buttons">
+    <a class="side-btn" href="../index.html" title="返回首頁">🏠</a>
+    <a class="side-btn" href="../updates/2007_to_2020_Updates.html" title="返回年份列表">↩</a>
+  </div>
+
+  <main class="content">
+
+    <!-- 角色大頭貼 -->
+    <div class="role-header">
+      <img src="../assets/images/roles/aesod.png" alt="艾索德" width="120">
+      <h2>艾索德</h2>
+    </div>
+
+    <!-- 四個職業分支區塊 -->
+    <div class="job-selector">
+      <div class="job-btn" onclick="showJob('Knight Emperor')" style="background-color:#FF9999">
+        <span>帝國騎士</span>
+        <img src="../assets/images/jobs/Elsword/Knight Emperor.png" alt="帝國騎士">
+      </div>
+      <div class="job-btn" onclick="showJob('Rune Master')" style="background-color:#99CCFF">
+        <span>符文主宰</span>
+        <img src="../assets/images/jobs/Elsword/Rune Master.png" alt="符文主宰">
+      </div>
+      <div class="job-btn" onclick="showJob('Immortal')" style="background-color:#AAAAAA">
+        <span>不敗劍帝</span>
+        <img src="../assets/images/jobs/Elsword/Immortal.png" alt="不敗劍帝">
+      </div>
+      <div class="job-btn" onclick="showJob('Genesis')" style="background-color:#FFD700">
+        <span>創世騎士</span>
+        <img src="../assets/images/jobs/Elsword/Genesis.png" alt="創世騎士">
+      </div>
+    </div>
+
+    <!-- 技能表格顯示區 -->
+    <div id="skills-container"></div>
+
+  </main>
+
+  <footer class="inner-page" style="text-align:center;padding:26px 10px 60px;">
+    © 2025 艾爾之光改版資料整理站
+  </footer>
+
+  <a class="scroll-top" href="#top" aria-label="回到頂端">⬆</a>
+
+  <!-- 讀取 JSON 並生成技能表 -->
+  <script>
+    function showJob(jobId) {
+      const tables = document.querySelectorAll('.job-skills');
+      tables.forEach(t => t.style.display = 'none');
+      const table = document.getElementById(jobId);
+      if (table) table.style.display = 'block';
+    }
+
+    fetch('../assets/data/skills/aesod.json')
+      .then(res => res.json())
+      .then(data => {
+        const skillsData = data.aesod;
+        const container = document.getElementById('skills-container');
+
+        for (let job in skillsData) {
+          const div = document.createElement('div');
+          div.id = job;
+          div.className = 'job-skills';
+          if (job !== 'knight') div.style.display = 'none'; // 預設顯示騎士
+
+          let table = '<table><tr><th>韓文技能名</th><th>中文技能名</th><th>備註</th></tr>';
+          skillsData[job].forEach(skill => {
+            table += `<tr>
+              <td>${skill.kor}</td>
+              <td>${skill.zh}</td>
+              <td>${skill.note}</td>
+            </tr>`;
+          });
+          table += '</table>';
+
+          div.innerHTML = table;
+          container.appendChild(div);
+        }
+      });
+  </script>
+
+</body>
+</html>
