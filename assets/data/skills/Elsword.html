@@ -86,42 +86,49 @@ document.addEventListener("DOMContentLoaded", () => {
     themeLink.href = cssPrefix + (next === "pink" ? "pink_style.css" : "blue_style.css");
   };
 
+  /* === 職業基本資料（對齊 JSON key） === */
+  const JOB_META = {
+    knight:   { zh: "騎士",     color: "#c62828", image: "../assets/images/jobs/elsword/knight.png" },
+    mage:     { zh: "魔法騎士", color: "#c62828", image: "../assets/images/jobs/elsword/mage.png" },
+    assassin: { zh: "刺客",     color: "#c62828", image: "../assets/images/jobs/elsword/assassin.png" },
+    paladin:  { zh: "聖騎士",   color: "#c62828", image: "../assets/images/jobs/elsword/paladin.png" }
+  };
+
   /* === 技能資料 === */
   fetch("../assets/data/skills/Elsword.json")
     .then(r => r.json())
-    .then(data => init(data));
+    .then(data => init(data.aesod));
 
-  function init(data) {
+  function init(aesod) {
     const selector = document.getElementById("job-selector");
     const tbody = document.getElementById("skill-body");
 
-    data.jobs.forEach((job, idx) => {
+    Object.keys(aesod).forEach((jobKey, idx) => {
+      const meta = JOB_META[jobKey];
       const card = document.createElement("div");
       card.className = "job-card";
-      card.style.color = data.color;
+      card.style.color = meta.color;
 
       card.innerHTML = `
-        <div class="job-name">${job.name_zh}</div>
-        <img src="${job.image}" alt="${job.name_zh}">
+        <div class="job-name">${meta.zh}</div>
+        <img src="${meta.image}" alt="${meta.zh}">
       `;
 
-      card.onclick = () => selectJob(job, card);
+      card.onclick = () => {
+        document.querySelectorAll(".job-card").forEach(c => c.classList.remove("active"));
+        card.classList.add("active");
+
+        tbody.innerHTML = "";
+        aesod[jobKey].forEach(s => {
+          const tr = document.createElement("tr");
+          tr.innerHTML = `<td>${s.kor}</td><td>${s.zh}</td>`;
+          tbody.appendChild(tr);
+        });
+      };
+
       selector.appendChild(card);
-
-      if (idx === 0) selectJob(job, card);
+      if (idx === 0) card.click();
     });
-
-    function selectJob(job, card) {
-      document.querySelectorAll(".job-card").forEach(c => c.classList.remove("active"));
-      card.classList.add("active");
-
-      tbody.innerHTML = "";
-      job.skills.forEach(s => {
-        const tr = document.createElement("tr");
-        tr.innerHTML = `<td>${s.ko}</td><td>${s.zh}</td>`;
-        tbody.appendChild(tr);
-      });
-    }
   }
 });
 </script>
