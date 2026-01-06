@@ -5,20 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>艾索德｜技能中韓文對照</title>
 
-<link id="theme-link" rel="stylesheet" href="../assets/css/blue_style.css">
+<!-- 主題 CSS -->
+<link id="theme-link" rel="stylesheet" href="../../css/blue_style.css">
 
 <style>
 main {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 40px auto;
   padding: 0 20px;
 }
 
+/* 職業選擇區 */
 .job-selector {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-  margin: 30px 0;
+  gap: 20px;
+  margin: 36px 0;
 }
 
 .job-card {
@@ -26,42 +28,45 @@ main {
   align-items: center;
   justify-content: space-between;
   padding: 16px 18px;
-  border-radius: 14px;
+  border-radius: 16px;
   cursor: pointer;
-  background: var(--table-cell-bg, #ffffffcc);
-  border: 2px solid transparent;
+  background: #fff;
+  border: 3px solid transparent;
   transition: transform .15s, box-shadow .15s, border-color .15s;
 }
 
 .job-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0,0,0,.12);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,.15);
 }
 
 .job-card.active {
   border-color: currentColor;
 }
 
+/* 職業名稱 */
 .job-name {
-  font-size: 1.1rem;
-  font-weight: bold;
+  font-size: 1.15rem;
+  font-weight: 800;
 }
 
+/* 職業圖片 */
 .job-card img {
   width: 64px;
   height: auto;
 }
 
+/* 技能表 */
 .skill-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 30px;
+  margin-top: 36px;
 }
 
 .skill-table th,
 .skill-table td {
   border: 1px solid var(--table-border, #ccc);
-  padding: 12px;
+  padding: 12px 14px;
 }
 
 .skill-table th {
@@ -72,11 +77,10 @@ main {
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* === 主題切換（原樣保留） === */
+  /* ===== 主題切換 ===== */
   const themeLink = document.getElementById("theme-link");
-  const cssPrefix = "../assets/css/";
+  const cssPrefix = "../../css/";
   const saved = localStorage.getItem("theme") || "blue";
-
   themeLink.href = cssPrefix + (saved === "pink" ? "pink_style.css" : "blue_style.css");
 
   document.getElementById("theme-toggle").onclick = () => {
@@ -86,49 +90,53 @@ document.addEventListener("DOMContentLoaded", () => {
     themeLink.href = cssPrefix + (next === "pink" ? "pink_style.css" : "blue_style.css");
   };
 
-  /* === 職業基本資料（對齊 JSON key） === */
-  const JOB_META = {
-    knight:   { zh: "騎士",     color: "#c62828", image: "../assets/images/jobs/elsword/knight.png" },
-    mage:     { zh: "魔法騎士", color: "#c62828", image: "../assets/images/jobs/elsword/mage.png" },
-    assassin: { zh: "刺客",     color: "#c62828", image: "../assets/images/jobs/elsword/assassin.png" },
-    paladin:  { zh: "聖騎士",   color: "#c62828", image: "../assets/images/jobs/elsword/paladin.png" }
-  };
+  /* ===== 職業定義（圖片路徑已對齊） ===== */
+  const JOBS = [
+    { key: "KE", zh: "帝國騎士", img: "../../images/Elsword_KE.png" },
+    { key: "RM", zh: "符文主宰", img: "../../images/Elsword_RM.png" },
+    { key: "IM", zh: "不敗劍帝", img: "../../images/Elsword_IM.png" },
+    { key: "GE", zh: "創世騎士", img: "../../images/Elsword_GE.png" }
+  ];
 
-  /* === 技能資料 === */
-  fetch("../assets/data/skills/Elsword.json")
+  const CHARACTER_COLOR = "#d32f2f"; // 艾索德紅
+
+  /* ===== 載入技能資料 ===== */
+  fetch("./Elsword.json")
     .then(r => r.json())
-    .then(data => init(data.aesod));
+    .then(json => init(json.aesod))
+    .catch(err => console.error("技能資料載入失敗", err));
 
-  function init(aesod) {
+  function init(skillData) {
     const selector = document.getElementById("job-selector");
     const tbody = document.getElementById("skill-body");
 
-    Object.keys(aesod).forEach((jobKey, idx) => {
-      const meta = JOB_META[jobKey];
+    JOBS.forEach((job, idx) => {
       const card = document.createElement("div");
       card.className = "job-card";
-      card.style.color = meta.color;
+      card.style.color = CHARACTER_COLOR;
 
       card.innerHTML = `
-        <div class="job-name">${meta.zh}</div>
-        <img src="${meta.image}" alt="${meta.zh}">
+        <div class="job-name">${job.zh}</div>
+        <img src="${job.img}" alt="${job.zh}">
       `;
 
-      card.onclick = () => {
-        document.querySelectorAll(".job-card").forEach(c => c.classList.remove("active"));
-        card.classList.add("active");
-
-        tbody.innerHTML = "";
-        aesod[jobKey].forEach(s => {
-          const tr = document.createElement("tr");
-          tr.innerHTML = `<td>${s.kor}</td><td>${s.zh}</td>`;
-          tbody.appendChild(tr);
-        });
-      };
-
+      card.onclick = () => selectJob(job.key, card);
       selector.appendChild(card);
-      if (idx === 0) card.click();
+
+      if (idx === 0) selectJob(job.key, card);
     });
+
+    function selectJob(jobKey, card) {
+      document.querySelectorAll(".job-card").forEach(c => c.classList.remove("active"));
+      card.classList.add("active");
+
+      tbody.innerHTML = "";
+      skillData[jobKey].forEach(s => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `<td>${s.kor}</td><td>${s.zh}</td>`;
+        tbody.appendChild(tr);
+      });
+    }
   }
 });
 </script>
