@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2025 年更新總覽｜艾爾之光改版資料整理</title>
+
+  <!-- 套用主題 CSS（藍/粉可切換） -->
+  <link id="theme-link" rel="stylesheet" href="../assets/css/blue_style.css">
+
+  <!-- 主題切換 JS -->
+  <script defer src="../assets/js/color_switch.js"></script>
+
+  <!-- 摺疊區塊功能 JS -->
+  <script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      // 控制月份摺疊
+      document.querySelectorAll(".month-block summary").forEach(summary => {
+        summary.addEventListener("click", () => {
+          summary.parentElement.classList.toggle("open");
+        });
+      });
+
+      // 控制週摺疊
+      document.querySelectorAll(".update-week summary").forEach(summary => {
+        summary.addEventListener("click", () => {
+          summary.parentElement.classList.toggle("open");
+        });
+      });
+    });
+  </script>
+
+  <style>
+    /* ==============================
+       🔘 返回首頁按鈕：依主題變色
+       ============================== */
+    .return-btn {
+      display: inline-block;
+      color: white;
+      padding: 10px 22px;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.2s;
+      margin-bottom: 25px;
+      font-weight: 500;
+    }
+    .return-btn:hover { transform: scale(1.05); }
+
+    /* 🌊 藍色主題 */
+    body.blue-theme .return-btn { background-color: #64b5f6; }
+    body.blue-theme .return-btn:hover { background-color: #42a5f5; }
+
+    /* 🌸 粉色主題 */
+    body.pink-theme .return-btn { background-color: #f48fb1; }
+    body.pink-theme .return-btn:hover { background-color: #f06292; }
+
+    /* header / footer */
+    header.inner-page {
+      background: transparent;
+      color: #111;
+      text-align: center;
+      padding: 30px 20px;
+      position: relative;
+    }
+    footer.inner-page {
+      text-align: center;
+      color: #777;
+      padding: 30px 10px 50px;
+      font-size: 0.95rem;
+    }
+
+    /* 月份摺疊 */
+    details.month-block {
+      margin-bottom: 25px;
+      border: 2px solid #bbdefb;
+      border-radius: 12px;
+      padding: 10px 15px;
+      background: #f9f9ffcc;
+      backdrop-filter: blur(4px);
+    }
+    details.month-block summary {
+      cursor: pointer;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    /* 週摺疊 */
+    details.update-week {
+      margin: 10px 0 10px 15px;
+      border: 1px solid #b3e5fc;
+      border-radius: 10px;
+      padding: 10px 15px;
+      background: #ffffffcc;
+      backdrop-filter: blur(4px);
+    }
+    details.update-week summary {
+      cursor: pointer;
+      font-weight: 600;
+      list-style: none;
+    }
+    details.update-week ul {
+      margin-top: 8px;
+      padding-left: 20px;
+    }
+
+    main.content {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="inner-page">
+    <h1>2025 年艾爾之光更新總覽</h1>
+    <button id="theme-toggle" class="theme-toggle-btn">🌸 切換粉色</button>
+  </header>
+
+  <main class="content">
+    <a href="../index.html" class="return-btn">← 返回首頁</a>
+    <section class="inner-page">
+      <h2>📅 2026 年度更新（韓版時程）</h2>
+
+      <!-- 一月 -->
+      <details class="month-block">
+        <summary>1 月</summary>
+          <details class="update-week"><summary>1/1 - 遊戲更新</summary><ul><li>此次更新遇元旦，提前至2025/12/31(三)(前一天)更新，請至2025年更新總覽之12月觀看</li></ul></details>
+        
+          <details class="update-week"><summary>1/8 - 商城更新</summary><ul><li>新寵物 - 摩卡 販售</li></ul></details>
+        
+          <details class="update-week"><summary>1/15 - 待更新</summary><ul><li>待更新</li></ul></details>
+        
+          <details class="update-week"><summary>1/22 - 待更新</summary><ul><li>待更新</li></ul></details>
+        
+          <details class="update-week"><summary>1/29 - 待更新</summary><ul><li>待更新</li></ul></details>
+        
+      </details>
+
+      <!-- 二月  二月以下日期皆未改 -->
+      <details class="month-block">
+        <summary>2 月</summary>
+        <details class="update-week"><summary>2/6 - 待更新</summary><ul><li>待更新</li></ul></details>
+        
+        <details class="update-week"><summary>2/13 - 待更新</summary><ul><li>待更新</li></ul></details>
+        
+        <details class="update-week"><summary>2/20 - 待更新</summary><ul><li>待更新</li></ul></details>
+        
+        <details class="update-week"><summary>2/27 - 待更新</summary><ul><li>待更新</li></ul></details>
+        
+  </details>
+
+      
+      <!-- 三月 -->
+      <details class="month-block">
+        <summary>3 月</summary>
+        <details class="update-week"><summary>3/6 - 待更新</summary><ul><li>待更新</li></ul></details>
+        
+        <details class="update-week"><summary>3/13 - 待更新</summary><ul><li>待更新</li></ul></details>
+        
+        <details class="update-week"><summary>3/20 - 待更新</summary><ul><li>待更新</li></ul></details>
+          
+        <details class="update-week"><summary>3/27 - 待更新</summary><ul><li>待更新</li></ul></details>
+          
+      </details>
+
+
+      
+      <!-- 四月 -->
+      <details class="month-block">
+        <summary>4 月</summary>
+        <details class="update-week"><summary>4/3 - 待更新</summary><ul><li>待更新</li></ul></details>
+        
+        <details class="update-week"><summary>4/10 - 待更新</summary><ul><li>待更新</li></ul></details>
+        
+        <details class="update-week"><summary>4/17 - 待更新</summary><ul><li>待更新</li></ul></details>
+        
+        <details class="update-week"><summary>4/24 - 待更新</summary><ul><li>待更新</li></ul></details>
+      
+      </details>
+
+
+      
+      
+      <!-- 五月 -->
+      <details class="month-block">
+        <summary>5 月</summary>
+        <details class="update-week"><summary>5/1 - 待更新</summary><ul><li>待更新</li></ul></details>
+        
+        <details class="update-week"><summary>5/8 - 待更新</summary><ul><li>待更新</li></ul></details>
+        
+        <details class="update-week"><summary>5/15 - 待更新</summary><ul><li>待更新</li></ul></details>
+        
+        <details class="update-week"><summary>5/22 - 待更新</summary><ul><li>待更新</li></ul></details>
+        
+        <details class="update-week"><summary>5/29 - 待更新</summary><ul><li>待更新</li></ul></details>
+
+        
+      </details>
+
+
+      
+      
+    <!-- 六月 -->
+      <details class="month-block">
+        <summary>6 月</summary>
+        <details class="update-week"><summary>6/5 - 待更新</summary><ul><li>待更新</li></ul></details>
+        
+       <details class="update-week"><summary>6/12 - 待更新</summary><ul><li>待更新</li></ul></details>
+        
+        <details class="update-week"><summary>6/19 - 待更新</summary><ul><li>待更新</li></ul></details>
+        
+       <details class="update-week"><summary>6/26 - 待更新</summary><ul><li>待更新</li></ul></details>
+        
+      </details>
+
+      
+
+      
+    <!-- 七月 -->
+      <details class="month-block">
+        <summary>7 月</summary>
+        <details class="update-week"><summary>7/3 -  待更新</summary><ul><li>待更新</li></ul></details>
+        
+        <details class="update-week"><summary>7/10 - 待更新</summary><ul><li>待更新</li></ul></details>
+        
+        <details class="update-week"><summary>7/17 - 待更新</summary><ul><li>待更新</li></ul></details>
+        
+        <details class="update-week"><summary>7/24 - 待更新</summary><ul><li>待更新</li></ul></details>
+        
+        <details class="update-week"><summary>7/31 - 待更新</summary><ul><li>待更新</li></ul></details>
+      </details>
+
+
+      
+  <!-- 八月 -->
+      <details class="month-block">
+        <summary>8 月</summary>
+        <details class="update-week"><summary>8/7 - 待更新</summary><ul><li>待更新</li></ul></details>
+        
+        <details class="update-week"><summary>8/14 - 待更新</summary><ul><li>待更新</li></ul></details>
+         
+        <details class="update-week"><summary>8/21 - 待更新</summary><ul><li>待更新</li></ul></details>
+        
+        <details class="update-week"><summary>8/28 - 待更新</summary><ul><li>待更新</li></ul></details>
+        
+      </details>
+
+
+      
+      <!-- 九月 -->
+      <details class="month-block">
+        <summary>9 月</summary>
+        <details class="update-week"><summary>9/4 - 待更新</summary><ul><li>待更新</li></ul></details>
+        
+        <details class="update-week"><summary>9/11- 待更新</summary><ul><li>待更新</li></ul></details>
+        
+        <details class="update-week"><summary>9/18 - 待更新</summary><ul><li>待更新</li></ul></details>
+        
+        <details class="update-week"><summary>9/25 - 待更新</summary><ul><li>待更新</li></ul></details>
+      </details>
+
+
+      
+      <!-- 十月 -->
+      <details class="month-block">
+        <summary>10 月</summary>
+        <details class="update-week"><summary>10/2 - 待更新</summary><ul><li>待更新</li></ul></details>
+        
+        <details class="update-week"><summary>10/9 - 待更新</summary><ul><li>待更新</li></ul></details>
+        
+        <details class="update-week"><summary>10/16 - 待更新</summary><ul><li>待更新</li></ul></details>
+        
+        <details class="update-week"><summary>10/23 - 待更新</summary><ul><li>待更新</li></ul></details>
+        
+        <details class="update-week"><summary>10/30 - 待更新</summary><ul><li>待更新</li></ul></details>
+      </details>
+
+      
+
+            <!-- 十一月 -->
+      <details class="month-block">
+        <summary>11 月</summary>
+        <details class="update-week"><summary>11/6 - 待更新</summary><ul><li>待更新</li></ul></details>
+        
+        <details class="update-week"><summary>11/13- 待更新</summary><ul><li>待更新</li></ul></details>
+        
+        <details class="update-week"><summary>11/20 - 待更新</summary><ul><li>待更新</li></ul></details>
+        
+        <details class="update-week"><summary>11/27 - 待更新</summary><ul><li>待更新</li></ul></details>
+      </details>
+
+
+      
+            <!-- 十二月 -->
+      <details class="month-block">
+        <summary>12 月</summary>
+        <details class="update-week"><summary>12/4 - 待更新</summary><ul><li>待更新</li></ul></details>
+        
+        <details class="update-week"><summary>12/11- 待更新</summary><ul><li>待更新</li></ul></details>
+
+
+        <details class="update-week"><summary>12/18 - 待更新</summary><ul><li>待更新</li></ul></details>
+
+
+        <details class="update-week"><summary>12/25 - 待更新</summary><ul><li>待更新</li></ul></details>
+
+        <details class="update-week"><summary>12/31 - 待更新</summary><ul><li>待更新</li></ul></details>
+
+
+          
+        </li></ul></details>
+      </details>
+
+      
+    </section>
+  </main>
+
+  <footer class="inner-page">
+    © 2025 艾爾之光改版資料整理站｜
+  </footer>
+</body>
+</html>
