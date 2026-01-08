@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ===== 載入技能資料 ===== */
   fetch("./Elsword.json")
     .then(r => r.json())
-    .then(json => init(json.aesod))
+    .then(json => init(json.Elsword))
     .catch(err => console.error("技能資料載入失敗", err));
 
   function init(skillData) {
