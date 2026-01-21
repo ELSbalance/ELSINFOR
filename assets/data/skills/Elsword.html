@@ -5,40 +5,64 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>艾索德｜技能中韓文對照</title>
 
-<!-- 主題 CSS（由 color_switch.js 控制） -->
+<!-- 主題 CSS -->
 <link id="theme-link" rel="stylesheet" href="../../css/blue_style.css">
 
-<!-- 主題切換 JS（⚠️一定要用這支） -->
-<script defer src="../../js/color_switch.js"></script>
-
 <style>
-/* ===============================
-   Header 右上角主題切換按鈕修正
-=============================== */
+/* =====================
+   Header 結構修正
+===================== */
 header.inner-page {
+  position: relative;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  padding: 36px 20px;
 }
 
+/* 標題永遠置中 */
 header.inner-page h1 {
   margin: 0;
+  font-size: 2.2rem;
+  font-weight: 800;
 }
 
-   
-/* ===============================
-   版面
-=============================== */
+/* 切換主題按鈕（樣式鎖死，不吃主題） */
+#theme-toggle {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 2px solid #888;
+  background: #fff;
+  color: #333;
+  font-size: 0.9rem;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  transition: background .2s, box-shadow .2s;
+}
+
+#theme-toggle:hover {
+  background: #f5f5f5;
+  box-shadow: 0 2px 6px rgba(0,0,0,.15);
+}
+
+/* =====================
+   內容區
+===================== */
 main {
   max-width: 1100px;
   margin: 40px auto;
   padding: 0 20px;
 }
 
-/* ===============================
-   職業選擇
-=============================== */
+/* 職業選擇 */
 .job-selector {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -53,7 +77,7 @@ main {
   padding: 16px 18px;
   border-radius: 16px;
   cursor: pointer;
-  background: #ffffffcc;
+  background: #fff;
   border: 3px solid transparent;
   transition: transform .15s, box-shadow .15s, border-color .15s;
 }
@@ -77,9 +101,7 @@ main {
   height: auto;
 }
 
-/* ===============================
-   技能表
-=============================== */
+/* 表格 */
 .skill-table {
   width: 100%;
   border-collapse: collapse;
@@ -95,27 +117,30 @@ main {
 .skill-table th {
   background: var(--table-head-bg, #e3f2fd);
 }
-
-/* ===============================
-   主題切換按鈕（保險寫法）
-=============================== */
-.theme-toggle-btn {
-  all: unset;
-  cursor: pointer;
-  padding: 8px 16px;
-  border-radius: 10px;
-  border: 1.5px solid #666;
-  background: rgba(255,255,255,0.9);
-  font-weight: 600;
-}
 </style>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* ===============================
-     艾索德職業定義
-  =============================== */
+  /* ===== 主題切換 ===== */
+  const themeLink = document.getElementById("theme-link");
+  const saved = localStorage.getItem("theme") || "blue";
+
+  function applyTheme(t) {
+    themeLink.href = "../../css/" + (t === "pink" ? "pink_style.css" : "blue_style.css");
+    document.getElementById("theme-toggle").innerText =
+      t === "pink" ? "❄ 切換藍調" : "🌸 切換粉色";
+  }
+
+  applyTheme(saved);
+
+  document.getElementById("theme-toggle").onclick = () => {
+    const next = (localStorage.getItem("theme") || "blue") === "blue" ? "pink" : "blue";
+    localStorage.setItem("theme", next);
+    applyTheme(next);
+  };
+
+  /* ===== 職業 ===== */
   const JOBS = [
     { key: "KE", zh: "帝國騎士", img: "../../images/Elsword_KE.png" },
     { key: "RM", zh: "符文主宰", img: "../../images/Elsword_RM.png" },
@@ -123,15 +148,11 @@ document.addEventListener("DOMContentLoaded", () => {
     { key: "GE", zh: "創世騎士", img: "../../images/Elsword_GE.png" }
   ];
 
-  const CHARACTER_COLOR = "#d32f2f"; // 艾索德紅色
+  const CHARACTER_COLOR = "#d32f2f";
 
-  /* ===============================
-     載入技能 JSON
-  =============================== */
   fetch("./Elsword.json")
     .then(r => r.json())
-    .then(json => init(json.Elsword))
-    .catch(err => console.error("技能資料載入失敗", err));
+    .then(json => init(json.Elsword));
 
   function init(skillData) {
     const selector = document.getElementById("job-selector");
@@ -144,7 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       card.innerHTML = `
         <div class="job-name">${job.zh}</div>
-        <img src="${job.img}" alt="${job.zh}">
+        <img src="${job.img}">
       `;
 
       card.onclick = () => selectJob(job.key, card);
@@ -153,15 +174,15 @@ document.addEventListener("DOMContentLoaded", () => {
       if (idx === 0) selectJob(job.key, card);
     });
 
-    function selectJob(jobKey, card) {
+    function selectJob(key, card) {
       document.querySelectorAll(".job-card").forEach(c => c.classList.remove("active"));
       card.classList.add("active");
 
       tbody.innerHTML = "";
-      (skillData[jobKey] || []).forEach(s => {
-        const tr = document.createElement("tr");
-        tr.innerHTML = `<td>${s.kor}</td><td>${s.zh}</td>`;
-        tbody.appendChild(tr);
+      skillData[key].forEach(s => {
+        tbody.insertAdjacentHTML("beforeend",
+          `<tr><td>${s.kor}</td><td>${s.zh}</td></tr>`
+        );
       });
     }
   }
@@ -170,9 +191,10 @@ document.addEventListener("DOMContentLoaded", () => {
 </head>
 
 <body>
+
 <header class="inner-page">
   <h1>艾索德｜技能中韓文對照</h1>
-  <button id="theme-toggle" class="theme-toggle-btn">🌸 切換粉色</button>
+  <button id="theme-toggle"></button>
 </header>
 
 <main>
@@ -192,5 +214,6 @@ document.addEventListener("DOMContentLoaded", () => {
 <footer class="inner-page" style="text-align:center;padding:30px;">
 © 2025 艾爾之光改版資料整理站
 </footer>
+
 </body>
 </html>
