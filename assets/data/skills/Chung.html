@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>澄｜技能中韓文對照</title>
+
+  <!-- 主題 CSS（沿用成功版本） -->
+  <link id="theme-link" rel="stylesheet" href="../../css/blue_style.css">
+
+  <!-- 主題切換 JS（沿用你原本成功的） -->
+  <script defer src="../../js/color_switch.js"></script>
+
+  <style>
+    /* ===== header：標題置中、按鈕右上 ===== */
+    header.inner-page {
+      position: relative;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    /* 主題切換按鈕：只定位，不改樣式 */
+    #theme-toggle {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+    }
+
+    /* ===== 主要內容 ===== */
+    main.content {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    /* ===== 職業選擇 ===== */
+    .job-selector {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin: 36px 0;
+      padding: 22px;
+      border-radius: 16px;
+      background: #ffffffcc;
+      border: 2px solid #90caf9;
+    }
+
+    .job-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 16px;
+      border-radius: 14px;
+      cursor: pointer;
+      border: 3px solid transparent;
+      background: #fff;
+      transition: transform .15s, box-shadow .15s, border-color .15s;
+    }
+
+    .job-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0,0,0,.12);
+    }
+
+    .job-card.active {
+      border-color: currentColor;
+    }
+
+    .job-name {
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    .job-card img {
+      width: 56px;
+      height: auto;
+    }
+
+    /* ===== 技能表 ===== */
+    .skill-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 36px;
+    }
+
+    .skill-table th,
+    .skill-table td {
+      border: 1px solid var(--table-border, #ccc);
+      padding: 12px 14px;
+    }
+
+    .skill-table th {
+      background: var(--table-head-bg, #e3f2fd);
+      font-weight: 700;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- header：結構完全同成功頁 -->
+  <header class="inner-page">
+    <h1>澄｜技能中韓文對照</h1>
+    <button id="theme-toggle" class="theme-toggle-btn">🌸 切換粉色</button>
+  </header>
+
+  <main class="content">
+
+    <!-- 職業選擇 -->
+    <section id="job-selector" class="job-selector"></section>
+
+    <!-- 技能表 -->
+    <table class="skill-table">
+      <thead>
+        <tr>
+          <th>韓文技能名</th>
+          <th>中文技能名</th>
+        </tr>
+      </thead>
+      <tbody id="skill-body"></tbody>
+    </table>
+
+  </main>
+
+  <footer class="inner-page" style="text-align:center;padding:30px;">
+    © 2026 艾爾之光改版資料整理站
+  </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const JOBS = [
+    { key: "CC", zh: "彗星革命軍", img: "../../images/Chung_CC.png" },
+    { key: "FP", zh: "烈滅幻影者", img: "../../images/Chung_FP.png" },
+    { key: "CET", zh: "銀白總帥", img: "../../images/Chung_CET.png" },
+    { key: "DIA", zh: "蔚藍聖天使", img: "../../images/Chung_DIA.png" }
+  ];
+
+  const CHARACTER_COLOR = "#d32f2f";
+
+  fetch("./Chung.json")
+    .then(r => r.json())
+    .then(json => init(json.Chung));
+
+  function init(skillData) {
+    const selector = document.getElementById("job-selector");
+    const tbody = document.getElementById("skill-body");
+
+    JOBS.forEach((job, idx) => {
+      const card = document.createElement("div");
+      card.className = "job-card";
+      card.style.color = CHARACTER_COLOR;
+
+      card.innerHTML = `
+        <div class="job-name">${job.zh}</div>
+        <img src="${job.img}" alt="${job.zh}">
+      `;
+
+      card.onclick = () => selectJob(job.key, card);
+      selector.appendChild(card);
+
+      if (idx === 0) selectJob(job.key, card);
+    });
+
+    function selectJob(jobKey, card) {
+      document.querySelectorAll(".job-card").forEach(c => c.classList.remove("active"));
+      card.classList.add("active");
+
+      tbody.innerHTML = "";
+      skillData[jobKey].forEach(s => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `<td>${s.kor}</td><td>${s.zh}</td>`;
+        tbody.appendChild(tr);
+      });
+    }
+  }
+});
+</script>
+
+</body>
+</html>
