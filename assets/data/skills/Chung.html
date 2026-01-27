@@ -42,7 +42,7 @@
       padding: 22px;
       border-radius: 16px;
       background: #ffffffcc;
-      border: 2px solid #90caf9;
+      border: 2px solid #7EC8FF;
     }
 
     .job-card {
@@ -55,6 +55,7 @@
       border: 3px solid transparent;
       background: #fff;
       transition: transform .15s, box-shadow .15s, border-color .15s;
+      color: #7EC8FF;
     }
 
     .job-card:hover {
@@ -63,7 +64,7 @@
     }
 
     .job-card.active {
-      border-color: currentColor;
+      border-color: #7EC8FF;
     }
 
     .job-name {
@@ -98,7 +99,7 @@
 
 <body>
 
-  <!-- header：結構完全同成功頁 -->
+  <!-- header -->
   <header class="inner-page">
     <h1>澄｜技能中韓文對照</h1>
     <button id="theme-toggle" class="theme-toggle-btn">🌸 切換粉色</button>
@@ -130,13 +131,11 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   const JOBS = [
-    { key: "CC", zh: "彗星革命軍", img: "../../images/Chung/Chung_CC.png" },
-    { key: "FP", zh: "烈滅幻影者", img: "../../images/Chung/Chung_FP.png" },
-    { key: "CET", zh: "銀白總帥", img: "../../images/Chung/Chung_CET.png" },
+    { key: "CC",  zh: "彗星革命軍", img: "../../images/Chung/Chung_CC.png" },
+    { key: "FP",  zh: "烈滅幻影者", img: "../../images/Chung/Chung_FP.png" },
+    { key: "CET", zh: "銀白總帥",   img: "../../images/Chung/Chung_CET.png" },
     { key: "DIA", zh: "蔚藍聖天使", img: "../../images/Chung/Chung_DIA.png" }
   ];
-
-  const CHARACTER_COLOR = "#d32f2f";
 
   fetch("./Chung.json")
     .then(r => r.json())
@@ -149,7 +148,6 @@ document.addEventListener("DOMContentLoaded", () => {
     JOBS.forEach((job, idx) => {
       const card = document.createElement("div");
       card.className = "job-card";
-      card.style.color = CHARACTER_COLOR;
 
       card.innerHTML = `
         <div class="job-name">${job.zh}</div>
