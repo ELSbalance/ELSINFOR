@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2021 年更新總覽｜艾爾之光改版資料整理</title>
+
+  <!-- 套用主題 CSS（藍/粉可切換） -->
+  <link id="theme-link" rel="stylesheet" href="../assets/css/blue_style.css">
+
+  <!-- 主題切換 JS -->
+  <script defer src="../assets/js/color_switch.js"></script>
+
+  <!-- 摺疊區塊功能 JS -->
+  <script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".month-block summary").forEach(summary => {
+        summary.addEventListener("click", () => {
+          summary.parentElement.classList.toggle("open");
+        });
+      });
+      document.querySelectorAll(".update-week summary").forEach(summary => {
+        summary.addEventListener("click", () => {
+          summary.parentElement.classList.toggle("open");
+        });
+      });
+    });
+  </script>
+
+  <style>
+    .return-btn {
+      display: inline-block;
+      color: white;
+      padding: 10px 22px;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.2s;
+      margin-bottom: 25px;
+      font-weight: 500;
+    }
+    .return-btn:hover { transform: scale(1.05); }
+
+    body.blue-theme .return-btn { background-color: #64b5f6; }
+    body.blue-theme .return-btn:hover { background-color: #42a5f5; }
+    body.pink-theme .return-btn { background-color: #f48fb1; }
+    body.pink-theme .return-btn:hover { background-color: #f06292; }
+
+    header.inner-page { background: transparent; color: #111; text-align: center; padding: 30px 20px; position: relative; }
+    footer.inner-page { text-align: center; color: #777; padding: 30px 10px 50px; font-size: 0.95rem; }
+
+    details.month-block {
+      margin-bottom: 25px;
+      border: 2px solid #bbdefb;
+      border-radius: 12px;
+      padding: 10px 15px;
+      background: #f9f9ffcc;
+      backdrop-filter: blur(4px);
+    }
+    details.month-block summary {
+      cursor: pointer;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    details.update-week {
+      margin: 10px 0 10px 15px;
+      border: 1px solid #b3e5fc;
+      border-radius: 10px;
+      padding: 10px 15px;
+      background: #ffffffcc;
+      backdrop-filter: blur(4px);
+    }
+    details.update-week summary {
+      cursor: pointer;
+      font-weight: 600;
+      list-style: none;
+    }
+    details.update-week ul {
+      margin-top: 8px;
+      padding-left: 20px;
+    }
+
+    main.content {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="inner-page">
+    <h1>2021 年艾爾之光更新總覽</h1>
+    <button id="theme-toggle" class="theme-toggle-btn">🌸 切換粉色</button>
+  </header>
+
+  <main class="content">
+    <a href="../index.html" class="return-btn">← 返回首頁</a>
+    <section class="inner-page">
+      <h2>📅 2021 年度更新（韓版時程）</h2>
+
+
+   <!-- 一月 -->
+      <details class="month-block">
+        <summary>1 月</summary>
+        <details class="update-week"><summary>1/7 - 商城更新</summary><ul><li>自定義動作 - 下雪的天鵝湖 販售<br>
+                                                                             補 諾亞 時裝 - 艾爾儀樂隊<br>
+                                                                             補 諾亞 剉冰機 - 納斯德戰鬥、皇室鐵衛軍</li></ul></details>
+
+        
+        <details class="update-week"><summary>1/14 - 遊戲更新</summary><ul><li>諾亞 2分支(CEL) 開放<br>
+                                                                              與諾亞一同迎接冬天活動第2彈 活動<br>
+                                                                              週末的選擇！賢者的魔法石200個VS虹霓珠320個！活動<br>
+                                                                              新時裝 - 黑社總裁<br>
+                                                                              補 諾亞 時裝 - 班德學院指定校服<br>
+                                                                              補 諾亞 連身裝 - 打工用人形布偶<br>
+                                                                              補 諾亞 自定義動作 - 自拍零失誤的技巧!<br>
+                                                                              補 諾亞 立繪 - 怦然心動(ver.Secret)</li></ul></details>
+
+
+        
+        <details class="update-week"><summary>1/21 - 商城更新</summary><ul><li>補 諾亞 剉冰機 - 天國主宰<br>
+                                                                              補 諾亞 連身裝 - 精銳搜查隊制服 - 紅焰邊界</li></ul></details>
+
+
+        
+        <details class="update-week"><summary>1/28 - 遊戲更新</summary><ul><li>布律那歐襲擊戰部分調整/修正<br>
+                                                                              平衡<br>
+                                                                              部分UI改善(任務指示、移動中、小地圖) & 修正部分UI問題<br>
+                                                                              諾亞第3分支更新前夜活動<br>
+                                                                              諾亞偶像練習生更衣室 活動<br>
+                                                                              新坐騎 - 咩花糖 販售<br>
+                                                                              新 艾爾小屋DIY：暖冬熊伴 販售<br>
+                                                                              補 諾亞 時裝 - 2017冬季休閒<br>
+                                                                              補 諾亞 時裝 - EL★STAR運動套裝<br>
+                                                                              補 諾亞 自定義動作 - 抱抱胖嘟嘟的海豹、快過來!圓滾滾的海豹<br>
+                                                                              補 諾亞 自定義動作 - 胖嘟嘟的海豹、圓滾滾的海豹<br>
+                                                                              <br>
+                                                                              2轉後計算物理/魔法防禦力無視效果時，變更為根據各角色的攻擊力種類來進行計算<br>
+                                                                              (前）物理/魔法攻擊力無視效果會直接計算大量的戰鬥力。<br>
+                                                                              (後）會根據各角色的攻擊力種類來計算戰鬥力。</li></ul></details>
+        
+      </details>
+
+
+   <!-- 二月 -->
+      <details class="month-block">
+        <summary>2 月</summary>
+        <details class="update-week"><summary>2/4 - 商城更新</summary><ul><li>補 諾亞 時裝 - 雅痞樂團<br>
+                                                                             補 諾亞 自定義動作 - 雅痞樂團 鼓、吉他、鋼琴</li></ul></details>
+
+        
+        <details class="update-week"><summary>2/11 - 遊戲更新</summary><ul><li>諾亞 3分支(NP) 開放<br>
+                                                                               UI變更/改善<br>
+                                                                               正式對戰 第10賽季<br>
+                                                                               與諾亞一同迎接冬天活動第3彈<br>
+                                                                               與諾亞一同的正月活動(尋找寶藏活動(漆黑魔使：白)、強化活動)<br>
+                                                                               Plus Alpha！挫冰機活動(幻想童話)<br>
+                                                                               正月紀念福袋！活動<br>
+                                                                               新時裝 - 甜蜜職人 販售<br>
+                                                                               補 諾亞 時裝 - EL★STAR Rookies trinityACE<br>
+                                                                               補 諾亞 自定義動作 - 星光紅毯(黑)<br>
+                                                                               補 諾亞 立繪 - EL★STAR技能立繪(Ver.特殊)<br>
+                                                                               補 諾亞 連身裝 - 百年好合(藍線/紅線)</li></ul></details>
+
+
+        
+        <details class="update-week"><summary>2/18 - 商城更新</summary><ul><li>補 諾亞 時裝 - 棉織紋<br>
+                                                                               諾亞 TrinityACE粉絲組合包 販售<br>
+                                                                               諾亞 MEGA CAKE粉絲組合包 販售<br>
+                                                                               諾亞 自定義動作 ： TrinityACE MAGICAL HOUR - 特異舞蹈 販售<br>
+                                                                               諾亞 自定義動作 ： MEGA CAKE My Dear Sweat - 特異舞蹈 販售<br>
+                                                                               諾亞 自定義動作：EL★STAR粉絲簽名會 販售</li></ul></details>
+
+        
+        <details class="update-week"><summary>2/25 - 遊戲更新</summary><ul><li>便利性改編(第一彈)<br>
+                                 <li><a href="https://forum.gamer.com.tw/Co.php?bsn=12259&sn=1433294&subbsn=18&bPage=0">便利性改編(第一彈)翻譯</a></li><br>
+                                                                              諾亞 3分支(NP) 平衡性調整<br>
+                                                                              快速任務UI改善(任務幫手標示(TAB))<br>
+                                                                              Plus Alpha挫冰機（聖潔熾天使）活動<br>
+                                                                              3.1節艾爾之光燃燒！活動<br>
+                                                                              新 剉冰機 - 聖潔熾天使 販售<br>
+                                                                              補 諾亞時裝：EL★STAR Maze（Ver.組合交換</li></ul></details>
+        
+      </details>
+
+
+    <!-- 三月 -->
+      <details class="month-block">
+        <summary>3 月</summary>
+        <details class="update-week"><summary>3/4 -  商城更新</summary><ul><li>補 諾亞 時裝 - 班德樂團<br>
+                                                                              補 諾亞 自定義動作 - 班德搖滾樂<br>
+                                                                              諾亞 MAZE 粉絲組合包 販售<br>
+                                                                              諾亞 ALTER CROWN 粉絲組合包 販售<br>
+                                                                              諾亞 MAZE -  Reset   特異舞蹈 販售<br>
+                                                                              諾亞 ALTER CROWN - 0（young） 特異舞蹈 販售</li></ul></details>
+
+        
+        <details class="update-week"><summary>3/11 - 遊戲更新</summary><ul><li>便利性改編(第二彈)：<br>
+                                                                              虹霓降魔鍛造緩和、巴尼米爾襲擊戰兌換列表改善、稱號切換系統<br>
+                                                                              副本跳過條件改善( 所有隊員ESC才可跳過 -> 4個以上隊員ESC即可跳過 )<br>
+                                                                              3轉任務條件緩和( 擊敗異域嗜怪20次 -> 通關艾爾之塔防禦戰5次 )<br>
+                                                                              <br>
+                                                                              諾亞職階賦靈錄-加成效果更新<br>
+                                                                              UI改善：遊戲顯示的彈出UI變更、自定義角色UI的分類與道具說明變更、稱號UI改善、快捷任務完成按鈕的大小調整<br>
+                                                                             新時裝 - 繽紛花開 販售<br>
+                                                                             補 菈比 & 諾亞 時裝 - 藝術巧克力<br>
+                                                                             艾爾小屋DIY：暖冬熊伴 販售期間變更(2021/01/28 ~ 2021/05/20 -> 2021/05/13)</li></ul></details>
+
+        
+        <details class="update-week"><summary>3/18 - 商城更新</summary><ul><li>新 自定義眼睛 - 聖潔熾天使眼睛 販售<br>
+                                                                              補 諾亞 時裝 - SWAT<br>
+                                                                              補 諾亞 自定義動作 - SWAT作戰中的休息<br>
+                                                                              諾亞娃娃連身裝、諾亞棉花鐮刀武器 販售</li></ul></details>
+
+        
+        <details class="update-week"><summary>3/25 - 遊戲更新</summary><ul><li>布律那歐襲擊戰調整<br>
+                                                                              角色平衡改編<br>
+                                                                              正式對戰 第11賽季<br>
+                                                                              週末在線發放變更券！活動(轉職變更券、魔力石效果&顏色變更券各2)<br>
+                                                                              新 自定義動作 - 植漾搖籃 販售<br>
+                                                                              補 諾亞 時裝 - 黑色電影 & 민중의 수호자 </li></ul></details>
+        
+      </details>
+
+      
+ <!-- 四月 -->
+      <details class="month-block">
+        <summary>4 月</summary>
+        <details class="update-week"><summary>4/1 - 商城更新</summary><ul><li>新飾品 - 羽衣(幽蘭/天櫻) 販售<br>
+                                                                              補 諾亞 時裝 - 美夢<br>
+                                                                              愚人節連身裝 - 輕飄紙娃娃 販售</li></ul></details>
+
+
+        
+        <details class="update-week"><summary>4/8 - 活動與商城更新</summary><ul><li>春季簽到活動<br>
+                                                                              新 公會秘密基地造型 - 甜點天堂<br>
+                                                                              補 諾亞 剉冰機 - 邪魔獵人1</li></ul></details>
+
+        
+        
+        <details class="update-week"><summary>4/15 - 遊戲更新</summary><ul><li>專門職業改編<br>
+                          <li><a href="https://forum.gamer.com.tw/C.php?bsn=12259&snA=292303&tnum=1&subbsn=18&bPage=16">專門職業改編翻譯</a></li><br>
+                                                                              UI變更/改善(UI變更為可以移動、變更大小，修改的內容改善為可以保存、載入)<br>
+                                                                              新時裝 - Funky crew 販售</li></ul></details>
+
+
+        
+        <details class="update-week"><summary>4/22 - 無更新</summary><ul><li>本週的原定更新內容我們評估下來不符合冒險家們的期望，因此推遲更新。</li></ul></details>
+
+
+        
+        <details class="update-week"><summary>4/29 - 遊戲更新</summary><ul><li>部分遊戲內容變更/改善<br>
+                                                                              專門職業追加改編<br>
+                                    <li><a href="https://forum.gamer.com.tw/C.php?bsn=12259&snA=292329&tnum=4&subbsn=18">部分遊戲內容變更/改善、專門職業追加改編翻譯</a></li><br>
+                                                                              正式對戰第11賽季延長<br>
+                                                                              溫暖的5月活動<br>
+                                                                              新寵物 - 花花(플로스) 販售<br>
+                                                                              新 連身裝 - 莊園時光 販售<br>
+                                                                              補 諾亞 時裝 - 戰鬥課<br>
+                                                                              補 諾亞 剉冰機 - 冰鑽獨角獸</li></ul></details>
+
+        
+      </details>
+
+
+ <!-- 五月 -->
+      <details class="month-block">
+        <summary>5 月</summary>
+        <details class="update-week"><summary>5/6 - 商城更新</summary><ul><li>補 諾亞 挫冰機 - 闇影煞星<br>
+                                                                             補 諾亞 連身時裝 - 淺藍吊帶褲</li></ul></details>
+
+
+        
+        <details class="update-week"><summary>5/13 - 遊戲更新</summary><ul><li>部分遊戲內容變更/改善<br>
+                                        <li><a href="https://forum.gamer.com.tw/C.php?bsn=12259&snA=292356&tnum=3&subbsn=18&bPage=15">部分遊戲內容變更/改善翻譯</a></li><br>
+                                                                              共鳴度改編支援活動<br>
+                                                                              海倫釣魚支援活動！<br>
+                                                                              佛誕節公休日特別禮物活動！、佛誕節艾里奧斯燃燒！(2021/05/19)<br>
+                                                                              新 艾爾小屋DIY - 科技潮玩遊戲室 販售<br>
+                                                                              新時裝 - 古董圖書館 販售<br>
+                                                                              補 諾亞 時裝 - 艾里奧斯偵探學院</li></ul></details>
+
+      
+        
+        <details class="update-week"><summary>5/20 - 商城更新</summary><ul><li>補 諾亞 剉冰機 - 納斯德戰鬥MK2、冰晶貴族<br>
+                                                                               補 諾亞 時裝 - 天生艾緣(高級組合包含飾品，飾品可單獨購買)</li></ul></details>
+
+        
+        
+        <details class="update-week"><summary>5/27 - 遊戲更新</summary><ul><li>平衡性改編<br>
+                                                                              正式對戰 第12賽季<br>
+                                                                              迎接夏季的艾爾之光禮物 活動<br>
+                                                                              週末特別禮物寶箱 活動 ( 轉職變更券 & 魔力石效果/顏色變更券 )<br>
+                                                                              新 剉冰機 - 薔薇彼岸</li></ul></details>
+      </details>
+
+
+    <!-- 六月 -->
+      <details class="month-block">
+        <summary>6 月</summary>
+        <details class="update-week"><summary>6/3 - 活動與商城更新</summary><ul><li>顯忠日紀念活動(6/6)<br>
+                                                                                   新坐騎 - 哈蜜 販售<br>
+                                                                                   補 諾亞 時裝 - 初綻之舞(高級組合包含踢踏舞自定義)</li></ul></details>
+
+
+        
+        <details class="update-week"><summary>6/10 - 遊戲更新</summary><ul><li>諾亞巔峰轉換技追加(LI、CEL、NP)<br>
+                                                                              魔奇~艾里希溫、秘密副本的強制踢出功能刪除<br>
+                                                                              噗魯的簽到活動<br>
+                                                                              新時裝 - 夏日航海士 販售<br>
+                                                                              補 諾亞 自定義動作 - 浪漫下午茶(奈爾/雷亞)</li></ul></details>
+
+        
+        <details class="update-week"><summary>6/17 - 商城更新</summary><ul><li>補 諾亞 剉冰機 - 灰白之龍:塞爾畢烏斯</li></ul></details>
+
+        
+        
+        <details class="update-week"><summary>6/24 - 遊戲更新</summary><ul><li>2021懇談會感謝活動(累計在線5分鐘可獲得[露莉爾]感恩寵物選擇寶箱)<br>
+                                                                              2021夏季事前預約活動！<br>
+                                                                              迎接夏季火熱跳躍活動(兩波，至三轉)<br>
+                                                                              新飾品 - 蘇打小熊 全息背包/豎耳髮夾/蕩漾水波 (水藍/萊姆黃) 販售<br>
+                                                                              補 諾亞 連身時裝 - 狂熱分子<br>
+                                                                              諾亞 自定義眼睛 - 塞爾畢溫眼睛 販售</li></ul></details>
+
+      </details>
+
+      
+      <!-- 七月 -->
+      <details class="month-block">
+        <summary>7 月</summary>
+        <details class="update-week"><summary>7/1 - 遊戲更新</summary><ul><li>蕾娜 4分支 開放 (PR) <br> 
+                                                                             佈告欄改善<br>
+                                                                            坐騎競賽改善<br>
+                                                                             新時裝 - 青少年啦啦隊 販售</li></ul></details>
+
+
+         <details class="update-week"><summary>7/14 - 商城與活動更新</summary><ul><li>艾爾之光週末特別活動( 送+10魔人 & 100顆賢者 )<br> 
+                                                                                     新飾品 - 噗通噗通艾里奧斯 販售<br>
+                                                                                     補 諾亞 時裝 - 浪漫夏日、熱情暖陽</li></ul></details>
+
+
+        <details class="update-week"><summary>7/21 - 遊戲更新</summary><ul><li>艾里奧斯Season Pass 2<br>
+                                                                              蕾娜 4支線(PR) 平衡性改善<br>
+                                                                              角色平衡<br>
+                                                                              巴尼米爾、利古魔爾、大師之路 改善<br>
+                                                                               一般副本稱號共用<br>
+                                                                              共倉第一排免費開放<br>
+                                                                               新剉冰機 - 神聖騎士 販售<br>
+                                                                               正式對戰  第22賽季<br>
+                                                                               拳擊大師活動<br>
+                                                                               兩極與適應力能力值上限提高(45%>55%)<br>
+                                                                              復刻時裝 - 海軍風、歌德、2016夏日度假、班德哈梅爾游泳隊<br>
+                                                                              利古摩爾每日獲得數量上修(25/100 > 50/200)<br>
+                                                                              改版後可共倉的有：虹霓裝備、虹霓珠、大師飾品</li></ul></details>
+
+        
+        <details class="update-week"><summary>7/28 - 商城更新</summary><ul><li>補 諾亞 剉冰機 - 冰海精靈 <br>
+                                                                              補 諾亞 眼睛自定義 - 冰海精靈眼 <br>
+                                                                              新寵物 - 聖詠 販售</li></ul></details>
+      </details>
+
+      
+       <!-- 八月 -->
+      <details class="month-block">
+        <summary>8 月</summary>
+        <details class="update-week"><summary>8/4 - 遊戲更新</summary><ul><li> 18襲擊<br>
+                                                                              新魔力石 - 深淵魔力石擊<br>
+                                                                               新泳裝 - 어반 썸머홀릭 販售<br>
+                                                                               結算畫面改編<br>
+                                                                               CC無限混亂、[轉換]炸裂狼嚎 從物理改雙向 </li></ul></details>
+
+        
+        <details class="update-week"><summary>8/11 - 商城更新</summary><ul><li>深淵襲擊戰改善<br>
+                                                                               新技能立繪（配合時裝主要模特兒）<br>
+                                                                              MN 榴彈融合下修（防禦力減少 100% ＞ 45%）<br>
+                                                                              補 諾亞 時裝 - 花香假期</li></ul></details>
+
+        
+        <details class="update-week"><summary>8/18 - 遊戲更新</summary><ul><li>菈比 4分支 開放 (TP)<br>
+                                                                              新家具DIY - 夏日度假別墅<br>
+                                                                              補 諾亞時裝 - 海洋祭、璀璨夏日</li></ul></details>
+
+        
+        <details class="update-week"><summary>8/25 - 商城更新</summary><ul><li>補 諾亞 剉冰機 - 七界權能<br>
+                                                                              補 諾亞 眼睛自定義 - 七界權能眼睛</li></ul></details>
+
+        
+      </details>
+
+      
+          <!-- 九月 -->
+      <details class="month-block">
+        <summary>9 月</summary>
+        <details class="update-week"><summary>9/1 - 遊戲更新</summary><ul><li>平衡(有送牆頭草捲)<br>
+                                                                            期間制道具變得會提醒了<br>
+                                                                            深淵襲擊戰追加改善<br>
+                                                                            TP下修<br>
+                                                                            正式對戰第23賽季<br>
+                                                                            艾爾之光秋季簽到活動<br>
+                                                                            新泳裝 - 珍珠美人魚 販售 </li></ul></details>
+        
+        <details class="update-week"><summary>9/8 - 商城及活動更新</summary><ul><li>中秋活動(強化)<br>
+                                                                                   黑滋浩克鏟子(異色魅影君主)<br>
+                                                                                   聖殿騎士Alpha<br>
+                                                                                   補 諾亞 自定義 - 艾里奧斯樹木、輝煌雕像 </li></ul></details>
+        
+        <details class="update-week"><summary>9/15 - 遊戲更新</summary><ul><li>韓服共存節(共存的慶典禮服販售)<br>
+                                                                              新增臨時背包直覺化系統<br>
+                                                                              復刻時裝 - 蝴蝶貴族、上班族、天堂假期<br>
+                                                                              復刻眼睛自定義 - 西洋棋眼、蝶眼<br>
+                                                                              補 諾亞 剉冰機 - 邪魔獵人Ⅲ/奇蹟鍊金術師
+                                                                               新寵物 - 咖啡水豚君 販售</li></ul></details>
+        
+        <details class="update-week"><summary>9/22 - 商城更新</summary><ul><li>菈比、蕾娜覺醒自定義 販售<br>
+                                                                               補 諾亞 時裝 - 私立大英名門學院</li></ul></details>
+        
+       <details class="update-week"><summary>9/29 - 遊戲更新</summary><ul><li>角色成長區間消耗道具改善 (改善前期藥水過多頻繁整理的問題)<br>
+                                                                              開天節在線活動(韓)<br>
+                                                                              新時裝 - 古典儀隊 販售</li></ul></details>
+      </details>
+
+      
+         <!-- 十月 -->
+      <details class="month-block">
+        <summary>10 月</summary>
+        <details class="update-week"><summary>10/6 - 商城更新</summary><ul><li>韓文日活動<br>
+                                                                               商城新坐騎： 飛天小蜜寶 販售<br>
+                                                                              補 諾亞 剉冰機 - 幽藍星辰、機械將軍<br>
+                                                                              補 諾亞 眼睛自定義 - 機械將軍眼<br>
+                                                                               復刻時裝：雅痞、雅致、黑貓<br>
+                                                                               復刻自定義：愛心眼、白龍眼</li></ul></details>
+
+        <details class="update-week"><summary>10/13 - 遊戲更新</summary><ul><li>平衡<br>
+                                                                              萬聖節小遊戲<br>
+                                                                              新冰裝 - 薔薇魔法使 (플로스 마지카) 販售<br>
+                                                                              補 諾亞 連身時裝 - 幽靈睡衣</li></ul></details>
+        
+        <details class="update-week"><summary>10/20 - 商城更新</summary><ul><li>薔薇魔法使眼睛自定義 販售<br>
+                                                                               補 菈比 時裝 - 糖果惡魔<br>
+                                                                               補 諾亞 時裝 - 杜克</li></ul></details>
+        
+        <details class="update-week"><summary>10/27 - 遊戲更新</summary><ul><li>ADD 4分支 開放 (OM)<br>
+                                                                              新時裝 - 奇妙的童話仙境 販售</li></ul></details>
+      </details>
+
+      
+         <!-- 十一月 -->
+      <details class="month-block">
+        <summary>11 月</summary>
+        <details class="update-week"><summary>11/3 - 無更新</summary><ul><li>純伺服器維護 </li></ul></details>
+        
+        <details class="update-week"><summary>11/10 - 遊戲更新</summary><ul><li>公會改編<br>
+                                                                                公會討伐改編<br>
+                                                                                 OM平衡<br>
+                                                                                 新 公會祕密基地 -  青蛙溫泉山莊 販售<br>
+                                                                                 新寵物 ： 占星小雪貂-塔羅 販售<br>
+                                                                                 復刻時裝 - 孤獨之狼、第一堂戰鬥課<br>
+                                                                                 復刻剉冰機 - 異界統治者、駭浪蛟龍、銀月暴風<br>
+                                                                                 新 覺醒自定義 - ADD<br>
+                                                                                 補 諾亞 連身時裝 - 動物睡衣(沙漠狐狸)、艾里奧斯唱詩班</li></ul></details>
+
+        
+        <details class="update-week"><summary>11/17 - 商城更新</summary><ul><li>韓國 大學修學能力測驗應援活動<br>
+                                                                               商城新品(15種新表情貼圖(各角色)<br>
+                                                                               新 飾品 - 逗趣手帳貼紙 販售<br>
+                                                                               補 諾亞 剉冰機 - 煥光琉璃<br>
+                                                                               補 諾亞 自定義眼睛 - 琉璃之眼</li></ul></details>
+
+        
+        <details class="update-week"><summary>11/24 - 遊戲更新</summary><ul><li>平衡(無送捲)<br>
+                                                                               染髮系統<br>
+                                                                               艾里奧斯Season Pass 3<br>
+                                                                               正式對戰 第24賽季<br>
+                                                                               新時裝 - 冬日暖心咖啡廳 販售</li></ul></details>
+      </details>
+
+
+      
+ <!-- 十二月 -->
+      <details class="month-block">
+        <summary>12 月</summary>
+        <details class="update-week"><summary>12/1 - 商城更新</summary><ul><li>新坐騎 - 雷電碰碰鼠 販售<br>
+                                                                              補 諾亞 時裝 - 貴族柴斯特非<br>
+                                                                              補 諾亞 剉冰機 - 黃昏支配者 & 黎明支配者</li></ul></details>
+        
+        <details class="update-week"><summary>12/8 - 遊戲更新</summary><ul><li>愛利西斯 4分支 開放 (AD)<br>
+                                                                              新 艾爾小屋DIY - 冬日小木屋 販售<br>
+                                                                              補 亞殷 & 菈比 & 諾亞自定義：雪球(스노우 볼)<br>
+                                                                              復刻時裝 - 棉織紋<br>
+                                                                              復刻冰裝 - 塔納托斯、 青風羽翼、蝶之安魂曲</li></ul></details>
+        
+        <details class="update-week"><summary>12/15 - 商城更新</summary><ul><li>復刻剉冰機：百花精靈、幻想童話、冰鑽獨角獸<br>
+                                                                                補 諾亞 剉冰機：百花精靈</li></ul></details>
+        
+        <details class="update-week"><summary>12/22 - 遊戲更新</summary><ul><li>12襲擊挑戰模式 開放<br>
+                                                                                副本UI改編<br>
+                                                                                對戰UI改編<br>
+                                                                                15、18襲擊改善<br>
+                                                                                泰納裝提取機率上限由50%>100%<br>
+                                                                                其他副本改善(113；入場券2>1；151 152極光作戰指令掉落率up)<br>
+                                                                               部分稱號開啟&獲得條件改善<br>
+                                                                               愛利西斯 4支線(AD)平衡性調整<br>
+                                                                               拳擊活動<br>
+                                                                               新時裝 - 維多利亞 販售<br>
+                                                                               +10魔人升級+9鎮魂活動<br>
+                                                                               聖誕節活動(小屋契約書)<br>
+                                                                               15周年送3轉職裝</li></ul></details> 
+        
+       <details class="update-week"><summary>12/29 - 商城更新</summary><ul><li>新年!艾里奧斯塔羅活動(1/1當天)<br>
+                                                                               5種頭髮復刻：街頭滑板、紳士管家、艾里奧斯偵探學院、繽紛花開、私立大英名門學院</li></ul></details>
+        
+      </details>
+
+      
+    </section>
+  </main>
+
+  <footer class="inner-page">
+    © 2022 艾爾之光改版資料整理站｜
+  </footer>
+</body>
+</html>
